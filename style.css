@@ -54,20 +54,41 @@ aside div{
     top: 0;
     background: linear-gradient(135deg, rgb(0, 226, 226), rgb(15, 134, 247));
     position: fixed;
+    text-align: center;
 }
-main{
+aside a{
+    color: #333;
+    font-size: medium;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 30px;
+    transition: all 0.25s ease-in-out;
+}
+aside a:hover {
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: black;
+    font-size: larger;
+}
+aside a.active {
+    font-size: larger;
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: orange;
+}
+main {
     width: 75%;
     margin-left: 20%;
 }
-section{
+section {
     background-color: #fff;
     padding: 15px;
-    margin-top: 25px;
+    margin-top: 50px;
     border-radius: 10px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
-h1{
+h1 {
     background-color: #333;
     color: #fff;
     margin: -15px;
@@ -78,9 +99,15 @@ h1{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.section-content{
+h2 {
+    background-color: orange;
+    color: black;
+    padding: 15px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.section-content {
     display: flex;
-    object-fit: contain;
 }
 footer {
     text-align: center;
@@ -90,4 +117,7 @@ footer {
     background-color: #333;
     color: #fff;
     margin-top: 2rem;
+}
+footer a {
+    color: rgb(0, 210, 210);
 }
