@@ -1,62 +1,112 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 25px;
     line-height: 1.6;
     background-color: #000000;
     color: #333;
 }
+
+section img {
+    float: left;
+    margin-right: 15px;
+    border-radius: 10px;
+    object-fit: cover;
+    width: 50%;
+    height: 66.6%;
+    min-width: 200px;
+    min-height: 266px;
+}
+
+.overhead-btns {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    margin: 25px;
+}
 header {
     background-color: #333;
-    color: #fff;
-    padding: 1rem;
+    height: 40px;
+    width: 100%;
+    padding: 25px;
     text-align: center;
     border-radius: 10px;
     border-style: solid;
     border-color: rgb(0, 210, 210);
-    position: sticky;
-    top: 0;
-    left: 20%;
-    width: 75%;
 }
 header p {
     color: orange;
     display: inline;
-    font-size: 1.2rem;
     font-weight: bold;
-    padding: 10px 15px;
-    margin: 0 2.5%;
+
+    padding: .75vw;
+    margin: 1rem;
     border: 4px solid orange;
     border-radius: 5px;
-    width: 20%;
-    height: 90%;
 }
 header a {
     color: rgb(0, 210, 210);
     text-decoration: none;
-    font-size: 1.2rem;
     font-weight: bold;
-    padding: 10px 15px;
-    margin: 0 2.5%;
+    padding: .75vw;
+    margin: 1rem;
     border: 2px solid rgb(0, 210, 210);
     border-radius: 5px;
     transition: all 0.25s ease-in-out;
-    width: 20%;
-    height: 90%;
 }
 header a:hover {
     background-color: orange;
     color: #333;
     border: 2px solid orange;
 }
-aside div{
-    width: 15%;
+nav {
+    height: 50px;
+    width: 50px;
+    padding: 15px;
+    display: flex;
+    background-color: #333;
+    border-radius: 10px;
+    border: solid rgb(0, 210, 210);
+    opacity: 0;
+    z-index: 20000;
+    margin-left:-200%;
+}
+.ham-menu {
+    height: 50px;
+    width: 50px;
+    position: sticky;
+}
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: rgb(0, 210, 210);
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .25s ease-in-out;
+}
+.ham-menu span:nth-child(1) {top: 25%;}
+.ham-menu span:nth-child(3) {top: 75%;}
+
+
+.side-bar {
+    background: linear-gradient(135deg, rgb(0, 226, 226), rgb(15, 134, 247));
+    width: 100%;
+    max-width: 250px;
     height: 100%;
     top: 0;
-    background: linear-gradient(135deg, rgb(0, 226, 226), rgb(15, 134, 247));
     position: fixed;
     text-align: center;
+    left: 25px;
+    transition: .25s ease-in-out;
+    z-index: 100;
+
+    flex: 0 1 250px;
 }
-aside a{
+.side-bar.active {
+    left: 0px;
+}
+.side-bar a{
     color: #333;
     font-size: medium;
     text-decoration: none;
@@ -64,21 +114,49 @@ aside a{
     margin-bottom: 30px;
     transition: all 0.25s ease-in-out;
 }
-aside a:hover {
+.side-bar a:hover {
     color: black;
     text-decoration: underline;
     text-decoration-color: black;
     font-size: larger;
 }
-aside a.active {
+.side-bar a.active {
     font-size: larger;
     color: black;
     text-decoration: underline;
     text-decoration-color: orange;
 }
+.side-bar-close {
+    height: 50px;
+    width: 50px;
+    float: right;
+    margin: 10px;
+    margin-bottom: -10px;
+    opacity: 0;
+}
+.side-bar-close span {
+    height: 5px;
+    width: 45px;
+    margin-top: 25px;
+    background-color: black;
+    border-radius: 25px;
+    position: absolute;
+}
+.side-bar-close span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.side-bar-close span:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
 main {
-    width: 75%;
-    margin-left: 20%;
+    margin: 25px;
+    margin-left: 300px;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    transition: all 0.25s ease-in-out;
 }
 section {
     background-color: #fff;
@@ -107,12 +185,10 @@ h2 {
     border-bottom: 2px solid black;
 }
 .section-content {
-    display: flex;
+    display: inline-block;
 }
 footer {
     text-align: center;
-    width: 75%;
-    margin-left: 20%;
     padding: 1rem 0;
     background-color: #333;
     color: #fff;
@@ -120,4 +196,35 @@ footer {
 }
 footer a {
     color: rgb(0, 210, 210);
+}
+
+
+@media screen and (orientation: portrait){
+    .overhead-btns {
+        display: flex;
+    }
+    header {
+        flex: 1 1 50px;
+        margin-left: 25px;
+    }
+    header p {
+        margin: 1%;
+        font-size: 10px;
+    }
+    header a {
+        margin: 1%;
+        font-size: 10px;;
+    }
+    nav {
+        opacity: 100;
+        margin-left: 0;
+    }
+    .side-bar {
+        left: -250px;
+    }
+    .side-bar-close {opacity: 100;}
+    main {
+        margin-left: 25px;
+    }
+
 }
