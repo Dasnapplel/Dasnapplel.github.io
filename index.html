@@ -6,44 +6,55 @@
   <link href="style.css" rel="stylesheet">
   <title>Diego de Jong Portfolio</title> 
   <style>
-    section img{
-      float: left;
-      margin-right: 15px;
-      border-radius: 10px;
-    }
+    
   </style>
 </head>
 <body>
-  <header>
-    <!-- five navigation buttons -->
-     <p>
-        <strong>About Me</strong>
-     </p>
-     <a href="Projects.html">
-        <strong>Projects</strong>
-     </a>
-     <a href="Adventures.html">
-        <strong>Adventures</strong>
-     </a>
-     <a href="Resume.html">
-        <strong>Resume</strong>
-     </a>
-     <a href="Links-&-Contact-Info.html">
-        <strong>Links & Contact Info</strong>
-     </a>
-  </header>
-  <aside>
-    <!-- side navigation bar -->
-    <div>
-      <img src="Images/Diego's Logo.png" alt="DiegoLogo" style="width: 100%;">
-      <h2><strong>About Me</strong></h2>
-      <a href="#biography" class="active">Biography</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#leadership-awards">Leadership & Awards</a>
+
+  <div class="side-bar">
+    <div class="side-bar-close">
+      <span></span>
+      <span></span>
     </div>
-  </aside>
+    <img src="Images/Diego's Logo.png" alt="DiegoLogo" style="width: 100%; margin-top: 2.5vw;">
+    <h2><strong>About Me</strong></h2>
+    <a href="#biography" class="active">Biography</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#awards">Awards</a>
+  </div>
+
   <main>
+    <div class="overhead-btns">
+      <nav>
+        <div class="ham-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+      <header>
+        <!-- five navigation buttons -->
+         <p>
+            <strong>About Me</strong>
+         </p>
+         <a href="Projects.html">
+            <strong>Projects</strong>
+         </a>
+         <a href="Adventures.html">
+            <strong>Adventures</strong>
+         </a>
+         <a href="Resume.html">
+            <strong>Resume</strong>
+         </a>
+         <a href="Links-&-Contact-Info.html">
+            <strong>Links & Contact Info</strong>
+         </a>
+      </header>
+    </div>
+    
+    
     <section id="biography">
       <h1>Biography</h1>
       <div class="section-content">
@@ -117,8 +128,8 @@
         </article>
       </div> 
     </section>
-    <section id="leadership-awards">
-      <h1>Leadership & Awards</h1>
+    <section id="leadership">
+      <h1>Leadership</h1>
       <div class="section-content">
         <article>
           <h3>Leadership</h3>
@@ -129,6 +140,13 @@
             <li>Closing Shift Leader at Forest Hills Foods</li>
             <li>Group Leader for Vacation Bible School Summer Camp</li>
           </ul>
+        </article>
+      </div> 
+    </section>
+    <section id="awards">
+      <h1>Awards</h1>
+      <div class="section-content">
+        <article>
           <h3>Awards</h3>
           <ul>
             <li>National Hispanic Recognition Award</li>
@@ -139,11 +157,11 @@
         </article>
       </div> 
     </section>
+    <br><br>
+    <footer>
+      <p>© [2025] [Diego de Jong] | <a href="https://github.com/Dasnapplel">GitHub</a></p>
+    </footer>
   </main>
-  <br><br>
-  <footer>
-    <p>© [2025] [Diego de Jong] | <a href="https://github.com/Dasnapplel">GitHub</a></p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
