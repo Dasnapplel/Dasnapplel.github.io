@@ -17,30 +17,29 @@ section img {
 }
 
 header {
-    text-align: center;
     position: sticky;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 5px;
+    padding-bottom: 25px;
     background-color: #333;
     border-radius: 10px;
     border: solid rgb(0, 210, 210);
     width: calc(100% - 100px);
     display: inline-block;
+    margin-left: 5px;
     top: 0;
     
-    font-size: 20px;
     height: 50px;
 }
 header p {
     color: orange;
     font-weight: bold; 
-    border: 4px solid orange;
+    border: 6px solid orange;
     border-radius: 5px;
     float: inline-start;
     display: inline-flex;
+    text-align: center;
 
-    margin: 15px;
-    margin-left: 30px;
+    width: calc(20%);
 }
 header a {
     color: rgb(0, 210, 210);
@@ -52,7 +51,8 @@ header a {
     float: inline-start;
     display: inline-flex;
 
-    margin: 15px;
+    margin-top: 17px;
+    width: calc(20%);
 }
 header a:hover {
     background-color: orange;
