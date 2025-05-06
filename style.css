@@ -16,48 +16,74 @@ section img {
     min-height: 266px;
 }
 
-header {
+.head-contain {
+    float: right;
     position: sticky;
-    padding-top: 5px;
-    padding-bottom: 25px;
+    top: 0;
+    width: 100%;
+}
+header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
     background-color: #333;
     border-radius: 10px;
     border: solid rgb(0, 210, 210);
-    width: calc(100% - 100px);
-    display: inline-block;
-    margin-left: 5px;
-    top: 0;
-    
+    font-weight: bold;
     height: 50px;
 }
-header p {
-    color: orange;
-    font-weight: bold; 
-    border: 6px solid orange;
+header * {
     border-radius: 5px;
-    float: inline-start;
-    display: inline-flex;
     text-align: center;
+    padding: 8px;
+    flex-grow: 1;
+}
 
-    width: calc(20%);
+header span {
+    color: orange;
+    border: 6px solid orange;
 }
 header a {
     color: rgb(0, 210, 210);
-    font-weight: bold;
     border: 2px solid rgb(0, 210, 210);
-    border-radius: 5px;
     transition: all 0.25s ease-in-out;
     text-decoration: none;
-    float: inline-start;
-    display: inline-flex;
-
-    margin-top: 17px;
-    width: calc(20%);
 }
 header a:hover {
     background-color: orange;
     color: #333;
     border: 2px solid orange;
+}
+
+.portait-head {
+    margin-left: 15px;
+    height: 50px;
+    width: 200px;
+    position: sticky;
+    display: inline-block;
+    top: 0;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 6px solid orange;
+    background-color: #333;
+    padding: 15px;
+    color: orange;
+}
+.portait-head * {
+    border-radius: 5px;
+    text-align: center;
+}
+
+.portait-head span {
+    border: 6px solid orange;
+}
+.portait-head a {
+    color: rgb(0, 210, 210);
+    border: 2px solid rgb(0, 210, 210);
+    transition: all 0.25s ease-in-out;
+    text-decoration: none;
 }
 
 nav {
@@ -70,6 +96,8 @@ nav {
     
     height: 50px;
     width: 50px;
+    opacity: 0;
+    margin-left: -1000px;
 
     display: inline-block;
 }
@@ -201,21 +229,7 @@ footer a {
 
 
 @media screen and (orientation: portrait){
-    .overhead-btns {
-        display: flex;
-    }
-    header {
-        flex: 1 1 50px;
-        margin-left: 25px;
-    }
-    header p {
-        margin: 1%;
-        font-size: 10px;
-    }
-    header a {
-        margin: 1%;
-        font-size: 10px;;
-    }
+    .head-contain {opacity: 0;}
     nav {
         opacity: 100;
         margin-left: 0;
@@ -228,4 +242,10 @@ footer a {
         margin-left: 25px;
     }
 
+}
+
+@media screen and (max-width: 860px) {
+    header {
+        font-size: 12px;
+    }
 }
