@@ -57,33 +57,24 @@ header a:hover {
 }
 
 .portait-head {
-    margin-left: 15px;
     height: 50px;
-    width: 200px;
+    width: calc(100% - 150px);
+    float: right;
     position: sticky;
-    display: inline-block;
     top: 0;
     align-items: center;
-    font-weight: bold;
     border-radius: 10px;
     border: 6px solid orange;
     background-color: #333;
     padding: 15px;
+
+    font-weight: bold;
     color: orange;
+    font-size: 25px;
 }
 .portait-head * {
     border-radius: 5px;
     text-align: center;
-}
-
-.portait-head span {
-    border: 6px solid orange;
-}
-.portait-head a {
-    color: rgb(0, 210, 210);
-    border: 2px solid rgb(0, 210, 210);
-    transition: all 0.25s ease-in-out;
-    text-decoration: none;
 }
 
 nav {
@@ -195,16 +186,19 @@ section {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
+section:first-of-type {
+    margin-top: 50px;
+}
 h1 {
     background-color: #333;
     color: #fff;
+    border-bottom: 5px solid orange;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     margin: -15px;
     margin-bottom: 15px;
     padding: 15px;
-    border-bottom: 5px solid orange;
     padding-bottom: 5px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 h2 {
     background-color: orange;
@@ -242,10 +236,4 @@ footer a {
         margin-left: 25px;
     }
 
-}
-
-@media screen and (max-width: 860px) {
-    header {
-        font-size: 12px;
-    }
 }
