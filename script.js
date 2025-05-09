@@ -19,15 +19,34 @@ window.onscroll = () => {
 };
 
 
-//should only work if the btns are 100 opacity
 //Burger menu 
 const hamMenu = document.querySelector('.ham-menu');
-const offScreenMenu = document.querySelector('.side-bar')
-const offScreenClose = document.querySelector('.side-bar-close')
+const sideBar = document.querySelector('.side-bar')
+const sideBarClose = document.querySelector('.side-bar-close')
+
+for (let i=0; i < sideBar.children.length; i++) {
+    const child = sideBar.children[i]
+    if(child in document.querySelectorAll('side-bar a')) {
+        child.addEventListener('click', () => {
+            sideBar.classList.remove('active');
+        })};
+};
+
 
 hamMenu.addEventListener('click', () => {
-    offScreenMenu.classList.add('active');
-})
-offScreenClose.addEventListener('click', () => {
-    offScreenMenu.classList.remove('active');
-})
+    sideBar.classList.add('active');
+});
+sideBarClose.addEventListener('click', () => {
+    sideBar.classList.remove('active');
+});
+
+//Portait NavBar open
+const NavBtn = document.querySelector('.portait-head')
+const NavMenu = document.querySelector('.portait-nav-menu')
+
+NavBtn.addEventListener('click', () => {
+    NavMenu.classList.toggle('active');
+    for (let i=0; i < NavMenu.children.length; i++) {
+        const child = NavMenu.children[i]
+        child.classList.toggle('active');
+    }});
