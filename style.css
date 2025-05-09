@@ -57,10 +57,6 @@ header a:hover {
 }
 
 .portait-head {
-    width: calc(100% - 150px);
-    float: right;
-    position: sticky;
-    top: 0;
     border-radius: 10px;
     border: 6px solid orange;
     background-color: #333;
@@ -70,20 +66,31 @@ header a:hover {
     color: orange;
     font-size: 25px;
     transition: all 0.25s ease-in-out;
+
+    opacity: 0;
+    float: none;
+    position: absolute;
+    top: 0%;
+    width: 0px;
+    height: 0px;
 }
 .portait-head:hover {
     background-color: orange;
     color: #333;
     border: 6px solid orange;
 }
+
 .portait-nav-menu {
-    position: sticky;
     top: 80px;
     width: calc(100% - 175px);
     right: 49px;
-    opacity: 100;
     margin-top: -12px;
-    float: right;
+    transition: all 0.25s ease-in-out;
+
+    margin-left: 200%;
+    float: none;
+    opacity: 0;
+    position: absolute;
 }
 .portait-nav-menu a {
     color: rgb(0, 210, 210);
@@ -98,17 +105,24 @@ header a:hover {
     float: right;
     height: 100%;
     width: 100%;
-}
-.portait-nav-menu:active {
-    opacity: 100;
-    margin-top: -12px;
-    float: right;
+    transition: all 0.25s ease-in-out;
+
+    position: absolute;
 }
 .portait-nav-menu a:hover {
     background-color: orange;
     color: #333;
     border: 2px solid orange;
 }
+.portait-nav-menu.active {
+    margin-left: 0;
+    float: right;
+    opacity: 100;
+}
+.portait-nav-menu a.active {
+    position: relative;
+}
+
 
 nav {
     position: sticky;
@@ -221,9 +235,7 @@ section {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
-section:first-of-type {
-    margin-top: 0;
-}
+
 h1 {
     background-color: #333;
     color: #fff;
@@ -258,17 +270,37 @@ footer a {
 
 
 @media screen and (orientation: portrait){
-    .head-contain {opacity: 0;}
+    .portait-head {
+        opacity: 100;
+        float: right;
+        position: sticky;
+        top: 0; 
+        width: calc(100% - 150px);
+        height: auto;
+    }
+    .portait-nav-menu {
+        position: sticky;
+    }
     nav {
         opacity: 100;
         margin-left: 0;
     }
-    .side-bar {
-        left: -250px;
-    }
+    
     .side-bar-close {opacity: 100;}
+
     main {
         margin-left: 25px;
     }
 
+    .head-contain {
+        opacity: 100;
+        float: none;
+        position: fixed;
+        margin-top: -200%;
+        width: 0px;
+        height: 0px;
+    }
+    .side-bar {
+        left: -250px;
+    }
 }
