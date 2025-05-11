@@ -5,17 +5,6 @@ body {
     color: #333;
 }
 
-section img {
-    float: left;
-    margin-right: 15px;
-    border-radius: 10px;
-    object-fit: cover;
-    width: 50%;
-    height: 66.6%;
-    min-width: 200px;
-    min-height: 266px;
-}
-
 .head-contain {
     float: right;
     position: sticky;
@@ -131,14 +120,13 @@ nav {
     background-color: #333;
     border-radius: 10px;
     border: solid rgb(0, 210, 210);
+    transition: .25s ease-in-out;
     
     height: 50px;
     width: 50px;
     opacity: 0;
     margin-left: -1000px;
-
-    display: inline-block;
-    transition: .25s ease-in-out;
+    display: none;
 }
 .ham-menu {
     height: 100%;
@@ -235,7 +223,16 @@ section {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
-
+section img {
+    float: left;
+    margin-right: 15px;
+    border-radius: 10px;
+    object-fit: cover;
+    width: 50%;
+    height: 66.6%;
+    min-width: 200px;
+    min-height: 266px;
+}
 h1 {
     background-color: #333;
     color: #fff;
@@ -284,6 +281,7 @@ footer a {
     nav {
         opacity: 100;
         margin-left: 0;
+        display: inline-block;
     }
     
     .side-bar-close {opacity: 100;}
