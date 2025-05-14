@@ -7,9 +7,9 @@ body {
 
 .head-contain {
     float: right;
-    position: sticky;
+    position: fixed;
     top: 0;
-    width: 100%;
+    width: calc(100% - 340px);
 }
 header {
     display: flex;
@@ -18,6 +18,8 @@ header {
     padding: 10px;
     background-color: #333;
     border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
     border: solid rgb(0, 210, 210);
     font-weight: bold;
     height: 50px;
@@ -56,12 +58,12 @@ header a:hover {
     font-size: 25px;
     transition: all 0.25s ease-in-out;
 
-    opacity: 0;
     float: none;
     position: absolute;
     top: 0%;
     width: 0px;
     height: 0px;
+    display: none;
 }
 .portait-head:hover {
     background-color: orange;
@@ -78,8 +80,8 @@ header a:hover {
 
     margin-left: 200%;
     float: none;
-    opacity: 0;
     position: absolute;
+    display: none;
 }
 .portait-nav-menu a {
     color: rgb(0, 210, 210);
@@ -95,8 +97,7 @@ header a:hover {
     height: 100%;
     width: 100%;
     transition: all 0.25s ease-in-out;
-
-    position: absolute;
+    position: relative;
 }
 .portait-nav-menu a:hover {
     background-color: orange;
@@ -104,12 +105,7 @@ header a:hover {
     border: 2px solid orange;
 }
 .portait-nav-menu.active {
-    margin-left: 0;
-    float: right;
-    opacity: 100;
-}
-.portait-nav-menu a.active {
-    position: relative;
+    display: none;
 }
 
 
@@ -124,7 +120,6 @@ nav {
     
     height: 50px;
     width: 50px;
-    opacity: 0;
     margin-left: -1000px;
     display: none;
 }
@@ -223,6 +218,9 @@ section {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
+section:first-of-type {
+    margin-top: 100px;
+}
 section img {
     float: left;
     margin-right: 15px;
@@ -266,9 +264,9 @@ footer a {
 }
 
 
-@media screen and (orientation: portrait){
+@media screen and (max-width: 1000px){
     .portait-head {
-        opacity: 100;
+        display: block;
         float: right;
         position: sticky;
         top: 0; 
@@ -279,26 +277,31 @@ footer a {
         position: sticky;
     }
     nav {
-        opacity: 100;
+        display: block;
         margin-left: 0;
         display: inline-block;
     }
     
     .side-bar-close {opacity: 100;}
 
-    main {
-        margin-left: 25px;
-    }
+    main {margin-left: 25px;}
+    section:first-of-type {margin-top: 25px;}
 
     .head-contain {
-        opacity: 100;
+        display: none;
         float: none;
-        position: fixed;
+        position: absolute;
         margin-top: -200%;
         width: 0px;
         height: 0px;
     }
     .side-bar {
         left: -250px;
+    }
+
+    .portait-nav-menu.active {
+    margin-left: 0;
+    float: right;
+    display: block;
     }
 }
