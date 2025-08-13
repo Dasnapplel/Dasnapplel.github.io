@@ -6,6 +6,72 @@
   <link href="style.css" rel="stylesheet">
   <title>Diego de Jong Portfolio</title> 
 </head>
+<style>
+  section {
+    background-color: #fff;
+    height: 80dvh;
+  }
+  .section-content {
+    height: calc(100% - 65px);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    background-color: #fff;
+  }
+  .slide {
+    display: none;
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 5px black;
+    object-fit: contain;
+    height: 90%;
+  }
+  section img {
+    margin-right: 15px;
+    border-radius: 10px;
+    object-fit: none;
+    width: 33%;
+    height: auto;
+    border: solid 5px black;
+    justify-self: center;
+  }
+  #first {
+    display: block;
+  }
+  article {
+    width: 60%;
+    margin-left: 37.5%;
+    color: black;
+  }
+  .left-btn, .right-btn {
+    height: 50dvh;
+    font-size: 1.5vw;
+    font-weight: 5000;
+    background-color: rgb(0, 210, 210);
+    color: black;
+    border-radius: 5px;
+    border: solid 2px black;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    align-self: center;
+
+  }
+  .left-btn:hover, .right-btn:hover {
+    height: 55dvh;
+    color: black;
+    background-color: orange;
+  }
+  @keyframes fadeout {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @keyframes fadein {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+</style>
 <body>
 
   <div class="side-bar">
@@ -15,6 +81,10 @@
     </div>
     <img src="Images/Diego's Logo.png" alt="DiegoLogo" style="width: 100%; margin-top: 2.5vw;">
     <h2><strong>Projects</strong></h2>
+    <a href="#gaming" class="active">Gaming</a>
+    <a href="#academic">Academic</a>
+    <a href="#professional">Professional</a>
+    <a href="#other">Other</a>
   </div>
 
   <main>
@@ -26,7 +96,7 @@
       </div>
     </nav>
 
-    <div class="portait-head">Projects</div>
+    <div class="portait-head">Projects ↓</div>
     <div class="portait-nav-menu">
       <a href="index.html">About Me</a>
       <a href="Adventures.html">Adventures</a>
@@ -43,6 +113,125 @@
         <a href="Links-&-Contact-Info.html">Links & Contact Info</a>
       </header>
     </div>
+
+    <section id="gaming">
+      <h1>Gaming</h1>
+      <div class="section-content">
+        <button class="left-btn">←</button>
+        <div class="slides-container">
+          <div class="slide" id="first">
+            <img src="">
+            <article>
+              <h3><span style="text-decoration: underline;">Swordfight Shenanigans</span> (May 2023 - May 2024)</h3>
+              <p>This project is a multiplayer online battle arena game where players control customizable characters and engage in fast-paced sword fights.
+                It is a Roblox game that has around 100 different swords that players can battle with, and 6 different maps to choose from. I created it as my highschool capstone project, to showcase my skills in game development.
+              Due to this, every aspect of the game, including the code, soundtrack, models, and UI, were created by me alone.
+              Since this was my first big personal project, I learned a lot about game development, coding, and how to work with a large codebase.
+              The game is still unfinished, but I plan to add more features and polish it further once I improve my skills as a computer scientist and videogame developer.
+              </p>
+              <a href="https://github.com/Dasnapplel/Swordfight-Shenanigans">GitHub Repository</a>
+            </article>
+          </div>
+          <div class="slide">
+            <img src="">
+            <article>
+              <h3><span style="text-decoration: underline;">Overdrive</span> (August 2024 - November 2024)</h3>
+              <p>This project is a car crash derby battle royale game where players compete in chaotic vehicular mayhem. 
+                This Roblox game was made for a game jam, where competitors had to create a game in just 2 weeks. 
+                My brother and I collaborated on this project, with him handling the art and modeling while I focused on the programming and game mechanics. 
+              Although we didn't win, and the game is still incomplete, we are both proud of what we accomplished in such a short time frame.</p>
+            </article>
+          </div>
+          <div class="slide">
+            <img src="">
+            <article>
+              <h3><span style="text-decoration: underline;">Glitch Maze</span> (Summer 2022 and Fall 2025)</h3>
+              <p>I really like creating games on Roblox Studio. 
+              One of the projects that I made randomly at some point was Glitch Maze. 
+              This game resembles PacMan in a lot of ways, such as the maze, pellets, and enemies that roam around the maze. 
+              However, my game is in first person, features music made by me, and focuses more on the fear of the maze. 
+              Additionally, I revisited the game during my Freshmen year in college, 
+              and polished it using new skills that I learned in my Computer Science classes.</p>
+              <a href="https://github.com/Dasnapplel/Glitch-Maze">GitHub Repository</a>
+            </article>
+          </div>
+        </div>
+        <button class="right-btn">→</button>
+      </div>
+    </section>
+    <section id="academic">
+      <h1>Academic</h1>
+      <div class="section-content">
+        <button class="left-btn">←</button>
+        <div class="slides-container">
+          <div class="slide" id="first">
+            <img src="">
+            <article>
+              <h3><span style="text-decoration: underline;">Python Quest Game</span> (November 2024 - December 2024)</h3>
+              <p>This was my final project for CIS 162, intro to computer science, at GVSU. 
+                We were to create a quest game using everything that we learned on python so far, that included items, npcs, different rooms, 
+                and a way to beat the game. My project was set in the backrooms, a scary and dangerous place that must be escaped from. 
+                What’s unique about my project is that all of the rooms randomly connect to each other, so you never know where you’ll go. 
+                Additionally, there are three different endings depending on how you play the game. 
+                I’m proud of what I was able to create! </p>
+              <a href="https://github.com/Dasnapplel/Backrooms-Quest-Game-CIS-162-Final-Project-">GitHub Repository</a>
+            </article>
+          </div>
+        </div>
+        <button class="right-btn">→</button>
+      </div> 
+    </section>
+    <section id="professional">
+      <h1>Professional</h1>
+      <div class="section-content">
+        <button class="left-btn">←</button>
+        <div class="slides-container">
+          <div class="slide" id="first">
+            <img src="">
+            <article>
+              <h3><span style="text-decoration: underline;">Rep4Finlit Quiz and Website</span> (Summer 2025)</h3>
+              <p>My first internship was at GVSU’s project grand path, for Rep4FinLit. 
+                My job was to work with a team to create a financial literacy quiz and website that will be used by college students all across the US. 
+                Over the course of the summer, I made great friends with my diverse group of coworkers and gained professional experience as a computer scientist. 
+                Additionally, I learned basic usage of Github.</p>
+            </article>
+          </div>
+        </div>
+        <button class="right-btn">→</button>
+      </div> 
+    </section>
+    <section id="other">
+      <h1>Other</h1>
+      <div class="section-content">
+        <button class="left-btn">←</button>
+        <div class="slides-container">
+          <div class="slide" id="first">
+            <img src="">
+            <article>
+              <h3><span style="text-decoration: underline;">Personal Webpage</span> (Summer 2025)</h3>
+              <p>This personal webpage was built from scratch by me. 
+                Before my internship at Rep4FinLit, I needed to refresh my HTML and CSS skills, so I decided to practice by creating something useful. 
+                Throughout the summer, I continued trying out new techniques and learning new features. 
+                Here, all of my professional information can be found, alongside a bit more about me.</p>
+                <a href="https://github.com/Dasnapplel/Dasnapplel.github.io">GitHub Repository</a>
+            </article>
+          </div>
+          <div class="slide">
+            <img src="">
+            <article>
+              <h3><span style="text-decoration: underline;">Listo</span> (Fall 2024)</h3>
+              <p>During my senior in in high school, I was losing track of all of the work that I had. 
+                I needed an easy-to-use app that could prioritize my to-do list, so I decided to create one myself.
+                Additionally, I needed to create a project for my senior english class to show what I'm doing to achieve my goals after high school.
+                This was my first HTML and CSS project, and I was able to create a simple app that allows users to add and remove tasks in a to-do list. 
+                Unfortunately, my experience was limited at the time, so I was unable to implement any further features.
+              This project helped me improve my skills in app development and user interface design.</p>
+            </article>
+          </div>
+        </div>
+        <button class="right-btn">→</button>
+      </div> 
+    </section>
     
     <br><br>
     <footer>
