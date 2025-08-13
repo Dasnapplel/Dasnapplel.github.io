@@ -10,6 +10,7 @@ body {
     position: fixed;
     top: 0;
     width: calc(100% - 340px);
+    z-index: 50;
 }
 header {
     display: flex;
@@ -64,6 +65,7 @@ header a:hover {
     width: 0px;
     height: 0px;
     display: none;
+    z-index: 50;
 }
 .portait-head:hover {
     background-color: orange;
@@ -82,6 +84,7 @@ header a:hover {
     float: none;
     position: absolute;
     display: none;
+    z-index: 50;
 }
 .portait-nav-menu a {
     color: rgb(0, 210, 210);
@@ -122,6 +125,7 @@ nav {
     width: 50px;
     margin-left: -1000px;
     display: none;
+    z-index: 50;
 }
 .ham-menu {
     height: 100%;
@@ -191,6 +195,8 @@ nav:hover span{background-color: #333;}
     margin-bottom: -10px;
     opacity: 0;
     transition: all 0.25s ease-in-out;
+    border: solid black;
+    border-radius: 10px;
 }
 .side-bar-close span {
     height: 5px;
@@ -207,8 +213,7 @@ nav:hover span{background-color: #333;}
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 .side-bar-close:hover {
-    border: solid 5px black;
-    border-radius: 10px;
+    
     background-color: orange;
 }
 
@@ -224,6 +229,7 @@ section {
     border-radius: 10px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+    scroll-margin-top: 100px;
 }
 section:first-of-type {
     margin-top: 100px;
@@ -233,10 +239,11 @@ section img {
     margin-right: 15px;
     border-radius: 10px;
     object-fit: cover;
-    width: 50%;
-    height: 66.6%;
+    width: auto;
+    height: 100%;
     min-width: 200px;
     min-height: 266px;
+    border: solid 5px black;
 }
 h1 {
     background-color: #333;
@@ -272,6 +279,15 @@ footer a {
 
 
 @media screen and (max-width: 1000px){
+    section img {
+        border-radius: 10px;
+        object-fit: cover;
+        width: calc(100% - 10px);
+        height: auto;
+        max-width: 225px;
+        border: solid 5px black;
+        justify-self: center;
+    }
     .portait-head {
         display: block;
         float: right;
@@ -279,7 +295,18 @@ footer a {
         top: 0; 
         width: calc(100% - 150px);
         height: auto;
+        animation: changeColor 2s;
     }
+    @keyframes changeColor {
+    50% {
+      color: #333;
+      background-color: orange;
+    }
+    100% {
+      color: orange;
+      background-color: #333;
+    }
+  }
     .portait-nav-menu {
         position: sticky;
     }
