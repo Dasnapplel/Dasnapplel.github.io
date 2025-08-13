@@ -11,6 +11,7 @@
     #mexico {background-color: rgb(254, 255, 203);}
     #chicago {background-color: rgb(255, 220, 220);}
     #vacations {background-color: rgb(228, 246, 255);}
+    #study-abroad {background-color: rgb(255, 255, 255);}
     .left, .right {display: flex;}
     .left img, .right img {
       margin: 15px;
@@ -18,6 +19,21 @@
       height: auto;
       min-width: 200px;
       min-height: 200px;
+      border: solid 5px black;
+      border-radius: 10px;
+    }
+
+    @media screen and (max-width: 1000px){
+      .left {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .right {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -35,6 +51,7 @@
     <a href="#mexico">Mexico</a>
     <a href="#chicago">Chicago</a>
     <a href="#vacations">Vacations</a>
+    <a href="#study-abroad">Study Abroad</a>
   </div>
 
   <main>
@@ -46,7 +63,7 @@
       </div>
     </nav>
 
-    <div class="portait-head">Adventures</div>
+    <div class="portait-head">Adventures ↓</div>
     <div class="portait-nav-menu">
       <a href="index.html">About Me</a>
       <a href="Projects.html">Projects</a>
@@ -70,13 +87,13 @@
         Here are the major adventures that I've done on the bike.</p>
       <div class="section-content">
         <div class="left">
-          <img>
+          <img src="Images/diego and papi at mackinaw.jpg" alt="Photo of me and dad after the 1st cycling trip">
           <article>
             <h3><span style="text-decoration: underline;">Grand Rapids to Mackinaw City</span><br><span style="font-size: medium;">(August 4-12, 2018)</span></h3>
             <p>My dad has always been a cycler and adventurer. In his past, he's cycled around all of South America, 
-            and on a Motorbike he Traveled from the Netherlands to Australia. I guess he wanted to let me experience a taste of that same type of adventure, 
+            and on a motorbike he traveled from the Netherlands to Australia. I guess he wanted to let me experience a taste of that same type of adventure, 
             so at some point, we decided to cycle across all of Michigan together. We planned on heading to Mackinaw City, 
-            because then we could head to Mackinaw Island and have a sort of victory lap around the island! 
+            because then we could head to Mackinac Island and have a sort of victory lap around the island! 
             In the end, this trip took five days, and we traveled around 240 miles total. I was 12 years old.</p>
           </article>
         </div>
@@ -90,16 +107,15 @@
             This way I could say that I cycled to the 'middle' and 'pinky' fingers of the state. 
             In the end, this trip took four days, and we traveled around 180 miles. I was 16 years old.</p>
           </article>
-          <img>
+          <img src="Images/diego at lighthouse.jpg" alt="Photo of me and dad after the 2nd cyclng trip">
         </div>
         <div class="left">
-          <img>
+          <img src="Images/diego pewamo.jpg" alt="Me at a Pewamo train memorial">
           <article>
             <h3><span style="text-decoration: underline;">Lowell to Pewamo</span><br><span style="font-size: medium;">(July 24, 2022)</span></h3>
-            <p>To do long distance cycling trips, some training and preperation is definetely required. To practice experiencing a day of cycling, 
+            <p>To do long distance cycling trips, some training and preparation is definitely required. To practice experiencing a day of cycling,
             my dad and I decided to cycle from Lowell county to Pewamo county. We took the Fred Meijer Grand River Valley Trail, and traveled about 50 miles.
-            We also saw a cool museum about the trains that used to travel on the trail a long time ago!
-          </p>
+            We also saw a cool museum about the trains that used to travel on the trail a long time ago!</p>
           </article>
         </div>
       </div> 
@@ -109,31 +125,43 @@
       <h1>Road Trips</h1>
       <p>Throughout the years, I've been on some really fun adventures by car. Here are a few of them.</p>
       <div class="section-content">
-         <div class="left">
-          <img>
+        <div class="left">
+          <img src="" alt="">
+          <article>
+            <h3><span style="text-decoration: underline;">Chicago and Milwaukee</span><br><span style="font-size: medium;">(July 31, 2025 - August 3, 2025)</span></h3>
+            <p>When I got tickets to go to a J-Pop concert in Chicago, I originally intended to go with one of my best friends for only a day. 
+              My brother, however, wanted to go with me instead because he actually liked the singer, unlike my friend. 
+              I was okay with him coming along, but my friend was my ride to Chicago, so I had to find a way to get transport. 
+              Since the concert was on a Thursday evening, I ended up convincing my parents to take a four day weekend roadtrip. 
+              We ended up going to Milwaukee Wisconsin for the majority of the trip, and spent our time at a variety of museums including the Milwaukee Art Museum, 
+              National Bobblehead Museum, Volo Auto Museum and Jurassic Gardens, and the Harley-Davidson Museum. It was fun!</p>
+          </article>
+        </div>
+        
+        <div class="right">
           <article>
             <h3><span style="text-decoration: underline;">Mall of America</span><br><span style="font-size: medium;">(May 22-24, 2024)</span></h3>
-            <p>After graduating highschool, me and two other friends decided to do a road trip together for fun. Since elementery school, 
-              there's been a place that's been nearly foreshadowed as a vacation spot that we would take, and that was the Mall of America. 
-              Since we were all somewhat introverted nerds, we joked that we postponed the stereotypical teenager-mall-hang-out to the end, 
-              and that we prioritized quality of quantity. It was fun!</p>
+            <p>After graduating high school, me and two other friends decided to do a road trip together for fun. Since elementary school,
+              there's been a place that's been nearly foreshadowed as a vacation spot that we would take, and that was the Mall of America.
+              Since we were all somewhat introverted nerds, we joked that we postponed the stereotypical teenager-mall-hang-out to the end,
+              and that we prioritized quality over quantity. It was fun!</p>
+          </article>
+          <img src="Images/boot.jpg" alt="mall of america boot with friend">
+        </div>
+        <div class="left">
+          <img src="Images/tech-dog-pic.jpg" alt="photo of me, my mom, and the Michigan Tech husky">
+          <article>
+            <h3><span style="text-decoration: underline;">Michigan Tech</span><br><span style="font-size: medium;">(January 11-16, 2024)</span></h3>
+            <p>Back when I was applying for colleges, Michigan Tech was one of the top contenders. Because of this, I applied for a few scholarships that they had.
+              One of them was the 'Leading Scholar Award', where I had to write an essay that revolved around my leadership related experience.
+              I ended up writing an essay about how I use internet memes to connect with people and make them laugh, and was a winner!
+              My mom and I flew to Houghton, Michigan at first, for what was supposed to be a weekend event and tour at Michigan Tech.
+              However, there was a terrible blizzard that kept us stuck in Houghton for an extra three days. In the end,
+              my mom and I decided to rent a car and drive the eight hours from Houghton to Grand Rapids. It was very beautiful driving through the upper peninsula
+              and Mackinaw Bridge in the winter!</p>
           </article>
         </div>
         <div class="right">
-          <article>
-            <h3><span style="text-decoration: underline;">Michigan Tech</span><br><span style="font-size: medium;">(January 11-16, 2024)</span></h3>
-            <p>Back when I was applying for colleges, Michigan Tech was one of the top contender. Because of this, I applied for a few scholarships that they had.
-              One of them was the 'Leading Scholar Award', where I had to write an essay that revolved my leadership related experience. 
-              I ended up writting an essay about how I use internet memes to connect with people and make them laugh, and was a winner! 
-              My mom and I flew to Houghton, Michigan at first, for what wa supposed to be a weekend event and tour at Michigan Tech. 
-              However, there was a terrible blizzard that kept us stuck in Houghton for an extra three days. In the end, 
-              my mom and I decided to rent a car and drive the eight hours from Houghton to Grand Rapids. It was very beautiful driving through the upper peninsula 
-              and Mackinaw Bridge in the winter! </p>
-          </article>
-          <img>
-        </div>
-        <div class="left">
-          <img>
           <article>
             <h3><span style="text-decoration: underline;">Washington DC and Massanutten, Virginia</span><br><span style="font-size: medium;">(August 15-25, 2018)</span></h3>
             <p>After I finished my first cycling trip to Mackinaw with my dad, my family went on vacation together. My parents had wanted to travel 
@@ -141,18 +169,7 @@
               They also found several interesting things to do in Virginia, like Massanutten Resort, Luray Caverns, and Monticello. 
               In the end, we had a road trip traveling to each of these locations. It was fun!</p>
           </article>
-        </div>
-        <div class="right">
-          <article>
-            <h3><span style="text-decoration: underline;">Road Trip 2014</span><br><span style="font-size: medium;">(Summer, 2014)</span></h3>
-            <ul>
-              <li>Ann Arbor, Michigan</li>
-              <li>Ontario, Canada (Niagra Falls)</li>
-              <li>Hershey, Pennsylvania</li>
-              <li>Pittsburg, Pennsylvania</li>
-            </ul>
-          </article>
-          <img>
+          <img src="Images/Diego Lincoln House.jpg">
         </div>
       </div> 
     </section>
@@ -163,53 +180,55 @@
         Because of this, we often visit them and have vacations there together. Here are a few of them.</p>
       <div class="section-content">
         <div class="left">
-          <img>
+          <img src="Images/fam foto.jpg">
           <article>
             <h3><span style="text-decoration: underline;">Winter 2024-2025</span><br><span style="font-size: medium;">(December 21, 2024 - January 4, 2025)</span></h3>
             <p>We spent the winter hanging out with our family, catching up and having fun together. 
-              We partied a lot for christmas and the new year! We also traveled to the Michelin Star taco stand. It was fun!</p>
+              We partied a lot for Christmas and the new year! Some notable attractions we went to were the Zocalo, Chapultepec Zoo, 
+              Mystica, and the only Michelin Star taco stand in Mexico! It was fun!</p>
           </article>
         </div>
         <div class="right">
           <article>
             <h3><span style="text-decoration: underline;">Spring 2022</span><br><span style="font-size: medium;">(March 26, 2022 - April 11, 2022)</span></h3>
-            <p>We spent spring break in Mexico hanging out with our family. 
-              We also celebrated my dad's and cousin's birthday. It was fun!</p>
+            <p>We spent spring break in Mexico hanging out with our family. Some notable attractions that we saw were 
+              king Tut's tomb and a professional luche libre fight.
+              We also celebrated my dad's and cousin's birthdays. It was fun!</p>
           </article>
-          <img>
+          <img src="Images/tetiohuacan.jpg">
         </div>
         <div class="left">
-          <img>
+          <img src="Images/chichenitza.jpg" alt="Image of me 'stepping' on the chichenitza temple">
           <article>
             <h3><span style="text-decoration: underline;">Mexico and Cancun</span><br><span style="font-size: medium;">(July 2-11, 2021)</span></h3>
             <p>Over the summer, my parents decided to have the family take a vacation to Cancun. 
               We first flew to Mexico City where our family lives to say hi, and then we went to our resort in Cancun. 
-              Over the course of our vacation, we went to several different attractions like Xcaret, and Sensus. It was fun!</p>
+              Over the course of our vacation, we went to several different attractions like Xcaret, Xenses, and Chichen Itza. It was fun!</p>
           </article>
         </div>
         <div class="right">
           <article>
             <h3><span style="text-decoration: underline;">Mexico and Los Cabos</span><br><span style="font-size: medium;">(March 29, 2019 - April 8, 2019)</span></h3>
-            <p>This was the third time we traveled to Los Cabos, specificaly Cabo San Lucas. 
-              It is a very beautiful location, and agreat place to relax, have fun, and swim! 
-              This time specificaly, we went on a pirate ship attraction. It was fun!</p>
+            <p>This was the third time we traveled to Los Cabos, specifically Cabo San Lucas.
+              It is a very beautiful location, and a great place to relax, have fun, and swim!
+              This time specifically, we went on a pirate ship attraction. It was fun!</p>
           </article>
-          <img>
+          <img src="Images/dego at cabo.jpg" alt="fam foto in cabo at the dragon rock">
         </div>
         
       </div> 
     </section>
     <section id="chicago">
       <h1>Chicago</h1>
-      <p>Chicago is three hours away from Grand Rapids by car, and is home to the O'Hare Air Airport. 
-        Alongside it being a really big and touristic city, I end up traveling there somewhat often. Here are some of them.</p>
+      <p>Chicago is about three hours away from Grand Rapids by car, and is home to the O'Hare International Airport. 
+        Alongside it being a really big and touristic city, I end up traveling there somewhat often. Here are some of the highlights.</p>
       <div class="section-content">
         <div class="left">
-          <img>
+          <img src="">
           <article>
-            <h3><span style="text-decoration: underline;">Summer 2019</span><br><span style="font-size: medium;">(June 21-23, 2019)</span></h3>
-            <p>My mom really wanted to see Hugh Jackman live, so we all got tickets to go see him perform in Chicago. 
-              We spent the rest of the weekend having fun around the city too, going to the Zoo, Navy Pier, and China Town. It was fun!</p>
+            <h3><span style="text-decoration: underline;">Summer 2025</span><br><span style="font-size: medium;">(June 20-22, 2025)</span></h3>
+            <p>For my Mom's birthday, she decided to celebrate by having the family go to Chicago for a weekend. 
+              We went to the Bean, the Medieval Torture Museum, Museum of Contemporary Art, Museum of Ice Cream, WNDR Museum, Shedd aquarium, and Chinatown. It was fun!</p>
           </article>
         </div>
         <div class="right">
@@ -220,21 +239,22 @@
           <img>
         </div>
         <div class="left">
-          <img>
+          <img src="Images/hughjackman dego.jpg">
           <article>
-            <h3><span style="text-decoration: underline;">New Year at </span><br><span style="font-size: medium;">(December 31, 2021, January 1, 2022)</span></h3>
-            <p>My mom wanted to do something fun and unique for new years, so we went to an attraction and arcade center to celebrate. 
-              We got unlimited play time and food for the night, and it was really fun!</p>
+            <h3><span style="text-decoration: underline;">Summer 2019</span><br><span style="font-size: medium;">(June 21-23, 2019)</span></h3>
+            <p>My mom really wanted to see Hugh Jackman live, so we all got tickets to go see him perform in Chicago. 
+              We spent the rest of the weekend having fun around the city too, going to the Zoo, Navy Pier, and China Town. It was fun!</p>
           </article>
         </div>
-         <div class="right">
+        <hr>
+        <div class="right">
           <article>
-            <h3><span style="text-decoration: underline;">Jazz Band 2022</span><br><span style="font-size: medium;">(Febuary, 2022)</span></h3>
-            <p>The Forest Hills Northern Jazz Band participates at the New Trier Highschool Jazz Fest annually. 
-              This was my first time participating, and the first festival after the covid pandemic. It was fun!</p>
+            <h3><span style="text-decoration: underline;">Jazz Band 2024</span><br><span style="font-size: medium;">(Febuary 3-4, 2024)</span></h3>
+            <p>My third and final time participating at the New Trier Jazz Festival. We went to the Chicago Science Museum on the second day of our trip. It was fun!</p>
           </article>
-          <img>
+          <img src="Images/newtrier 2024.png">
         </div>
+        
         <div class="left">
           <img>
           <article>
@@ -242,14 +262,15 @@
             <p>My second time participating at the New Trier Jazz Festival. We went to the Shed Aquarium on the second day of our trip. It was fun!</p>
           </article>
         </div>
-        <div class="right">
+      <div class="right">
           <article>
-            <h3><span style="text-decoration: underline;">Jazz Band 2024</span><br><span style="font-size: medium;">(Febuary 3-4, 2024)</span></h3>
-            <p>My third and final time participating at the New Trier Jazz Festival. We went to the Chicago Science Museum on the second day of our trip. It was fun!</p>
+            <h3><span style="text-decoration: underline;">Jazz Band 2022</span><br><span style="font-size: medium;">(Febuary, 2022)</span></h3>
+            <p>The Forest Hills Northern Jazz Band participates at the New Trier Highschool Jazz Fest annually. 
+              This was my first time participating, and the first festival after the covid pandemic. It was fun!</p>
           </article>
-          <img>
-        </div>
-      </div> 
+          <img src="Images/newtrier 2022.png">
+        </div> 
+      </div>
     </section>
 
     <section id="vacations">
@@ -258,32 +279,54 @@
         Whatever the case, we travel relatively frequently for vacations. Here are some of them.</p>
       <div class="section-content">
          <div class="left">
-          <img>
+          <img src="Images/tokyo-foto.jpg" alt="Family photo in Tokyo" style="height: 50%;">
           <article>
             <h3><span style="text-decoration: underline;">Japan</span><br><span style="font-size: medium;">(July 7-26, 2024)</span></h3>
-            <p>My family had been planning on traveling to Japan for years before we finally went. 
-              My mom wanted to go back in 2020, but then the pandemic happened, and we put the plan on the sideline for a while. 
-              After I graduated highschool, I put the idea up in the air again, and we all agreed that it was the perfect time to go. 
-              I had just graduated, so it was like a reward for me. I had also been learning Japanese in my free time as a hobby, so I was trained enough to help out if needed. 
-              Additionaly, the economy at the time had a good dollar to yen conversion rate. We traveled to all different types of temples, museums, theme parks, restaurants, and parks. 
-              I designed and scheduled the entire itinerary, and my family agreed that it was the best vacation that we had ever had! 
-            </p>
+            <p>My family had been planning on traveling to Japan for years before we finally went.
+              My mom wanted to go back in 2020, but then the pandemic happened, and we put the plan on the sideline for a while.
+              After I graduated high school, I put the idea up in the air again, and we all agreed that it was the perfect time to go.
+              I had just graduated, so it was like a reward for me. I had also been learning Japanese in my free time as a hobby, so I was trained enough to help out if needed.
+              Additionally, the economy at the time had a good dollar to yen conversion rate. We traveled to all different types of temples, museums, theme parks, restaurants, and parks.
+              I designed and scheduled the entire itinerary, and my family agreed that it was the best vacation that we had ever had!</p>
           </article>
         </div>
         <div class="right">
           <article>
             <h3><span style="text-decoration: underline;">Mediterranean Cruise</span><br><span style="font-size: medium;">(July 7-22, 2023)</span></h3>
-            <p>My family had considered taking a cruise for years, and we finally decided to take one around the mediterranean area. 
-              The cruise we took traveled from Italy to Greece, Turkey and back. Notable places we visited were Vennice, and Mykonos. 
+            <p>My family had considered taking a cruise for years, and we finally decided to take one around the Mediterranean area.
+              The cruise we took traveled from Italy to Greece, Turkey and back. Notable places we visited were Venice, and Mykonos.
               I believe Mykonos in particular was the most beautiful place that I had ever seen. It was fun!</p>
           </article>
-          <img>
+          <img src="Images/greece-foto.jpg" alt="Family photo in front of ancient ruins">
         </div>
       </div> 
+      <div class="left">
+          <img>
+          <article>
+            <h3><span style="text-decoration: underline;">Miami, Florida</span><br><span style="font-size: medium;">(April 2-11, 2021)</span></h3>
+            <p>Me, my dad, and my brother are all Dutch citizens, so we all have Dutch passports. At some point, me and my brother's passports expired, and unfortunately our closest renewer had closed. 
+              Since the next closest one was in Miami, we decided to make the trip worthwhile and turned it into a vacation!
+              Some notable places we went to were the Miami Zoo and the beach.</p>
+          </article>
+        </div>
         
       </div> 
     </section>
-    
+    <section id="study-abroad">
+      <h1>Study Abroad</h1>
+      <div class="left">
+          <img>
+          <article>
+            <h3><span style="text-decoration: underline;">Switzerland</span><br><span style="font-size: medium;">(June 30, 2025- July 25, 2025)</span></h3>
+            <p>I’ve always lived with my family. There hasn’t been a time in my life where I was separated from them for more than a week, and now that I’m an adult, I wanted to leave for a while just to prove that I can. 
+              I’m a student commuter at Grand Valley State University too, which means I didn’t have the instant friendship that comes from living on campus together with others. 
+              It’s difficult making friends at today’s colleges. I’ve also always wanted to do a study abroad program just for the thrill of it, so to answer all of these feelings, 
+              I ended up signing up for the only faculty-led one that Grand Valley had to offer. It was mainly located in Winterthur, and was one of the best decisions I’ve made in college so far. 
+              I became friends with people on campus and from another nation, I got to fully experience another nation in their daily life, and I got to learn and create incredible things way cooler than I thought I was capable of doing at this point. 
+              I went to Ebenalp, Rhine Falls, Bern, Zurich, witnessed a graduation ceremony for ZHAW, and hiked to Schloss Kyburg, and so much more! It was worth every penny!</p>
+          </article>
+        </div>
+    </section>
     <br><br>
     <footer>
       <p>© [2025] [Diego de Jong] | <a href="https://github.com/Dasnapplel">GitHub</a></p>
