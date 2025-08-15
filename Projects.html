@@ -7,59 +7,64 @@
   <title>Diego de Jong Portfolio</title> 
 </head>
 <style>
-  section {
-    background-color: #fff;
-    height: 80dvh;
-  }
   .section-content {
     height: calc(100% - 65px);
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
     background-color: #fff;
+    padding-bottom: 10px;
+    display: grid;
+    align-items: center;
+  }
+  .slides-container {
+    grid-row: 1;
+    grid-column: 2;
   }
   .slide {
     display: none;
-    flex: 1;
+    flex-direction: row;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     border: solid 5px black;
     object-fit: contain;
     height: 90%;
+    width: 90%;
+    justify-self: center;
+  }
+  #first {
+    display: flex;
   }
   section img {
     margin-right: 15px;
     border-radius: 10px;
     object-fit: none;
-    width: 33%;
-    height: auto;
     border: solid 5px black;
     justify-self: center;
   }
-  #first {
-    display: block;
-  }
   article {
-    width: 60%;
-    margin-left: 37.5%;
     color: black;
   }
   .left-btn, .right-btn {
-    height: 50dvh;
-    font-size: 1.5vw;
-    font-weight: 5000;
+    height: 50%;
+    padding: 0%;
+    font-size: 5vw;
     background-color: rgb(0, 210, 210);
     color: black;
     border-radius: 5px;
     border: solid 2px black;
     cursor: pointer;
     transition: all 0.25s ease-in-out;
-    align-self: center;
-
+    flex: 1;
+  }
+  .left-btn {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .right-btn {
+    grid-row: 1;
+    grid-column: 3;
   }
   .left-btn:hover, .right-btn:hover {
-    height: 55dvh;
+    height: 75%;
     color: black;
     background-color: orange;
   }
@@ -70,6 +75,47 @@
   @keyframes fadein {
     0% { opacity: 0; }
     100% { opacity: 1; }
+  }
+  @media screen and (max-width: 1000px){
+    .section-content {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .slides-container {
+      grid-row: 1;
+      grid-column: 1 / 2;
+    }
+    .slide {
+      flex-direction: column;
+      width: 100%;
+    }
+    .article {
+      justify-items: center;
+    }
+    .left-btn, .right-btn {
+      height: 10dvh;
+      width: 50%;
+      font-size: 8vw;
+      font-weight: 5000;
+      background-color: rgb(0, 210, 210);
+      color: black;
+      border-radius: 5px;
+      border: solid 2px black;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out;
+    }
+    .left-btn:hover, .right-btn:hover {
+      height: 10dvh;
+      color: black;
+      background-color: orange;
+    }
+    .left-btn {
+      grid-row: 2;
+      grid-column: 1;
+    }
+    .right-btn {
+      grid-row: 2;
+      grid-column: 2;
+    }
   }
 </style>
 <body>
@@ -165,7 +211,7 @@
         <button class="left-btn">←</button>
         <div class="slides-container">
           <div class="slide" id="first">
-            <img src="">
+            <img src="Images\Screenshot 2025-08-14 143748.png">
             <article>
               <h3><span style="text-decoration: underline;">Python Quest Game</span> (November 2024 - December 2024)</h3>
               <p>This was my final project for CIS 162, intro to computer science, at GVSU. 
@@ -173,8 +219,49 @@
                 and a way to beat the game. My project was set in the backrooms, a scary and dangerous place that must be escaped from. 
                 What’s unique about my project is that all of the rooms randomly connect to each other, so you never know where you’ll go. 
                 Additionally, there are three different endings depending on how you play the game. 
+                I recieved a score of 100% along with extra credit for implementing colored text.
                 I’m proud of what I was able to create! </p>
               <a href="https://github.com/Dasnapplel/Backrooms-Quest-Game-CIS-162-Final-Project-">GitHub Repository</a>
+            </article>
+          </div>
+          <div class="slide">
+            <img src="">
+            <article>
+              <h3><span style="text-decoration: underline;">Balatro Lite</span> (Febuary 2025)</h3>
+              <p>For CIS 163, computer science 2, at GVSU, we were given three projects over the course of the semester. 
+                Our first project was to create a lite version of the hit video game Balatro. 
+                This project was designed to have us learn about decorators, unit testing, and setter/getter functions. 
+                I worked on it alone, and completed it with time to spare. 
+                I received an A for my efforts. </p>
+              <a href="https://github.com/Dasnapplel/Glitch-Maze">GitHub Repository</a>
+            </article>
+          </div>
+          <div class="slide">
+            <img src="">
+            <article>
+              <h3><span style="text-decoration: underline;">Go Game</span> (March 2025)</h3>
+              <p>For CIS 163, computer science 2, at GVSU, we were given three projects over the course of the semester. 
+                Our second project was to create a lite version of the board game Go. 
+                This project was designed to have us learn about recursion and unit testing. 
+                I worked on it with a group, however I ended up completing the entire project myself. 
+                We received an A for our efforts.  
+              </p>
+              <a href="https://github.com/Dasnapplel/Glitch-Maze">GitHub Repository</a>
+            </article>
+          </div>
+          <div class="slide">
+            <img src="">
+            <article>
+              <h3><span style="text-decoration: underline;">Pokemon Battle Assistant</span> (July 2025)</h3>
+              <p>Over the duration of my four week study abroad program in Switzerland, we had to create a project that included machine learning models and image recognition. 
+                My group’s project was to create a pokemon GO battle assistant. 
+                The first part of the project was to scrape data from thousands of simulated pokemon battles, 
+                and create a data model to accurately predict who would win a new battle when given two pokemon. 
+                The second part of the project was to create an image recognition model that could identify any pokemon when given an image of it. 
+                Our group was split evenly between American and Swiss students, along with our work. I worked on the pokemon battle predictor and UI of the program. 
+                Together, we won the prize for best presentation in our class!  
+              </p>
+              <a href="https://github.com/Dasnapplel/Glitch-Maze">GitHub Repository</a>
             </article>
           </div>
         </div>
@@ -220,9 +307,9 @@
             <img src="">
             <article>
               <h3><span style="text-decoration: underline;">Listo</span> (Fall 2024)</h3>
-              <p>During my senior in in high school, I was losing track of all of the work that I had. 
+              <p>During my senior in in highschool, I was losing track of all of the work that I had. 
                 I needed an easy-to-use app that could prioritize my to-do list, so I decided to create one myself.
-                Additionally, I needed to create a project for my senior english class to show what I'm doing to achieve my goals after high school.
+                Additionally, I needed to create a project for my senior english class to show what I'm doing to achieve my goals after highschool.
                 This was my first HTML and CSS project, and I was able to create a simple app that allows users to add and remove tasks in a to-do list. 
                 Unfortunately, my experience was limited at the time, so I was unable to implement any further features.
               This project helped me improve my skills in app development and user interface design.</p>

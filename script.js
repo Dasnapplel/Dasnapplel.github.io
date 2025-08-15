@@ -76,7 +76,7 @@ sectionContent.forEach(content => {
         setTimeout(() => {
             slides[currentSlide].style.display = 'none';
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            slides[currentSlide].style.display = 'block';
+            slides[currentSlide].style.display = 'flex';
             debounce = false;
         }, 250); // time in ms
     });
@@ -90,7 +90,7 @@ sectionContent.forEach(content => {
         setTimeout(() => {
             slides[currentSlide].style.display = 'none';
             currentSlide = (currentSlide + 1 + slides.length) % slides.length;
-            slides[currentSlide].style.display = 'block';
+            slides[currentSlide].style.display = 'flex';
             debounce = false;
         }, 250); // time in ms
     });
