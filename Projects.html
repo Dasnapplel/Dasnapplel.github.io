@@ -39,6 +39,9 @@
     object-fit: none;
     border: solid 5px black;
     justify-self: center;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
   article {
     color: black;
@@ -76,24 +79,23 @@
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
-  @media screen and (max-width: 1000px){
+  @media screen and (max-width: 1250px){
     .section-content {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
     }
     .slides-container {
-      grid-row: 1;
-      grid-column: 1 / 2;
+      grid-column: 1 / span 2;
     }
     .slide {
-      flex-direction: column;
-      width: 100%;
+      width: 90%;
     }
     .article {
       justify-items: center;
     }
     .left-btn, .right-btn {
-      height: 10dvh;
-      width: 50%;
+      height: 7.5dvh;
+      width: 45%;
       font-size: 8vw;
       font-weight: 5000;
       background-color: rgb(0, 210, 210);
@@ -111,10 +113,13 @@
     .left-btn {
       grid-row: 2;
       grid-column: 1;
+      width: 95%;
+      justify-self: flex-end;
     }
     .right-btn {
       grid-row: 2;
       grid-column: 2;
+      width: 95%;
     }
   }
 </style>
@@ -159,11 +164,10 @@
         <a href="Links-&-Contact-Info.html">Links & Contact Info</a>
       </header>
     </div>
-
     <section id="gaming">
       <h1>Gaming</h1>
       <div class="section-content">
-        <button class="left-btn">←</button>
+        
         <div class="slides-container">
           <div class="slide" id="first">
             <img src="">
@@ -202,6 +206,7 @@
             </article>
           </div>
         </div>
+        <button class="left-btn">←</button>
         <button class="right-btn">→</button>
       </div>
     </section>
