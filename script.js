@@ -19,9 +19,10 @@ window.onscroll = () => {
 };
 
 //Burger menu 
-const hamMenu = document.querySelector('.ham-menu');
-const sideBar = document.querySelector('.side-bar')
-const sideBarClose = document.querySelector('.side-bar-close')
+const hamMenu = document.getElementsByTagName('nav');
+console.log(hamMenu)
+const sideBar = document.querySelector('.side-bar');
+const sideBarClose = document.querySelector('.side-bar-close');
 
 for (let i=0; i < sideBar.children.length; i++) {
     const child = sideBar.children[i]
@@ -32,7 +33,7 @@ for (let i=0; i < sideBar.children.length; i++) {
 };
 
 
-hamMenu.addEventListener('click', () => {
+hamMenu[0].addEventListener('click', () => {
     sideBar.classList.add('active');
 });
 sideBarClose.addEventListener('click', () => {
