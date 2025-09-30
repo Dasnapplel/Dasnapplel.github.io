@@ -32,61 +32,73 @@ header * {
     flex-grow: 1;
 }
 
-header span {
-    color: orange;
-    border: 6px solid orange;
-}
-header a {
+.head-contain a {
     color: rgb(0, 210, 210);
     border: 2px solid rgb(0, 210, 210);
     transition: all 0.25s ease-in-out;
     text-decoration: none;
 }
-header a:hover {
+.head-contain a:hover {
     background-color: orange;
     color: #333;
     border: 2px solid orange;
 }
-
-.portait-head {
-    border-radius: 10px;
-    border: 4px solid rgb(0, 210, 210);
+.head-contain a.active {
+    color: orange;
+    border: 6px solid orange;
+}
+.head-contain a.active:hover {
+    color: orange;
     background-color: #333;
-    padding: 15px;
+    border: 6px solid orange;
+}
+
+.portrait-head {
+    border: 4px solid rgb(0, 210, 210);
+    border-radius: 10px;
+    color: rgb(0, 210, 210);
+    background-color: #333;
     text-align: center;
     font-weight: bold;
-    color: rgb(0, 210, 210);
     font-size: 25px;
     transition: all 0.25s ease-in-out;
-    float: none;
+    top: 0;
     position: absolute;
-    top: 0%;
-    width: 0px;
-    height: 0px;
     display: none;
     z-index: 50;
+}
+.portrait-head-p1 {
+    color: orange;
+    background-color: #333;
+    border-right: 4px solid rgb(0, 210, 210);
+    padding: 15px;
+    width: 40%;
+    z-index: 10;
+}
+.portrait-head-p2 {
+    transition: all 0.25s ease-in-out;
+    padding: 15px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 60%;
+    z-index: 10;
     cursor: pointer;
 }
-.portait-head:hover {
+.portrait-head-p2:hover {
     background-color: orange;
     color: #333;
-    border: 4px solid orange;
 }
 
-.portait-nav-menu {
-    top: 80px;
-    width: calc(100% - 175px);
-    right: 49px;
-    margin-top: -12px;
+.portrait-nav-menu {
     transition: all 0.25s ease-in-out;
-
-    margin-left: 200%;
-    float: none;
-    position: absolute;
     display: none;
-    z-index: 50;
+    width: 48%;
+    z-index: 0;
 }
-.portait-nav-menu a {
+.portrait-nav-menu.active {
+    display: none;
+}
+.portrait-nav-menu a {
     color: rgb(0, 210, 210);
     background-color: #333;
     border: 2px solid rgb(0, 210, 210);
@@ -96,20 +108,18 @@ header a:hover {
     text-align: center;
     font-size: 20px;
     padding: 15px;
-    float: right;
     height: 100%;
     width: 100%;
+    float: right;
     transition: all 0.25s ease-in-out;
-    position: relative;
+    position: block;
 }
-.portait-nav-menu a:hover {
+.portrait-nav-menu a:hover {
     background-color: orange;
     color: #333;
     border: 2px solid orange;
 }
-.portait-nav-menu.active {
-    display: none;
-}
+
 
 
 nav {
@@ -123,6 +133,7 @@ nav {
     height: 40px;
     width: 40px;
     margin-left: -1000px;
+    margin-right: 0;
     display: none;
     z-index: 50;
     cursor: pointer;
@@ -284,18 +295,18 @@ footer a {
         border: solid 5px black;
         justify-self: center;
     }
-    .portait-head {
-        display: block;
+    .portrait-head {
+        display: flex;
+        flex-direction: row;
         float: right;
         position: sticky;
-        top: 0; 
+        align-content: center;
+        align-items: center;
         width: calc(100% - 150px);
         height: auto;
     }
    
-    .portait-nav-menu {
-        position: sticky;
-    }
+   
     nav {
         display: block;
         margin-left: 0;
@@ -319,9 +330,32 @@ footer a {
         left: -250px;
     }
 
-    .portait-nav-menu.active {
-    margin-left: 0;
-    float: right;
-    display: block;
+    .portrait-nav-menu {
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        z-index: 0;
+    }
+    .portrait-nav-menu.active {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 575px){
+    .portrait-head {
+        width: calc(100% - 100px);
+        display: block;
+        justify-items: center;
+    }
+    .portrait-head-p1{
+        display: none;
+    }
+    .portrait-head-p2 {
+        width: 91%;
+    }
+    .portrait-nav-menu{
+        width: 80%;
+        left: 15%;
     }
 }

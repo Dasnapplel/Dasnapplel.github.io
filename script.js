@@ -1,6 +1,7 @@
 //Nav Bar link activations
 let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('.side-bar a');
+let navLinks = document.querySelectorAll('.head-contain a');
+const NavMenu = document.querySelector('.portrait-nav-menu')
 
 window.onscroll = () => {
     sections.forEach(sec => {
@@ -8,11 +9,16 @@ window.onscroll = () => {
         let offset = sec.offsetTop - 300;
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
+        let title = document.querySelector('.portrait-head-p2');
+        
+        
 
         if(top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('.side-bar a[href*=' + id + ']').classList.add('active');
+                document.querySelector('.head-contain a[href*=' + id + ']').classList.add('active');
+                title.innerHTML = id + ' ▼';
+                NavMenu.classList.remove('active');
             });
         };
     });
@@ -20,7 +26,6 @@ window.onscroll = () => {
 
 //Burger menu 
 const hamMenu = document.getElementsByTagName('nav');
-console.log(hamMenu)
 const sideBar = document.querySelector('.side-bar');
 const sideBarClose = document.querySelector('.side-bar-close');
 
@@ -40,22 +45,24 @@ sideBarClose.addEventListener('click', () => {
     sideBar.classList.remove('active');
 });
 
-//Portait NavBar open
-const NavBtn = document.querySelector('.portait-head')
-const NavMenu = document.querySelector('.portait-nav-menu')
+//portrait NavBar open
+const NavBtn = document.querySelector('.portrait-head-p2')
 
 NavBtn.addEventListener('click', () => {
-    NavMenu.classList.toggle('active');
-    NavBtn.style.animation = 'none';
-    if (NavBtn.innerHTML.includes('↑')) {
-        NavBtn.innerHTML = NavBtn.innerHTML.replace('↑', '↓');
-    } else if (NavBtn.innerHTML.includes('↓')) {
-        NavBtn.innerHTML = NavBtn.innerHTML.replace('↓', '↑');
+    // Change mode
+    if (NavBtn.innerHTML.includes('▲')) {
+        NavBtn.innerHTML = NavBtn.innerHTML.replace('▲', '▼');
+        NavMenu.classList.remove('active');
+    } else if (NavBtn.innerHTML.includes('▼')) {
+        NavBtn.innerHTML = NavBtn.innerHTML.replace('▼', '▲');
+        NavMenu.classList.add('active');
     }
-    for (let i=0; i < NavMenu.children.length; i++) {
-        const child = NavMenu.children[i]
-        child.classList.toggle('active');
-    }});
+    // 
+    // for (let i=0; i < NavMenu.children.length; i++) {
+    //     let child = NavMenu.children[i]
+    //     child.classList.toggle('active');
+    // }
+});
 
 //projects page slide btns
 const sectionContent = document.querySelectorAll('.section-content');
