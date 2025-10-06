@@ -181,17 +181,21 @@ nav:hover span{background-color: #333;}
 }
 .side-bar a{
     color: #333;
-    font-size: medium;
+    font-size: larger;
+    font-weight: bold;
     text-decoration: none;
     display: block;
-    margin-bottom: 30px;
+    padding: 15px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-color: transparent;
     transition: all 0.25s ease-in-out;
 }
 .side-bar a:hover {
+    background-color: rgb(0, 210, 210);
     color: black;
-    text-decoration: underline;
-    text-decoration-color: black;
-    font-size: larger;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
 }
 .side-bar a.active {
     font-size: larger;
