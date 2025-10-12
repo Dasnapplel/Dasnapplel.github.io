@@ -1,5 +1,6 @@
 //Nav Bar link activations
 let sections = document.querySelectorAll('section');
+let resumes = document.querySelectorAll('.resume');
 let navLinks = document.querySelectorAll('.head-contain a');
 const NavMenu = document.querySelector('.portrait-nav-menu')
 
@@ -10,8 +11,22 @@ window.onscroll = () => {
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
         let title = document.querySelector('.portrait-head-p2');
-        
-        
+
+        if(top >= offset && top < offset + height) {
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('.head-contain a[href*=' + id + ']').classList.add('active');
+                title.innerHTML = id + ' ▼';
+                NavMenu.classList.remove('active');
+            });
+        };
+    });
+    resumes.forEach(res => {
+        let top = window.scrollY;
+        let offset = res.offsetTop - 300;
+        let height = res.offsetHeight;
+        let id = res.getAttribute('id');
+        let title = document.querySelector('.portrait-head-p2');
 
         if(top >= offset && top < offset + height) {
             navLinks.forEach(links => {

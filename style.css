@@ -71,6 +71,8 @@ header * {
     color: orange;
     background-color: #333;
     border-right: 4px solid rgb(0, 210, 210);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     padding: 15px;
     width: 40%;
     z-index: 10;

@@ -6,15 +6,20 @@
   <link href="style.css" rel="stylesheet">
   <title>Diego de Jong Portfolio</title> 
   <style>
-    #resume {
+    #Physical, #Digital {
         width: 90%;
         height: auto;
         margin-top: 100px;
         margin-left: 5%;
     }
-    .portrait-head-p2:hover {
-        background-color: #333;
-        color: rgb(0, 210, 210);
+    section img {
+        border-radius: 10px;
+        object-fit: cover;
+        width: auto;
+        height: 100%;
+        max-width: 225px;
+        border: solid 5px black;
+        justify-self: center;
     }
     </style>
 </head>
@@ -44,17 +49,25 @@
 
     <div class="portrait-head" style="animation: changeColor 3s 3;">
       <div class="portrait-head-p1">Resume</div>
-      <div class="portrait-head-p2">Resume</div>
+      <div class="portrait-head-p2">Physical ▼</div>
+      <div class="portrait-nav-menu">
+        <a href="#Physical" class="active">Physical</a>
+        <a href="#Digital">Digital</a>
+      </div>
     </div>
 
     <div class="head-contain">
       <header>
-          
+        <a href="#Physical" class="active">Physical</a>
+        <a href="#Digital">Digital</a>
       </header>
     </div>
     
-    <img src="Images\Diego de Jong GVSU Resume.png" id="resume">
-   
+    
+    <img src="Images\Diego de Jong GVSU Resume Final.png" class="resume" id="Physical"/>  
+    <img src="Images\Diego_digital_png.png" class="resume" id="Digital"/>
+     
+    
     <br><br>
     <footer>
       <p>© 2025 Diego de Jong | <a href="https://github.com/Dasnapplel">GitHub</a></p>
