@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -266,6 +270,7 @@ h1 {
     border-top-right-radius: 10px;
     margin: -15px;
     margin-bottom: 15px;
+    margin-top: -20px;
     padding: 15px;
     padding-bottom: 5px;
 }
