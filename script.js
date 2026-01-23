@@ -80,9 +80,10 @@ NavBtn.addEventListener('click', () => {
 });
 
 //projects page slide btns
-const sectionContent = document.querySelectorAll('.section-content');
+const sectionContent = document.querySelectorAll('section');
 
 sectionContent.forEach(content => {
+    let title = content.querySelector('h1');
     let leftBtn = content.querySelector('.left-btn');
     let rightBtn = content.querySelector('.right-btn');
     let slides = content.querySelector('.slides-container').children;
@@ -100,6 +101,8 @@ sectionContent.forEach(content => {
             slides[currentSlide].style.display = 'none';
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;
             slides[currentSlide].style.display = 'flex';
+            const text = title.textContent.trim().slice(0, -3);
+            title.textContent = text + `${currentSlide + 1}/${slides.length}`;
             debounce = false;
         }, 250); // time in ms
     });
@@ -114,6 +117,8 @@ sectionContent.forEach(content => {
             slides[currentSlide].style.display = 'none';
             currentSlide = (currentSlide + 1 + slides.length) % slides.length;
             slides[currentSlide].style.display = 'flex';
+            const text = title.textContent.trim().slice(0, -3);
+            title.textContent = text + `${currentSlide + 1}/${slides.length}`;
             debounce = false;
         }, 250); // time in ms
     });
