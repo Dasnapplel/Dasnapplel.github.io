@@ -79,6 +79,18 @@ NavBtn.addEventListener('click', () => {
     // }
 });
 
+//dark mode toggle
+const lightToggleBtn = document.querySelector('.light-toggle-btn');
+
+lightToggleBtn.addEventListener('click', () => {
+    console.log('clicked');
+    lightToggleBtn.classList.toggle('active');
+    lightToggleBtn.innerHTML = lightToggleBtn.classList.contains('active') ? '☽' : '☼';
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.toggle('dark-mode');
+    })
+});
+
 //projects page slide btns
 const sectionContent = document.querySelectorAll('section');
 
@@ -123,3 +135,4 @@ sectionContent.forEach(content => {
         }, 250); // time in ms
     });
 });
+

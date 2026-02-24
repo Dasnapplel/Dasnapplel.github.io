@@ -57,6 +57,24 @@ header * {
     border: 6px solid orange;
 }
 
+.bot {
+    display: block;
+    position: fixed;
+    overflow: hidden;
+    z-index: 10;
+}
+.bot-btn {
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 50%;
+    border: 4px solid rgb(0, 210, 210);
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+}
+
 .portrait-head {
     border: 4px solid rgb(0, 210, 210);
     border-radius: 10px;
@@ -89,6 +107,8 @@ header * {
     width: 60%;
     z-index: 10;
     cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .portrait-head-p2:hover {
     background-color: orange;
@@ -209,15 +229,42 @@ nav:hover span{background-color: #333;}
     text-decoration: underline;
     text-decoration-color: orange;
 }
+.light-toggle-btn {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    font-size: 200%;
+    float: left;
+    margin: 10px;
+    margin-bottom: -10px;
+    border: 4px solid black;
+    border-radius: 10px;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+.light-toggle-btn:hover {
+    background-color: orange;
+}
+.light-toggle-btn.active {
+    background-color: #333;
+    color: white;
+}
+.light-toggle-btn.active:hover {
+    background-color: orange;
+    color: black;
+}
 .side-bar-close {
     height: 50px;
     width: 50px;
     float: right;
     margin: 10px;
     margin-bottom: -10px;
-    opacity: 0;
+    border: 4px solid black;
     border-radius: 10px;
-    cursor: pointer;
+    opacity: 0;
+    cursor: default;
+    transition: all 0.25s ease-in-out;
 }
 .side-bar-close span {
     height: 5px;
@@ -233,6 +280,10 @@ nav:hover span{background-color: #333;}
 .side-bar-close span:nth-child(2) {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
+.side-bar-close:hover {
+    background-color: orange;
+    
+}
 
 main {
     margin: 25px;
@@ -241,12 +292,22 @@ main {
 }
 section {
     background-color: #fff;
+    color: black;
     padding: 15px;
     margin-top: 50px;
     border-radius: 10px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     scroll-margin-top: 100px;
+    transition: all 0.25s ease-in-out;
+}
+
+section.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+section.dark-mode a {
+    color: rgb(0, 210, 210);
 }
 section:first-of-type {
     margin-top: 100px;
@@ -324,7 +385,10 @@ footer a {
         display: inline-block;
     }
     
-    .side-bar-close {opacity: 100;}
+    .side-bar-close {
+        opacity: 100;
+        cursor: pointer;
+    }
 
     main {margin-left: 25px;}
     section:first-of-type {margin-top: 25px;}
@@ -364,6 +428,8 @@ footer a {
     }
     .portrait-head-p2 {
         width: 91%;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
     }
     .portrait-nav-menu{
         width: 80%;

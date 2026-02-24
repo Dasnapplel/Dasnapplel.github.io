@@ -12,6 +12,10 @@
     #Chicago {background-color: rgb(255, 220, 220);}
     #Vacations {background-color: rgb(228, 246, 255);}
     #Academic {background-color: rgb(255, 255, 255);}
+    section.dark-mode  {
+      background-color: #333 !important;
+      color: #fff;
+    }
     .left, .right {display: flex;}
     .left img, .right img {
       margin: 15px;
@@ -21,6 +25,16 @@
       min-height: 200px;
       border: solid 5px black;
       border-radius: 10px;
+    }
+
+    .section-description {
+      background-color: #333;
+      color: white;
+      margin-top: -15px;
+      margin-left: -15px;
+      margin-right: -15px;
+      padding: 15px;
+      font-size: larger;
     }
 
     @media screen and (max-width: 1000px){
@@ -40,6 +54,7 @@
 <body>
 
   <div class="side-bar">
+    <div class="light-toggle-btn">☼</div>
     <div class="side-bar-close">
       <span></span>
       <span></span>
@@ -87,6 +102,7 @@
 
     <section id="Academic">
       <h1>Academic</h1>
+      <div class="section-description">Throughout college, I've been fortunate enough to go an many adventures. Here are a few notable ones!</div>
       <div class="left">
           <img src="Images/shpeconventiongroupic.jpg" alt="Photo of me and the group in philly">
           <img src="Images/diegoResumeCostume.jpg" alt="Photo of me in my resume costume">
@@ -131,8 +147,8 @@
     </section>
     <section id="Cycling">
       <h1>Cycling</h1>
-      <p>Me, my dad, and my brother are all Dutch. Perhaps it's in our blood to cycle. 
-        Here are the major adventures that I've done on the bike.</p>
+      <div class="section-description">Me, my dad, and my brother are all Dutch. Perhaps it's in our blood to cycle. 
+        Here are the major adventures that I've done on the bike.</div>
       <div class="section-content">
         <div class="left">
           <img src="Images/diego and papi at mackinaw.jpg" alt="Photo of me and dad after the 1st cycling trip">
@@ -171,7 +187,7 @@
 
     <section id="Road-Trips">
       <h1>Road Trips</h1>
-      <p>Throughout the years, I've been on some really fun adventures by car. Here are a few of them.</p>
+      <div class="section-description">Throughout the years, I've been on some really fun adventures by car. Here are a few of them.</div>
       <div class="section-content">
         <div class="left">
           <img src="Images/mamchicagofoto.jpg" alt="Me and my family at the Milwaukee Art Museum">
@@ -225,8 +241,8 @@
 
     <section id="Mexico">
       <h1>Mexico</h1>
-      <p>My mom is mexican, and we have a great relationship with our family there. 
-        Because of this, we often visit them and have vacations there together. Here are a few of them.</p>
+      <div class="section-description">My mom is mexican, and we have a great relationship with our family there. 
+        Because of this, we often visit them and have vacations there together. Here are a few of them.</div>
       <div class="section-content">
         <div class="left">
           <img src="Images/fam foto.jpg">
@@ -269,8 +285,8 @@
     </section>
     <section id="Chicago">
       <h1>Chicago</h1>
-      <p>Chicago is about three hours away from Grand Rapids by car, and is home to the O'Hare International Airport. 
-        Alongside it being a really big and touristic city, I end up traveling there somewhat often. Here are some of the highlights.</p>
+      <div class="section-description">Chicago is about three hours away from Grand Rapids by car, and is home to the O'Hare International Airport. 
+        Alongside it being a really big and touristic city, I end up traveling there somewhat often. Here are some of the highlights.</div>
       <div class="section-content">
         <div class="left">
           <img src="Images\chicago-bday.jpg">
@@ -324,8 +340,8 @@
 
     <section id="Vacations">
       <h1>Vacations</h1>
-      <p>My parents have always held a very high value for traveling. They must've had the dream to travel and see the world. 
-        Whatever the case, we travel relatively frequently for vacations. Here are some of them.</p>
+      <div class="section-description">My parents have always held a very high value for traveling. They must've had the dream to travel and see the world. 
+        Whatever the case, we travel relatively frequently for vacations. Here are some of them.</div>
       <div class="section-content">
          <div class="left">
           <img src="Images/tokyo-foto.jpg" alt="Family photo in Tokyo" style="height: 50%;">
@@ -363,7 +379,7 @@
     </section>
     <br><br>
     <footer>
-      <p>© 2025 Diego de Jong| <a href="https://github.com/Dasnapplel">GitHub</a></p>
+      <p>2026 Diego de Jong| <a href="https://github.com/Dasnapplel">GitHub</a></p>
     </footer>
   </main>
 
