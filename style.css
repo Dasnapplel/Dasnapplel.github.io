@@ -1,3 +1,10 @@
+/* Variables */
+:root {
+    --blue: rgb(0, 210, 210);
+    --orange: rgb(255, 165, 0);
+}
+
+/* Other Styles */
 html {
     scroll-behavior: smooth;
 }
@@ -9,258 +16,8 @@ body {
     color: #333;
 }
 
-.head-contain {
-    float: right;
-    position: fixed;
-    top: 0;
-    width: calc(100% - 340px);
-    z-index: 50;
-}
-header {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    padding: 10px;
-    background-color: #333;
-    border-radius: 10px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border: solid rgb(0, 210, 210);
-    font-weight: bold;
-    height: 50px;
-}
-header * {
-    border-radius: 5px;
-    text-align: center;
-    padding: 8px;
-    flex-grow: 1;
-}
-
-.head-contain a {
-    color: rgb(0, 210, 210);
-    border: 2px solid rgb(0, 210, 210);
-    transition: all 0.25s ease-in-out;
-    text-decoration: none;
-}
-.head-contain a:hover {
-    background-color: orange;
-    color: #333;
-    border: 2px solid orange;
-}
-.head-contain a.active {
-    color: orange;
-    border: 6px solid orange;
-}
-.head-contain a.active:hover {
-    color: orange;
-    background-color: #333;
-    border: 6px solid orange;
-}
-
-.bot {
-    display: block;
-    position: fixed;
-    overflow: hidden;
-    z-index: 10;
-}
-.bot-btn {
-    height: 100px;
-    width: 100px;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    border-radius: 50%;
-    border: 4px solid rgb(0, 210, 210);
-    transition: all 0.25s ease-in-out;
-    cursor: pointer;
-}
-.bot-btn:hover {
-    background-color: orange;
-    border-color: orange;
-}
-.bot-btn.active {
-    background-color: orange;
-    border-color: orange;
-}
-.bot-chat-container {
-    display: none;
-    position: fixed;
-    bottom: 5px;
-    right: 5px;
-    width: 310px;
-    height: 410px;
-    border-radius: 10px;
-    background-color: rgb(0, 210, 210);
-    transition: all 0.25s ease-in-out;
-    z-index: 9;
-    clip-path: path(
-        "M 0,0 L 300,0 L 300,290 L 190,290 L 190,400 L 0,400 L 0,0 Z"
-    );
-}
-.bot-chat-container.active {
-    display: block;
-}
-.bot-chat {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    width: 300px;
-    height: 400px;
-    background-color: white;
-    transition: all 0.25s ease-in-out;
-    z-index: 10;
-    border-radius: 10px;
-    clip-path: path(
-        "M 0,0 L 290,0 L 290,280 L 180,280 L 180,390 L 0,390 L 0,0 Z"
-    );
-    overflow: scroll;
-}
-.bot-input {
-    position: fixed;
-    bottom: 20px;
-    width: 172px;
-    height: 105px;
-    border: 2px solid black;
-    font-size: 16px;
-}
-.user-chat {
-    background-color: white;
-    border: 2px solid black;
-    float: right;
-    width: 200px;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
-    overflow-y: auto;
-    margin-top: 5px;
-}
-.bot-response {
-    background-color: white;
-    border: 2px solid orange;
-    float: left;
-    width: 200px;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
-    overflow-y: auto;
-    margin-top: 5px;
-}
-
-.portrait-head {
-    border: 4px solid rgb(0, 210, 210);
-    border-radius: 10px;
-    color: rgb(0, 210, 210);
-    background-color: #333;
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-    transition: all 0.25s ease-in-out;
-    top: 0;
-    position: absolute;
-    display: none;
-    z-index: 50;
-}
-.portrait-head-p1 {
-    color: orange;
-    background-color: #333;
-    border-right: 4px solid rgb(0, 210, 210);
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    padding: 15px;
-    width: 40%;
-    z-index: 10;
-}
-.portrait-head-p2 {
-    transition: all 0.25s ease-in-out;
-    padding: 15px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    width: 60%;
-    z-index: 10;
-    cursor: pointer;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    overflow: hidden;
-}
-.portrait-head-p2:hover {
-    background-color: orange;
-    color: #333;
-}
-
-.portrait-nav-menu {
-    transition: all 0.25s ease-in-out;
-    display: none;
-    width: 48%;
-    z-index: 0;
-}
-.portrait-nav-menu.active {
-    display: none;
-}
-.portrait-nav-menu a {
-    color: rgb(0, 210, 210);
-    background-color: #333;
-    border: 2px solid rgb(0, 210, 210);
-    transition: all 0.25s ease-in-out;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 20px;
-    padding: 15px;
-    height: 100%;
-    width: 100%;
-    float: right;
-    transition: all 0.25s ease-in-out;
-    position: block;
-}
-.portrait-nav-menu a:hover {
-    background-color: orange;
-    color: #333;
-    border: 2px solid orange;
-}
-
-
-
-nav {
-    position: sticky;
-    top: 0;
-    padding: 15px;
-    background-color: #333;
-    border-radius: 10px;
-    border: 4px solid rgb(0, 210, 210);
-    transition: .25s ease-in-out;
-    height: 40px;
-    width: 40px;
-    margin-left: -1000px;
-    margin-right: 0;
-    display: none;
-    z-index: 50;
-    cursor: pointer;
-}
-.ham-menu {
-    height: 100%;
-    width: 100%;
-    position: sticky;
-}
-.ham-menu span {
-    height: 5px;
-    width: 100%;
-    background-color: rgb(0, 210, 210);
-    border-radius: 25px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: .25s ease-in-out;
-}
-.ham-menu span:nth-child(1) {top: 25%;}
-.ham-menu span:nth-child(3) {top: 75%;}
-nav:hover {
-    background-color: orange;
-    border-color: orange;
-}
-nav:hover span{background-color: #333;}
-
-.side-bar {
+/* Side Bar */
+.sidebar {
     background: linear-gradient(135deg, rgb(0, 226, 226), rgb(15, 134, 247));
     width: 100%;
     max-width: 250px;
@@ -274,10 +31,10 @@ nav:hover span{background-color: #333;}
 
     flex: 0 1 250px;
 }
-.side-bar.active {
+.sidebar.active {
     left: 0px;
 }
-.side-bar a{
+.sidebar a{
     color: #333;
     font-size: larger;
     font-weight: bold;
@@ -289,18 +46,49 @@ nav:hover span{background-color: #333;}
     border-color: transparent;
     transition: all 0.25s ease-in-out;
 }
-.side-bar a:hover {
-    background-color: rgb(0, 210, 210);
+.sidebar a:hover {
+    background-color: var(--blue);
     color: black;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
-.side-bar a.active {
+.sidebar a.active {
     font-size: larger;
     color: black;
     text-decoration: underline;
-    text-decoration-color: orange;
+    text-decoration-color: var(--orange);
 }
+.sidebar-close {
+    height: 50px;
+    width: 50px;
+    float: right;
+    margin: 10px;
+    margin-bottom: -10px;
+    border: 4px solid black;
+    border-radius: 10px;
+    opacity: 0;
+    cursor: default;
+    transition: all 0.25s ease-in-out;
+}
+.sidebar-close span {
+    height: 5px;
+    width: 45px;
+    margin-top: 25px;
+    background-color: black;
+    border-radius: 25px;
+    position: absolute;
+}
+.sidebar-close span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.sidebar-close span:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.sidebar-close:hover {
+    background-color: var(--orange);
+}
+
+/* Light or Dark Mode Toggle Button*/
 .light-toggle-btn {
     height: 50px;
     width: 50px;
@@ -318,52 +106,189 @@ nav:hover span{background-color: #333;}
     align-content: center;
 }
 .light-toggle-btn:hover {
-    background-color: orange;
+    background-color: var(--orange);
 }
 .light-toggle-btn.active {
     background-color: #333;
     color: white;
 }
 .light-toggle-btn.active:hover {
-    background-color: orange;
+    background-color: var(--orange);
     color: black;
 }
-.side-bar-close {
-    height: 50px;
-    width: 50px;
-    float: right;
-    margin: 10px;
-    margin-bottom: -10px;
-    border: 4px solid black;
-    border-radius: 10px;
-    opacity: 0;
-    cursor: default;
-    transition: all 0.25s ease-in-out;
-}
-.side-bar-close span {
-    height: 5px;
-    width: 45px;
-    margin-top: 25px;
-    background-color: black;
-    border-radius: 25px;
-    position: absolute;
-}
-.side-bar-close span:nth-child(1) {
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-.side-bar-close span:nth-child(2) {
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
-.side-bar-close:hover {
-    background-color: orange;
-    
-}
 
+/* Main */
 main {
     margin: 25px;
     margin-left: 300px;
     transition: all 0.25s ease-in-out;
 }
+
+/* Side Bar Open Button*/
+.sidebar-open {
+    position: sticky;
+    top: 0;
+    padding: 15px;
+    background-color: #333;
+    border-radius: 10px;
+    border: 4px solid var(--blue);
+    transition: .25s ease-in-out;
+    height: 40px;
+    width: 40px;
+    margin-left: -1000px;
+    margin-right: 0;
+    display: none;
+    z-index: 50;
+    cursor: pointer;
+}
+.hamburger-btn {
+    height: 100%;
+    width: 100%;
+    position: sticky;
+}
+.hamburger-btn span {
+    height: 5px;
+    width: 100%;
+    background-color: var(--blue);
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .25s ease-in-out;
+}
+.hamburger-btn span:nth-child(1) {top: 25%;}
+.hamburger-btn span:nth-child(3) {top: 75%;}
+.sidebar-open:hover {
+    background-color: var(--orange);
+    border-color: var(--orange);
+}
+.sidebar-open:hover span{background-color: #333;}
+
+/* Portrait Mode Top NavBar */
+.portrait-navbar {
+    border: 4px solid var(--blue);
+    border-radius: 10px;
+    color: var(--blue);
+    background-color: #333;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    transition: all 0.25s ease-in-out;
+    top: 0;
+    position: absolute;
+    display: none;
+    z-index: 50;
+    animation: changeColor 3s 3;
+}
+.portrait-navbar-p1 {
+    color: var(--orange);
+    background-color: #333;
+    border-right: 4px solid var(--blue);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 15px;
+    width: 40%;
+    pointer-events: none;
+    z-index: 10;
+}
+.portrait-navbar-p2 {
+    transition: all 0.25s ease-in-out;
+    padding: 15px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 60%;
+    z-index: 10;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow: hidden;
+}
+.portrait-navbar-p2:hover {
+    background-color: var(--orange);
+    color: #333;
+}
+
+.portrait-navbar-menu {
+    transition: all 0.25s ease-in-out;
+    display: none;
+    width: 48%;
+    z-index: 0;
+}
+.portrait-navbar-menu.active {
+    display: none;
+}
+.portrait-navbar-menu a {
+    color: var(--blue);
+    background-color: #333;
+    border: 2px solid var(--blue);
+    transition: all 0.25s ease-in-out;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    padding: 15px;
+    height: 100%;
+    width: 100%;
+    float: right;
+    transition: all 0.25s ease-in-out;
+}
+.portrait-navbar-menu a:hover {
+    background-color: var(--orange);
+    color: #333;
+    border: 2px solid var(--orange);
+}
+
+/* Landscape Mode Top NavBar */
+.landscape-navbar {
+    float: right;
+    position: fixed;
+    top: 0;
+    width: calc(100% - 340px);
+    z-index: 50;
+}
+.inner-landscape-navbar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: solid var(--blue);
+    font-weight: bold;
+    height: 50px;
+}
+.inner-landscape-navbar * {
+    border-radius: 5px;
+    text-align: center;
+    padding: 8px;
+    flex-grow: 1;
+}
+
+.landscape-navbar a {
+    color: var(--blue);
+    border: 2px solid var(--blue);
+    transition: all 0.25s ease-in-out;
+    text-decoration: none;
+}
+.landscape-navbar a:hover {
+    background-color: var(--orange);
+    color: #333;
+    border: 2px solid var(--orange);
+}
+.landscape-navbar a.active {
+    color: var(--orange);
+    border: 6px solid var(--orange);
+}
+.landscape-navbar a.active:hover {
+    color: var(--orange);
+    background-color: #333;
+    border: 6px solid var(--orange);
+}
+
+/* Website Content Section */
 section {
     background-color: #fff;
     color: black;
@@ -375,13 +300,12 @@ section {
     scroll-margin-top: 100px;
     transition: all 0.25s ease-in-out;
 }
-
 section.dark-mode {
     background-color: #333;
     color: #fff;
 }
 section.dark-mode a {
-    color: rgb(0, 210, 210);
+    color: var(--blue);
 }
 section:first-of-type {
     margin-top: 100px;
@@ -400,7 +324,7 @@ section img {
 h1 {
     background-color: #333;
     color: #fff;
-    border-bottom: 5px solid orange;
+    border-bottom: 5px solid var(--orange);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin: -15px;
@@ -410,7 +334,7 @@ h1 {
     padding-bottom: 5px;
 }
 h2 {
-    background-color: orange;
+    background-color: var(--orange);
     color: black;
     padding: 15px;
     border-top: 2px solid black;
@@ -419,6 +343,21 @@ h2 {
 .section-content {
     display: inline-block;
 }
+
+.frame-container {
+    justify-self: center;
+    align-self: center;
+    width: 85%;
+}
+iframe {
+    border: none; 
+    border-radius: 8px; 
+    width: 100%; 
+    height: 75dvh; 
+    display: block;
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 1rem 0;
@@ -427,21 +366,27 @@ footer {
     margin-top: 2rem;
 }
 footer a {
-    color: rgb(0, 210, 210);
+    color: var(--blue);
 }
 
-
+/* Media Queries */
 @media screen and (max-width: 1000px){
-    section img {
-        border-radius: 10px;
-        object-fit: cover;
-        width: calc(100% - 10px);
-        height: auto;
-        max-width: 225px;
-        border: solid 5px black;
-        justify-self: center;
+    .sidebar {
+        left: -250px;
     }
-    .portrait-head {
+    .sidebar-close {
+        opacity: 100;
+        cursor: pointer;
+    }
+    main {
+        margin-left: 25px;
+    }
+    .sidebar-open {
+        display: block;
+        margin-left: 0;
+        display: inline-block;
+    }
+    .portrait-navbar {
         display: flex;
         flex-direction: row;
         float: right;
@@ -451,23 +396,17 @@ footer a {
         width: calc(100% - 150px);
         height: auto;
     }
-   
-   
-    nav {
+    .portrait-navbar-menu {
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        z-index: 0;
+    }
+    .portrait-navbar-menu.active {
         display: block;
-        margin-left: 0;
-        display: inline-block;
     }
-    
-    .side-bar-close {
-        opacity: 100;
-        cursor: pointer;
-    }
-
-    main {margin-left: 25px;}
-    section:first-of-type {margin-top: 25px;}
-
-    .head-contain {
+    .landscape-navbar {
         display: none;
         float: none;
         position: absolute;
@@ -475,38 +414,44 @@ footer a {
         width: 0px;
         height: 0px;
     }
-    .side-bar {
-        left: -250px;
+    section img {
+        border-radius: 10px;
+        object-fit: cover;
+        width: calc(100% - 10px);
+        height: auto;
+        max-width: 225px;
+        border: solid 5px black;
+        justify-self: center;
     }
-
-    .portrait-nav-menu {
-        display: none;
-        position: absolute;
-        left: 50%;
-        top: 100%;
-        z-index: 0;
+    section:first-of-type {
+        margin-top: 25px;
     }
-    .portrait-nav-menu.active {
-        display: block;
+    .frame-container {
+        width: 90%;
     }
 }
 
 @media screen and (max-width: 575px){
-    .portrait-head {
+    .portrait-navbar {
         width: calc(100% - 100px);
         display: block;
         justify-items: center;
     }
-    .portrait-head-p1{
+    .portrait-navbar-p1{
         display: none;
     }
-    .portrait-head-p2 {
-        width: 91%;
+    .portrait-navbar-p2 {
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
     }
-    .portrait-nav-menu{
+    .portrait-navbar-menu{
         width: 80%;
         left: 15%;
+    }
+    .frame-container {
+        width: 95%;
     }
 }
