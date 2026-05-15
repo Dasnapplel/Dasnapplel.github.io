@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diego de Jong Portfolio</title> 
+  <link rel="icon" href="Images\DiegoLogoFinal.png" type="image/png">
+</head>
+<style>
+/* Variables */
+:root {
+    --blue: rgb(0, 210, 210);
+    --orange: rgb(255, 165, 0);
+
+    --lime: rgb(0, 255, 40);
+    --pink: rgb(255, 75, 210);
+
+    --blue: rgb(250, 250, 25);
+    --orange: rgb(175, 20, 250);
+
+    --blue: rgb(0, 255, 0);
+    --orange: rgb(255, 0, 0);
+}
+
+/* Other Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #000000;
+    color: #333;
+}
+
+/* Side Bar */
+.sidebar {
+    background: linear-gradient(135deg, rgb(0, 226, 226), rgb(15, 134, 247));
+    width: 100%;
+    max-width: 250px;
+    height: 100%;
+    top: 0;
+    position: fixed;
+    text-align: center;
+    left: 25px;
+    transition: .25s ease-in-out;
+    z-index: 100;
+
+    flex: 0 1 250px;
+}
+.sidebar.active {
+    left: 0px;
+}
+.sidebar a{
+    color: #333;
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-color: transparent;
+    transition: all 0.25s ease-in-out;
+}
+.sidebar a:hover {
+    background-color: var(--blue);
+    color: black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.sidebar a.active {
+    font-size: larger;
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+}
+.sidebar-close {
+    height: 50px;
+    width: 50px;
+    float: right;
+    margin: 10px;
+    margin-bottom: -10px;
+    border: 4px solid black;
+    border-radius: 10px;
+    opacity: 0;
+    cursor: default;
+    transition: all 0.25s ease-in-out;
+}
+.sidebar-close span {
+    height: 5px;
+    width: 45px;
+    margin-top: 25px;
+    background-color: black;
+    border-radius: 25px;
+    position: absolute;
+}
+.sidebar-close span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.sidebar-close span:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.sidebar-close:hover {
+    background-color: var(--orange);
+}
+
+/* Light or Dark Mode Toggle Button*/
+.light-toggle-btn {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    font-size: 30px;
+    float: left;
+    margin: 10px;
+    margin-bottom: -10px;
+    border: 4px solid black;
+    border-radius: 10px;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    justify-content: center;
+    align-content: center;
+}
+.light-toggle-btn:hover {
+    background-color: var(--orange);
+}
+.light-toggle-btn.active {
+    background-color: #333;
+    color: white;
+}
+.light-toggle-btn.active:hover {
+    background-color: var(--orange);
+    color: black;
+}
+
+/* Main */
+main {
+    margin: 25px;
+    margin-left: 300px;
+    transition: all 0.25s ease-in-out;
+}
+
+/* Side Bar Open Button*/
+.sidebar-open {
+    position: sticky;
+    top: 0;
+    padding: 15px;
+    background-color: #333;
+    border-radius: 10px;
+    border: 4px solid var(--blue);
+    transition: .25s ease-in-out;
+    height: 40px;
+    width: 40px;
+    margin-left: -1000px;
+    margin-right: 0;
+    display: none;
+    z-index: 50;
+    cursor: pointer;
+}
+.hamburger-btn {
+    height: 100%;
+    width: 100%;
+    position: sticky;
+}
+.hamburger-btn span {
+    height: 5px;
+    width: 100%;
+    background-color: var(--blue);
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .25s ease-in-out;
+}
+.hamburger-btn span:nth-child(1) {top: 25%;}
+.hamburger-btn span:nth-child(3) {top: 75%;}
+.sidebar-open:hover {
+    background-color: var(--orange);
+    border-color: var(--orange);
+}
+.sidebar-open:hover span{background-color: #333;}
+
+/* Portrait Mode Top NavBar */
+.portrait-navbar {
+    border: 4px solid var(--blue);
+    border-radius: 10px;
+    color: var(--blue);
+    background-color: #333;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    transition: all 0.25s ease-in-out;
+    top: 0;
+    position: absolute;
+    display: none;
+    z-index: 50;
+    animation: changeColor 3s 3;
+}
+.portrait-navbar-p1 {
+    color: var(--orange);
+    background-color: #333;
+    border-right: 4px solid var(--blue);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 15px;
+    width: 40%;
+    pointer-events: none;
+    z-index: 10;
+}
+.portrait-navbar-p2 {
+    transition: all 0.25s ease-in-out;
+    padding: 15px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 10;
+    cursor: pointer;
+    overflow: hidden;
+}
+.portrait-navbar-p2:hover {
+    background-color: var(--orange);
+    color: #333;
+}
+
+.portrait-navbar-menu {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 60%;
+    height: 100%;
+    z-index: 10;
+    transition: all 0.25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 10;
+}
+.portrait-navbar-menu.active {
+    display: none;
+}
+.portrait-navbar-menu a {
+    color: var(--blue);
+    background-color: #333;
+    border: 2px solid var(--blue);
+    transition: all 0.25s ease-in-out;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    position: absolute;
+    width: calc(40% + 60px);
+    height: 100%;
+    transition: all 0.25s ease-in-out;
+}
+.portrait-navbar-menu a:hover {
+    background-color: var(--orange);
+    color: #333;
+    border: 2px solid var(--orange);
+}
+
+/* Landscape Mode Top NavBar */
+.landscape-navbar {
+    float: right;
+    position: fixed;
+    top: 0;
+    width: calc(100% - 340px);
+    z-index: 50;
+}
+.inner-landscape-navbar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border: solid var(--blue);
+    font-weight: bold;
+    height: 50px;
+}
+.inner-landscape-navbar * {
+    border-radius: 5px;
+    text-align: center;
+    padding: 8px;
+    flex-grow: 1;
+}
+
+.landscape-navbar a {
+    color: var(--blue);
+    border: 2px solid var(--blue);
+    transition: all 0.25s ease-in-out;
+    text-decoration: none;
+}
+.landscape-navbar a:hover {
+    background-color: var(--orange);
+    color: #333;
+    border: 2px solid var(--orange);
+}
+.landscape-navbar a.active {
+    color: var(--orange);
+    border: 6px solid var(--orange);
+}
+.landscape-navbar a.active:hover {
+    color: var(--orange);
+    background-color: #333;
+    border: 6px solid var(--orange);
+}
+
+/* Website Content Section */
+section {
+    background-color: #fff;
+    color: black;
+    padding: 15px;
+    margin-top: 50px;
+    border-radius: 10px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    scroll-margin-top: 100px;
+    transition: all 0.25s ease-in-out;
+}
+section.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+section.dark-mode a {
+    color: var(--blue);
+}
+section:first-of-type {
+    margin-top: 100px;
+}
+section img {
+    float: left;
+    margin-right: 15px;
+    border-radius: 10px;
+    object-fit: cover;
+    width: auto;
+    height: 100%;
+    min-width: 200px;
+    min-height: 266px;
+    border: solid 5px black;
+}
+h1 {
+    background-color: #333;
+    color: #fff;
+    border-bottom: 5px solid var(--orange);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: -15px;
+    margin-bottom: 15px;
+    margin-top: -20px;
+    padding: 15px;
+    padding-bottom: 5px;
+}
+h2 {
+    background-color: var(--orange);
+    color: black;
+    padding: 15px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.section-content {
+    display: inline-block;
+}
+
+.frame-container {
+    justify-self: center;
+    align-self: center;
+    width: 85%;
+}
+iframe {
+    border: none; 
+    border-radius: 8px; 
+    width: 100%; 
+    height: 75dvh; 
+    display: block;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333;
+    color: #fff;
+    margin-top: 2rem;
+}
+footer a {
+    color: var(--blue);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1000px){
+    .sidebar {
+        left: -250px;
+    }
+    .sidebar-close {
+        opacity: 100;
+        cursor: pointer;
+    }
+    main {
+        margin-left: 25px;
+    }
+    .sidebar-open {
+        display: block;
+        margin-left: 0;
+        display: inline-block;
+    }
+    .portrait-navbar {
+        display: flex;
+        flex-direction: row;
+        float: right;
+        position: sticky;
+        align-content: center;
+        align-items: center;
+        width: calc(100% - 150px);
+        height: auto;
+    }
+    .portrait-navbar-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .portrait-navbar-menu.active {
+        display: none;
+    }
+    .landscape-navbar {
+        display: none;
+        float: none;
+        position: absolute;
+        margin-top: -200%;
+        width: 0px;
+        height: 0px;
+    }
+    section img {
+        border-radius: 10px;
+        object-fit: cover;
+        width: calc(100% - 10px);
+        height: auto;
+        max-width: 225px;
+        border: solid 5px black;
+        justify-self: center;
+    }
+    section:first-of-type {
+        margin-top: 25px;
+    }
+    .frame-container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 575px){
+    .portrait-navbar {
+        width: calc(100% - 100px);
+        display: block;
+        justify-items: center;
+    }
+    .portrait-navbar-p1{
+        display: none;
+    }
+    .portrait-navbar-p2 {
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    .portrait-navbar-menu{
+        width: 80%;
+        left: 15%;
+    }
+    .frame-container {
+        width: 95%;
+    }
+}
+</style>
+<body>
+  <div class="sidebar">
+    <div class="light-toggle-btn">☼</div>
+    <div class="sidebar-close">
+      <span></span>
+      <span></span>
+    </div>
+    <img src="Images/Diego's Logo.png" alt="DiegoLogo" style="width: 100%; margin-top: 2.5vw;">
+    <h2><strong>About Me</strong></h2>
+    <a href="Projects.html">Projects</a>
+    <a href="Adventures.html">Adventures</a>
+    <a href="Resume.html">Resume</a>
+    <a href="Links-&-Contact-Info.html">Links & Contact Info</a>
+  </div>
+
+  <main>
+    <div class="sidebar-open">
+      <div class="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="portrait-navbar">
+      <div class="portrait-navbar-p1">About Me</div>
+      <div class="portrait-navbar-menu">
+        <div class="portrait-navbar-p2">Biography ▼</div>
+        <a href="#Biography" class="active">Biography</a>
+        <a href="#Linkedin">Recent Posts</a>
+        <a href="#Skills">Skills</a>
+        <a href="#Education">Education</a>
+        <a href="#Experience">Experience</a>
+        <a href="#Leadership">Leadership</a>
+        <a href="#Awards">Awards</a>
+      </div>
+    </div>
+    
+    <div class="landscape-navbar">
+      <div class="inner-landscape-navbar">
+        <a href="#Biography" class="active">Biography</a>
+        <a href="#Linkedin">Recent Posts</a>
+        <a href="#Skills">Skills</a>
+        <a href="#Education">Education</a>
+        <a href="#Experience">Experience</a>
+        <a href="#Leadership">Leadership</a>
+        <a href="#Awards">Awards</a>
+      </div>
+    </div>
+    
+    
+    <section id="Skills">
+      <h1>Skills</h1>
+      <div class="section-content">
+        <article>
+          <ul>
+            <li>Python, Lua, HTML, CSS, JavaScript, C, C++, C#, SQL, Bash</li>
+            <li>Spanish (Fluent; MI Seal of Biliteracy)</li>
+            <li>Dutch (Intermediate)</li>
+            <li>Japanese (Basic; JLPT N5)</li>
+            <li>GitHub and Git Version Control</li>
+            <li>Problem Solving and Critical Thinking</li>
+            <li>3D Digital Modeling (Blender, Rhinocerous 3D, OnShape CAD)</li>
+            <li>Trumpet, Piano</li>
+            <li>Music Composition (FL Studio)</li>
+            <li>Google Drive and Microsoft 365 Softwares</li>
+            <li>Youtube & Video Editing</li>
+          </ul>
+        </article>
+      </div> 
+    </section>
+    
+    <br><br>
+    <footer>
+      <p>© 2026 Diego de Jong | <a href="https://github.com/Dasnapplel">GitHub</a></p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
