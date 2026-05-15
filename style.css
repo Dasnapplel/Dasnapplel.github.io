@@ -1,21 +1,19 @@
 /* Variables */
 :root {
-    --primary: rgb(0, 210, 210);
-    --secondary: rgb(255, 165, 0);
+    --blue: rgb(0, 210, 210);
+    --orange: rgb(255, 165, 0);
 }
 
 /* Other Styles */
 html {
     scroll-behavior: smooth;
 }
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #000000;
     color: #333;
-}
-* {
-    transition: all 0.25s ease-in-out;
 }
 
 /* Side Bar */
@@ -28,7 +26,9 @@ body {
     position: fixed;
     text-align: center;
     left: 25px;
+    transition: .25s ease-in-out;
     z-index: 100;
+
     flex: 0 1 250px;
 }
 .sidebar.active {
@@ -44,9 +44,10 @@ body {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     border-color: transparent;
+    transition: all 0.25s ease-in-out;
 }
 .sidebar a:hover {
-    background-color: var(--primary);
+    background-color: var(--blue);
     color: black;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
@@ -55,15 +56,19 @@ body {
     font-size: larger;
     color: black;
     text-decoration: underline;
-    text-decoration-color: var(--secondary);
+    text-decoration-color: var(--orange);
 }
 .sidebar-close {
     height: 50px;
     width: 50px;
+    float: right;
+    margin: 10px;
+    margin-bottom: -10px;
     border: 4px solid black;
     border-radius: 10px;
     opacity: 0;
     cursor: default;
+    transition: all 0.25s ease-in-out;
 }
 .sidebar-close span {
     height: 5px;
@@ -80,7 +85,7 @@ body {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 .sidebar-close:hover {
-    background-color: var(--secondary);
+    background-color: var(--orange);
 }
 
 /* Light or Dark Mode Toggle Button*/
@@ -89,61 +94,26 @@ body {
     width: 50px;
     background-color: white;
     font-size: 30px;
+    float: left;
+    margin: 10px;
+    margin-bottom: -10px;
     border: 4px solid black;
     border-radius: 10px;
     opacity: 1;
     cursor: pointer;
+    transition: all 0.25s ease-in-out;
     justify-content: center;
     align-content: center;
 }
 .light-toggle-btn:hover {
-    background-color: var(--secondary);
+    background-color: var(--orange);
 }
 .light-toggle-btn.active {
     background-color: #333;
     color: white;
 }
 .light-toggle-btn.active:hover {
-    background-color: var(--secondary);
-    color: black;
-}
-
-.sidebar-specials-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1;
-    justify-self: center;
-    width: 90%;
-    height: 80px;
-}
-
-.highlight-toggle-btn {
-    height: 50px;
-    width: 50px;
-    background-color: var(--secondary);
-    border: 4px solid black;
-    border-radius: 10px;
-    opacity: 1;
-    cursor: pointer;
-}
-.highlight-corner {
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    background-color: var(--primary);
-    clip-path: polygon(100% 0%, 0% 100%, 0% 0%);
-}
-.highlight-toggle-btn:hover {
-    background-color: var(--secondary);
-}
-.highlight-toggle-btn.active {
-    background-color: #333;
-    color: white;
-}
-.highlight-toggle-btn.active:hover {
-    background-color: var(--secondary);
+    background-color: var(--orange);
     color: black;
 }
 
@@ -151,7 +121,7 @@ body {
 main {
     margin: 25px;
     margin-left: 300px;
-    opacity: 0;
+    transition: all 0.25s ease-in-out;
 }
 
 /* Side Bar Open Button*/
@@ -161,7 +131,8 @@ main {
     padding: 15px;
     background-color: #333;
     border-radius: 10px;
-    border: 4px solid var(--primary);
+    border: 4px solid var(--blue);
+    transition: .25s ease-in-out;
     height: 40px;
     width: 40px;
     margin-left: -1000px;
@@ -178,39 +149,42 @@ main {
 .hamburger-btn span {
     height: 5px;
     width: 100%;
-    background-color: var(--primary);
+    background-color: var(--blue);
     border-radius: 25px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: .25s ease-in-out;
 }
 .hamburger-btn span:nth-child(1) {top: 25%;}
 .hamburger-btn span:nth-child(3) {top: 75%;}
 .sidebar-open:hover {
-    background-color: var(--secondary);
-    border-color: var(--secondary);
+    background-color: var(--orange);
+    border-color: var(--orange);
 }
 .sidebar-open:hover span{background-color: #333;}
 
 /* Portrait Mode Top NavBar */
 .portrait-navbar {
-    border: 4px solid var(--primary);
+    border: 4px solid var(--blue);
     border-radius: 10px;
-    color: var(--primary);
+    color: var(--blue);
     background-color: #333;
     text-align: center;
     font-weight: bold;
     font-size: 25px;
+    transition: all 0.25s ease-in-out;
     top: 0;
     position: absolute;
     display: none;
     z-index: 50;
+    animation: changeColor 3s 3;
 }
 .portrait-navbar-p1 {
-    color: var(--secondary);
+    color: var(--orange);
     background-color: #333;
-    border-right: 4px solid var(--primary);
+    border-right: 4px solid var(--blue);
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     padding: 15px;
@@ -219,6 +193,7 @@ main {
     z-index: 10;
 }
 .portrait-navbar-p2 {
+    transition: all 0.25s ease-in-out;
     padding: 15px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -230,11 +205,12 @@ main {
     overflow: hidden;
 }
 .portrait-navbar-p2:hover {
-    background-color: var(--secondary);
+    background-color: var(--orange);
     color: #333;
 }
 
 .portrait-navbar-menu {
+    transition: all 0.25s ease-in-out;
     display: none;
     width: 48%;
     z-index: 0;
@@ -243,9 +219,10 @@ main {
     display: none;
 }
 .portrait-navbar-menu a {
-    color: var(--primary);
+    color: var(--blue);
     background-color: #333;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--blue);
+    transition: all 0.25s ease-in-out;
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
@@ -254,11 +231,12 @@ main {
     height: 100%;
     width: 100%;
     float: right;
+    transition: all 0.25s ease-in-out;
 }
 .portrait-navbar-menu a:hover {
-    background-color: var(--secondary);
+    background-color: var(--orange);
     color: #333;
-    border: 2px solid var(--secondary);
+    border: 2px solid var(--orange);
 }
 
 /* Landscape Mode Top NavBar */
@@ -278,7 +256,7 @@ main {
     border-radius: 10px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    border: solid var(--primary);
+    border: solid var(--blue);
     font-weight: bold;
     height: 50px;
 }
@@ -290,23 +268,24 @@ main {
 }
 
 .landscape-navbar a {
-    color: var(--primary);
-    border: 2px solid var(--primary);
+    color: var(--blue);
+    border: 2px solid var(--blue);
+    transition: all 0.25s ease-in-out;
     text-decoration: none;
 }
 .landscape-navbar a:hover {
-    background-color: var(--secondary);
+    background-color: var(--orange);
     color: #333;
-    border: 2px solid var(--secondary);
+    border: 2px solid var(--orange);
 }
 .landscape-navbar a.active {
-    color: var(--secondary);
-    border: 6px solid var(--secondary);
+    color: var(--orange);
+    border: 6px solid var(--orange);
 }
 .landscape-navbar a.active:hover {
-    color: var(--secondary);
+    color: var(--orange);
     background-color: #333;
-    border: 6px solid var(--secondary);
+    border: 6px solid var(--orange);
 }
 
 /* Website Content Section */
@@ -319,13 +298,14 @@ section {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     scroll-margin-top: 100px;
+    transition: all 0.25s ease-in-out;
 }
 section.dark-mode {
     background-color: #333;
     color: #fff;
 }
 section.dark-mode a {
-    color: var(--primary);
+    color: var(--blue);
 }
 section:first-of-type {
     margin-top: 100px;
@@ -344,7 +324,7 @@ section img {
 h1 {
     background-color: #333;
     color: #fff;
-    border-bottom: 5px solid var(--secondary);
+    border-bottom: 5px solid var(--orange);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin: -15px;
@@ -354,7 +334,7 @@ h1 {
     padding-bottom: 5px;
 }
 h2 {
-    background-color: var(--secondary);
+    background-color: var(--orange);
     color: black;
     padding: 15px;
     border-top: 2px solid black;
@@ -386,11 +366,11 @@ footer {
     margin-top: 2rem;
 }
 footer a {
-    color: var(--primary);
+    color: var(--blue);
 }
 
 /* Media Queries */
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 1000px){
     .sidebar {
         left: -250px;
     }
