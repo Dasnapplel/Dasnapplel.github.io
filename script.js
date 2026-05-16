@@ -7,11 +7,14 @@ const portraitNavMenu = document.querySelector('.portrait-navbar-menu')
 const sideBarOpen = document.querySelector('.sidebar-open');
 const sideBar = document.querySelector('.sidebar');
 const sideBarClose = document.querySelector('.sidebar-close');
+const pageChangeButtons = document.querySelectorAll('.sidebar a');
+const main = document.querySelector('main');
 
 const portraitNavmenuOpen = document.querySelector('.portrait-navbar-p2')
 
 const lightToggleBtn = document.querySelector('.light-toggle-btn');
 
+const highlightToggleBtn = document.querySelector('.highlight-toggle-btn');
 
 // Dark Mode Toggle
 const enterState = localStorage.getItem('DarkMode') === 'true';
@@ -34,6 +37,61 @@ lightToggleBtn.addEventListener('click', () => {
     } else {
         localStorage.setItem('DarkMode', true);
     }
+});
+
+
+// Color Theme Toggle
+let colors = [
+    ['rgb(230, 240, 10)','rgb(225, 10, 240)'],
+    ['rgb(40, 200, 10)','rgb(255, 0, 190)'],
+    ['rgb(5, 240, 5)', 'rgb(230, 5, 5)'],
+    ['rgb(0, 210, 210)', 'rgb(255, 165, 0)']
+]
+
+const primaryColor = document.querySelector('.highlight-toggle-btn');
+const secondaryColor = document.querySelector('.highlight-toggle-btn');
+
+let count = 0;
+highlightToggleBtn.addEventListener('click', () => {
+    document.documentElement.style.setProperty('--primary', colors[count][0]);
+    document.documentElement.style.setProperty('--secondary', colors[count][1]);
+    count = (count + 1) % colors.length;
+    
+    // For completely random colors lmao
+    // const num1 = Math.floor(Math.random() * 255);
+    // const num2 = Math.floor(Math.random() * 255);
+    // const num3 = Math.floor(Math.random() * 255);
+    // const num4 = Math.floor(Math.random() * 255);
+    // const num5 = Math.floor(Math.random() * 255);
+    // const num6 = Math.floor(Math.random() * 255);
+    //document.documentElement.style.setProperty('--primary', 'rgb(' + num1 + ',' + num2 + ',' + num3 + ')');
+    //document.documentElement.style.setProperty('--secondary', 'rgb(' + num4 + ',' + num5 + ',' + num6 + ')');
+});
+
+
+// Side Bar Page Change Animation
+main.style.opacity = 1;
+pageChangeButtons.forEach(button => {
+    button.addEventListener('click', e => {
+        e.preventDefault();
+        const target = button.href;
+        sideBar.classList.remove('active');
+        main.style.opacity = 0;
+
+        setTimeout(() => {
+            window.location.href = target;
+        }, 250); // Must match CSS transition duration
+  
+    });
+});
+
+
+// Sidebar Open and Close
+sideBarOpen.addEventListener('click', () => {
+    sideBar.classList.add('active');
+});
+sideBarClose.addEventListener('click', () => {
+    sideBar.classList.remove('active');
 });
 
 
@@ -73,23 +131,6 @@ window.onscroll = () => {
     //     };
     // });
 };
-
-
-// Sidebar Open and Close
-sideBarOpen.addEventListener('click', () => {
-    sideBar.classList.add('active');
-});
-sideBarClose.addEventListener('click', () => {
-    sideBar.classList.remove('active');
-});
-// redundent feature that closes the side bar after traveling pages
-// for (let i=0; i < sideBar.children.length; i++) {
-//     const child = sideBar.children[i]
-//     if(child in document.querySelectorAll('sidebar a')) {
-//         child.addEventListener('click', () => {
-//             sideBar.classList.remove('active');
-//         })};
-// };
 
 
 // Portrait NavBar Menu Open
@@ -151,4 +192,3 @@ sections.forEach(content => {
         }, 250); // time in ms
     });
 });
-
