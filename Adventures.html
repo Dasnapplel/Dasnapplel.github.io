@@ -26,6 +26,8 @@
       min-height: 200px;
       border: solid 5px black;
       border-radius: 10px;
+      animation: fade-in linear;
+      animation-timeline: view(85% 0px);
     }
 
     .section-description {
@@ -50,29 +52,34 @@
         text-align: center;
       }
     }
+
+    @keyframes fade-in {
+      from {scale: .8; opacity: 0;}
+      to {scale: 1; opacity: 1;}
+    }
   </style>
 </head>
 <body>
 
   <div class="sidebar">
     <div class="sidebar-specials-container">
-      <div class="light-toggle-btn">☼</div>
-      <div class="highlight-toggle-btn"><div class="highlight-corner"></div></div>
-      <div class="sidebar-close">
+      <div class="light-toggle-btn" role="button">☼</div>
+      <div class="highlight-toggle-btn" role="button"><div class="highlight-corner"></div></div>
+      <div class="sidebar-close" role="button">
       <span></span>
         <span></span>
       </div>
     </div>
     
-    <img src="Images/Diego's Logo.png" alt="DiegoLogo" style="width: 100%; margin-top: 2.5vw;">
-    <a href="index.html">About Me</a>
-    <a href="Projects.html">Projects</a>
+    <p>Diego de Jong</p>
+    <a href="index.html" role="button">Projects</a>
+    <a href="AboutMe.html" role="button">About Me</a>
     <h2><strong>Adventures</strong></h2>
-    <a href="Links-&-Contact-Info.html">Links & Contact Info</a>
+    <a href="Links-&-Contact-Info.html" role="button">Links & Contact Info</a>
   </div>
 
   <main>
-    <div class="sidebar-open">
+    <div class="sidebar-open" role="button">
       <div class="hamburger-btn">
         <span></span>
         <span></span>
@@ -82,32 +89,33 @@
 
     <div class="portrait-navbar">
       <div class="portrait-navbar-p1">Adventures</div>
-      <div class="portrait-navbar-p2">Cycling ▼</div>
+      <div class="portrait-navbar-p2" role="button">Cycling ▼</div>
       <div class="portrait-navbar-menu">
-        <a href="#Academic" class="active">Academic</a>
-        <a href="#Cycling">Cycling</a>
-        <a href="#Road-Trips">Road Trips</a>
-        <a href="#Mexico">Mexico</a>
-        <a href="#Chicago">Chicago</a>
-        <a href="#Vacations">Vacations</a>
+        <a href="#Academic" role="button" class="active">Academic</a>
+        <a href="#Cycling" role="button">Cycling</a>
+        <a href="#Road-Trips" role="button">Road Trips</a>
+        <a href="#Mexico" role="button">Mexico</a>
+        <a href="#Chicago" role="button">Chicago</a>
+        <a href="#Vacations" role="button">Vacations</a>
       </div>
     </div>
     
     <div class="landscape-navbar">
       <div class="inner-landscape-navbar">
-        <a href="#Academic" class="active">Academic</a>
-        <a href="#Cycling">Cycling</a>
-        <a href="#Road-Trips">Road Trips</a>
-        <a href="#Mexico">Mexico</a>
-        <a href="#Chicago">Chicago</a>
-        <a href="#Vacations">Vacations</a>
+        <a href="#Academic" role="button" class="active">Academic</a>
+        <a href="#Cycling" role="button">Cycling</a>
+        <a href="#Road-Trips" role="button">Road Trips</a>
+        <a href="#Mexico" role="button">Mexico</a>
+        <a href="#Chicago" role="button">Chicago</a>
+        <a href="#Vacations" role="button">Vacations</a>
       </div>
     </div>
 
     <section id="Academic">
       <h1>Academic</h1>
       <div class="section-description">Throughout college, I've been fortunate enough to go an many adventures. Here are a few notable ones!</div>
-      <div class="left">
+      <div class="section-content">
+        <div>
           <img src="Images/shpeconventiongroupic.jpg" alt="Photo of me and the group in philly">
           <img src="Images/diegoResumeCostume.jpg" alt="Photo of me in my resume costume">
           <article>
@@ -121,7 +129,8 @@
               In the end I had a lot of fun, and learned a lot about the companies and how to boost my career.</p>
           </article>
         </div>
-      <div class="right">
+        <div>
+          <img src="Images\gvsu-studayabroad.jpg" alt="Switzerland">
           <article>
             <h3><span style="text-decoration: underline;">Study Abroad at ZHAW (Switzerland)</span><br><span style="font-size: medium;">(June 30, 2025 - July 25, 2025)</span></h3>
             <p>I’ve always lived with my family. There hasn’t been a time in my life where I was separated from them for more than a week, and now that I’m an adult, I wanted to leave for a while just to prove that I can. 
@@ -132,9 +141,8 @@
               I learned about machine learning, deep learning, data models, digital images, and accessability. and created a Pokemon Battle Assistant. 
               I went to Ebenalp, Rhine Falls, Bern, Zurich, witnessed a graduation ceremony for ZHAW, and hiked to Schloss Kyburg, and so much more! It was worth every penny!</p>
           </article>
-          <img src="Images\gvsu-studayabroad.jpg" alt="Switzerland">
         </div>
-      <div class="left">
+        <div>
           <img src="Images/gvsuchampions.png" alt="Photo of me and everyone in pittsburgh">
           <article>
             <h3><span style="text-decoration: underline;">GVSU Women's Basketball Pep-Band in Pittsburgh, PA</span><br><span style="font-size: medium;">(October 29, 2025 - November 1, 2025)</span></h3>
@@ -143,18 +151,17 @@
               I did both their Women’s Volley Pep Band and Basketball Pep Band programs for the entirety of the 2024-25 school year. 
               Out of sheer luck, the women’s basketball team ended up going to nationals and winning the GLIAC national championship, and we got to go with them to Pittsburg and cheer them on! 
               It was fun!
-</p>
+            </p>
           </article>
         </div>
-      
-        
+      </div>
     </section>
     <section id="Cycling">
       <h1>Cycling</h1>
       <div class="section-description">Me, my dad, and my brother are all Dutch. Perhaps it's in our blood to cycle. 
         Here are the major adventures that I've done on the bike.</div>
       <div class="section-content">
-        <div class="left">
+        <div>
           <img src="Images/diego and papi at mackinaw.jpg" alt="Photo of me and dad after the 1st cycling trip">
           <article>
             <h3><span style="text-decoration: underline;">Grand Rapids to Mackinaw City</span><br><span style="font-size: medium;">(August 4-12, 2018)</span></h3>
@@ -165,7 +172,8 @@
             In the end, this trip took five days, and we traveled around 240 miles total. I was 12 years old.</p>
           </article>
         </div>
-        <div class="right">
+        <div>
+          <img src="Images/diego at lighthouse.jpg" alt="Photo of me and dad after the 2nd cyclng trip">
           <article>
             <h3><span style="text-decoration: underline;">Grand Rapids to Grand Traverse Lighthouse</span><br><span style="font-size: medium;">(August 14-19, 2022)</span></h3>
             <p>After a few years, my brother became 14 and he and my dad both wanted to do a cycling trip together as well. 
@@ -175,9 +183,8 @@
             This way I could say that I cycled to the 'middle' and 'pinky' fingers of the state. 
             In the end, this trip took four days, and we traveled around 180 miles. I was 16 years old.</p>
           </article>
-          <img src="Images/diego at lighthouse.jpg" alt="Photo of me and dad after the 2nd cyclng trip">
         </div>
-        <div class="left">
+        <div>
           <img src="Images/diego pewamo.jpg" alt="Me at a Pewamo train memorial">
           <article>
             <h3><span style="text-decoration: underline;">Lowell to Pewamo</span><br><span style="font-size: medium;">(July 24, 2022)</span></h3>
@@ -193,7 +200,7 @@
       <h1>Road Trips</h1>
       <div class="section-description">Throughout the years, I've been on some really fun adventures by car. Here are a few of them.</div>
       <div class="section-content">
-        <div class="left">
+        <div>
           <img src="Images/mamchicagofoto.jpg" alt="Me and my family at the Milwaukee Art Museum">
           <article>
             <h3><span style="text-decoration: underline;">Chicago and Milwaukee</span><br><span style="font-size: medium;">(July 31, 2025 - August 3, 2025)</span></h3>
@@ -205,8 +212,8 @@
               National Bobblehead Museum, Volo Auto Museum and Jurassic Gardens, and the Harley-Davidson Museum. It was fun!</p>
           </article>
         </div>
-        
-        <div class="right">
+        <div>
+          <img src="Images/boot.jpg" alt="mall of america boot with friend">
           <article>
             <h3><span style="text-decoration: underline;">Mall of America</span><br><span style="font-size: medium;">(May 22-24, 2024)</span></h3>
             <p>After graduating high school, me and two other friends decided to do a road trip together for fun. Since elementary school,
@@ -215,9 +222,8 @@
               and that we prioritized education first. I was put in charge of finding a place to stay, and found the only motel in the area 
               that accepted payment and stay from 18 year olds. It was fun!</p>
           </article>
-          <img src="Images/boot.jpg" alt="mall of america boot with friend">
         </div>
-        <div class="left">
+        <div>
           <img src="Images/tech-dog-pic.jpg" alt="photo of me, my mom, and the Michigan Tech husky">
           <article>
             <h3><span style="text-decoration: underline;">Michigan Tech</span><br><span style="font-size: medium;">(January 11-16, 2024)</span></h3>
@@ -230,7 +236,8 @@
               and Mackinaw Bridge in the winter!</p>
           </article>
         </div>
-        <div class="right">
+        <div>
+          <img src="Images/Diego Lincoln House.jpg">
           <article>
             <h3><span style="text-decoration: underline;">Washington DC and Massanutten, Virginia</span><br><span style="font-size: medium;">(August 15-25, 2018)</span></h3>
             <p>After I finished my first cycling trip to Mackinaw with my dad, my family went on vacation together. My parents had wanted to travel 
@@ -238,7 +245,6 @@
               They also found several interesting things to do in Virginia, like Massanutten Resort, Luray Caverns, and Monticello. 
               In the end, we had a road trip traveling to each of these locations. It was fun!</p>
           </article>
-          <img src="Images/Diego Lincoln House.jpg">
         </div>
       </div> 
     </section>
@@ -248,7 +254,7 @@
       <div class="section-description">My mom is mexican, and we have a great relationship with our family there. 
         Because of this, we often visit them and have vacations there together. Here are a few of them.</div>
       <div class="section-content">
-        <div class="left">
+        <div>
           <img src="Images/fam foto.jpg">
           <article>
             <h3><span style="text-decoration: underline;">Winter 2024-2025</span><br><span style="font-size: medium;">(December 21, 2024 - January 4, 2025)</span></h3>
@@ -257,16 +263,16 @@
               Mystica, and the only Michelin Star taco stand in Mexico! It was fun!</p>
           </article>
         </div>
-        <div class="right">
+        <div>
+          <img src="Images/tetiohuacan.jpg">
           <article>
             <h3><span style="text-decoration: underline;">Spring 2022</span><br><span style="font-size: medium;">(March 26, 2022 - April 11, 2022)</span></h3>
             <p>We spent spring break in Mexico hanging out with our family. Some notable attractions that we saw were 
               king Tut's tomb and a professional luche libre fight.
               We also celebrated my dad's and cousin's birthdays. It was fun!</p>
           </article>
-          <img src="Images/tetiohuacan.jpg">
         </div>
-        <div class="left">
+        <div>
           <img src="Images/chichenitza.jpg" alt="Image of me 'stepping' on the chichenitza temple">
           <article>
             <h3><span style="text-decoration: underline;">Mexico and Cancun</span><br><span style="font-size: medium;">(July 2-11, 2021)</span></h3>
@@ -275,24 +281,24 @@
               Over the course of our vacation, we went to several different attractions like Xcaret, Xenses, and Chichen Itza. It was fun!</p>
           </article>
         </div>
-        <div class="right">
+        <div>
+          <img src="Images/dego at cabo.jpg" alt="fam foto in cabo at the dragon rock">
           <article>
             <h3><span style="text-decoration: underline;">Mexico and Los Cabos</span><br><span style="font-size: medium;">(March 29, 2019 - April 8, 2019)</span></h3>
             <p>This was the third time we traveled to Los Cabos, specifically Cabo San Lucas.
               It is a very beautiful location, and a great place to relax, have fun, and swim!
               This time specifically, we went on a pirate ship attraction. It was fun!</p>
           </article>
-          <img src="Images/dego at cabo.jpg" alt="fam foto in cabo at the dragon rock">
         </div>
-        
       </div> 
     </section>
+
     <section id="Chicago">
       <h1>Chicago</h1>
       <div class="section-description">Chicago is about three hours away from Grand Rapids by car, and is home to the O'Hare International Airport. 
         Alongside it being a really big and touristic city, I end up traveling there somewhat often. Here are some of the highlights.</div>
       <div class="section-content">
-        <div class="left">
+        <div>
           <img src="Images\chicago-bday.jpg">
           <article>
             <h3><span style="text-decoration: underline;">Summer 2025</span><br><span style="font-size: medium;">(June 20-22, 2025)</span></h3>
@@ -300,14 +306,14 @@
               We went to the Bean, the Medieval Torture Museum, Museum of Contemporary Art, Museum of Ice Cream, WNDR Museum, Shedd aquarium, and Chinatown. It was fun!</p>
           </article>
         </div>
-        <div class="right">
+        <div>
+          <img src="Images/chicago foto.jpg">
           <article>
             <h3><span style="text-decoration: underline;">Summer 2021</span><br><span style="font-size: medium;">(July 25-27, 2021)</span></h3>
             <p>We spent a weekend in Chicago for fun. We went to the Van Gogh Museum, and the Museum of Illusions. It was fun!</p>
           </article>
-          <img src="Images/chicago foto.jpg">
         </div>
-        <div class="left">
+        <div>
           <img src="Images/hughjackman dego.jpg" style="width: 500px;">
           <article>
             <h3><span style="text-decoration: underline;">Summer 2019</span><br><span style="font-size: medium;">(June 21-23, 2019)</span></h3>
@@ -316,28 +322,27 @@
           </article>
         </div>
         <hr>
-        <div class="right">
+        <div>
+          <img src="Images/newtrier 2024.png">
           <article>
             <h3><span style="text-decoration: underline;">Jazz Band 2024</span><br><span style="font-size: medium;">(Febuary 3-4, 2024)</span></h3>
             <p>My third and final time participating at the New Trier Jazz Festival. We went to the Chicago Science Museum on the second day of our trip. It was fun!</p>
           </article>
-          <img src="Images/newtrier 2024.png">
         </div>
-        
-        <div class="left">
+        <div>
           <img src="Images\bazz-jand-2023.jpg">
           <article>
             <h3><span style="text-decoration: underline;">Jazz Band 2023</span><br><span style="font-size: medium;">(Febuary 4-5, 2023)</span></h3>
             <p>My second time participating at the New Trier Jazz Festival. We went to the Shed Aquarium on the second day of our trip. It was fun!</p>
           </article>
         </div>
-      <div class="right">
+        <div>
+          <img src="Images/newtrier 2022.png">
           <article>
             <h3><span style="text-decoration: underline;">Jazz Band 2022</span><br><span style="font-size: medium;">(Febuary, 2022)</span></h3>
             <p>The Forest Hills Northern Jazz Band participates at the New Trier Highschool Jazz Fest annually. 
               This was my first time participating, and the first festival after the covid pandemic. It was fun!</p>
           </article>
-          <img src="Images/newtrier 2022.png">
         </div> 
       </div>
     </section>
@@ -347,7 +352,17 @@
       <div class="section-description">My parents have always held a very high value for traveling. They must've had the dream to travel and see the world. 
         Whatever the case, we travel relatively frequently for vacations. Here are some of them.</div>
       <div class="section-content">
-         <div class="left">
+        <div>
+          <img src="Images/tokyo-foto.jpg" alt="Family photo in Tokyo" style="height: 50%;">
+          <article>
+            <h3><span style="text-decoration: underline;">Cape Canaveral and Daytona Beach, Florida</span><br><span style="font-size: medium;">(December 20, 2025 - January 3, 2026)</span></h3>
+            <p>My family and I went to Florida, specifically to Cape Canaveral and Daytona beach! 
+              We got to go see the Kennedy Space Center, a few smaller historical museums, a lot of parks, and relax!
+              We also got to celebrate Christmas and New Year’s Eve at the beach! 
+              It was fun!</p>
+          </article>
+        </div>
+        <div>
           <img src="Images/tokyo-foto.jpg" alt="Family photo in Tokyo" style="height: 50%;">
           <article>
             <h3><span style="text-decoration: underline;">Japan</span><br><span style="font-size: medium;">(July 7-26, 2024)</span></h3>
@@ -356,30 +371,30 @@
               After I graduated high school, I put the idea up in the air again, and we all agreed that it was the perfect time to go.
               I had just graduated, so it was like a reward for me. I had also been learning Japanese in my free time as a hobby, so I was trained enough to help out if needed.
               Additionally, the economy at the time had a good dollar to yen conversion rate. We traveled to all different types of temples, museums, theme parks, restaurants, and parks.
-              I designed and scheduled the entire itinerary, and my family agreed that it was the best vacation that we had ever had!</p>
+              Our vacation was split between two main locations, Tokyo and Osaka, though we also visited Yokohama and Kyoto.
+              I designed and scheduled the entire itinerary, and my family agreed that it was the one of the best vacations that we had ever had!</p>
           </article>
         </div>
-        <div class="right">
+        <div>
+          <img src="Images/greece-foto.jpg" alt="Family photo in front of ancient ruins">
           <article>
             <h3><span style="text-decoration: underline;">Mediterranean Cruise</span><br><span style="font-size: medium;">(July 7-22, 2023)</span></h3>
             <p>My family had considered taking a cruise for years, and we finally decided to take one around the Mediterranean area.
               The cruise we took traveled from Italy to Greece, Turkey and back. Notable places we visited were Venice, and Mykonos.
               I believe Mykonos in particular was the most beautiful place that I had ever seen. It was fun!</p>
           </article>
-          <img src="Images/greece-foto.jpg" alt="Family photo in front of ancient ruins">
         </div>
+        <div>
+        <img src="Images/floridaIndoorSkydiving.jpg" alt="Me indoor skydiving in Florida">
+        <article>
+          <h3><span style="text-decoration: underline;">Miami, Florida</span><br><span style="font-size: medium;">(April 2-11, 2021)</span></h3>
+          <p>Me, my dad, and my brother are all Dutch citizens, so we all have Dutch passports. At some point, me and my brother's passports expired, and unfortunately our closest renewer had closed. 
+            Since the next closest one was in Miami, we decided to make the trip worthwhile and turned it into a vacation!
+            Some notable places we went to were the Miami Zoo and the beach. We also did indoor skydiving for the first time. It was fun!</p>
+        </article>
+      </div>
       </div> 
-      <div class="left">
-          <img src="Images/floridaIndoorSkydiving.jpg" alt="Me indoor skydiving in Florida">
-          <article>
-            <h3><span style="text-decoration: underline;">Miami, Florida</span><br><span style="font-size: medium;">(April 2-11, 2021)</span></h3>
-            <p>Me, my dad, and my brother are all Dutch citizens, so we all have Dutch passports. At some point, me and my brother's passports expired, and unfortunately our closest renewer had closed. 
-              Since the next closest one was in Miami, we decided to make the trip worthwhile and turned it into a vacation!
-              Some notable places we went to were the Miami Zoo and the beach. We also did indoor skydiving for the first time. It was fun!</p>
-          </article>
-        </div>
-        
-      </div> 
+    </div> 
     </section>
     <br><br>
     <footer>
@@ -388,5 +403,6 @@
   </main>
 
   <script src="script.js"></script>
+  <script src="AdventuresJS.js"></script>
 </body>
 </html>

@@ -8,70 +8,71 @@
   <link rel="icon" href="Images\DiegoLogoFinal.png" type="image/png">
 </head>
 <style>
-  @media screen and (max-width: 1100px){
-    #first-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  /* Must save this page before testing it out on local server, or else it breaks the website */
+  section {
+    background-color: transparent !important;
   }
-  #Resume .section-content {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
+  .section-content {
+    display: block;
     align-items: center;
+    max-height: 0;
+    height: 100vh;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    background-color: #fff;
   }
-  .resume {
-    all: revert;
-    width: 90%;
-    height: auto;
-    justify-self: center;
-    align-self: center;
-    border-radius: 10px;
-    object-fit: cover;
-    min-width: 200px;
-    min-height: 266px;
-    border: solid 5px black;
-  }
-  .download-resume-btn {
-    color: var(--primary);
+  section.dark-mode .slides-container, section.dark-mode .slide, section.dark-mode .section-content, section.dark-mode article {
     background-color: #333;
-    border: 4px solid var(--primary);
-    border-radius: 5px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bolder;
-    padding: 15px;
-    height: 100%;
-    margin-bottom: 20px;
-    width: calc(90% - 28px);
+    color:#fff;
   }
-  .download-resume-btn:hover {
-    background-color: var(--secondary);
-    color: #333;
-    border: 4px solid var(--secondary);
+  section img {
+    object-fit: none;
+    border: none;
+    width: 50%;
+    height: auto;
+    object-fit: contain;
   }
+  section.active .section-content {
+    max-height: 60vh;
+  }
+  section.active .button-circle {
+    background-color: #fff;
+  }
+  section.active .slider {
+    padding-top: 5vh;
+  }
+  section.active .slider-nav {
+    display: flex;
+  }
+  section ::-webkit-scrollbar-track {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+
 </style>
 <body>
+
   <div class="sidebar">
     <div class="sidebar-specials-container">
-      <div class="light-toggle-btn">☼</div>
-      <div class="highlight-toggle-btn"><div class="highlight-corner"></div></div>
-      <div class="sidebar-close">
+      <div class="light-toggle-btn" role="button">☼</div>
+      <div class="highlight-toggle-btn" role="button"><div class="highlight-corner"></div></div>
+      <div class="sidebar-close" role="button">
       <span></span>
         <span></span>
       </div>
     </div>
-      
-    <img src="Images/Diego's Logo.png" alt="DiegoLogo" style="width: 100%; margin-top: 2.5vw;">
-    <h2><strong>About Me</strong></h2>
-    <a href="Projects.html">Projects</a>
-    <a href="Adventures.html">Adventures</a>
-    <a href="Links-&-Contact-Info.html">Links & Contact Info</a>
+    
+    <p>Diego de Jong</p>
+    <h2><strong>Projects</strong></h2>
+    <a href="AboutMe.html" role="button">About Me</a>
+    <a href="Adventures.html" role="button">Adventures</a>
+    <a href="Links-&-Contact-Info.html" role="button">Links & Contact Info</a>
   </div>
 
   <main>
-    <div class="sidebar-open">
+    
+    <div class="sidebar-open" role="button">
       <div class="hamburger-btn">
         <span></span>
         <span></span>
@@ -80,230 +81,256 @@
     </div>
 
     <div class="portrait-navbar">
-      <div class="portrait-navbar-p1">About Me</div>
-      <div class="portrait-navbar-p2">Biography ▼</div>
+      <div class="portrait-navbar-p1">Projects</div>
+      <div class="portrait-navbar-p2" role="button">Gaming ▼</div>
       <div class="portrait-navbar-menu">
-        <a href="#Biography" class="active">Biography</a>
-        <a href="#Linkedin">Linkedin</a>
-        <a href="#Skills">Skills</a>
-        <a href="#Education">Education</a>
-        <a href="#Experience">Experience</a>
-        <a href="#Leadership">Leadership</a>
-        <a href="#Awards">Awards</a>
-        <a href="#Resume">Resume</a>
+        <a href="#Gaming" role="button" class="active">Gaming</a>
+        <a href="#Academic" role="button">Academic</a>
+        <a href="#Professional" role="button">Professional</a>
+        <a href="#Other" role="button">Other</a>
       </div>
     </div>
     
     <div class="landscape-navbar">
       <div class="inner-landscape-navbar">
-        <a href="#Biography" class="active">Bio</a>
-        <a href="#Linkedin">Linkedin</a>
-        <a href="#Skills">Skills</a>
-        <a href="#Education">Education</a>
-        <a href="#Experience">Experience</a>
-        <a href="#Leadership">Leadership</a>
-        <a href="#Awards">Awards</a>
-        <a href="#Resume">Resume</a>
+        <a href="#Gaming" role="button" class="active">Gaming</a>
+        <a href="#Academic" role="button">Academic</a>
+        <a href="#Professional" role="button">Professional</a>
+        <a href="#Other" role="button">Other</a>
       </div>
     </div>
-    
-    <section id="Biography">
-      <h1>Biography</h1>
-      <div class="section-content" id="first-section">
-        <img src="Images/diegowebpfp.jpg" alt="Diego de Jong Portrait" style="width: 250px; border-radius: 15px; margin-right: 20px; margin-bottom: 20px;">
-        <article>
-          <p><strong>Hi, I'm Diego de Jong, and I'm a computer scientist!</strong></p>
-          <p>
-            I'm a 3rd-year undergraduate at Grand Valley State University, and am currently interning with 
-            Rep4FinLit, where I help create their website, financial personality quiz, and AI chatbot using 
-            HTML, CSS, and JavaScript. 
-          </p>
-          <p>
-            On campus, I serve as an EBoard leader for the Computing Club, 
-            Pokémon Club, and Society of Hispanic Professional Engineers, 
-            where I manage funding and help organize events. 
-          </p>
-          <p>
-            My long-term goal is to combine my technical skills and creativity to build engaging video games. 
-            In the meantime, I’m focused on growing as a developer through both professional opportunities and community involvement.
-          </p>
-        </article>
-      </div> 
-    </section>
-    <section id="Linkedin">
-      <h1>Linkedin</h1>
-      <div class="frame-container">
-        <iframe 
-          src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7459776581297725440?collapsed=1" 
-          allowfullscreen 
-          title="LinkedIn Embedded Post"
-          onerror="this.style.display='none';document.getElementById('linkedin-fallback-link').style.display='block';">
-        </iframe>
+
+    <div id="Bio" class="special-section">
+      <img src="Images/DiegoAura.jpg">
+      <div class="bio-text">
+        <p>
+          <span></span>
+          Diego de Jong
+          <span></span>
+        </p>
+        <p><em>Computer Science</em></p>
+        <p><em>Videogame Developer</em></p>
+      </div>
+    </div>
+
+    <section id="Gaming" class="active">
+      <div class="top-cap">
+        <p>Gaming</p>
+        <div class="project-section-btn" role="button">
+          <div class="button-circle"></div>
+        </div>
+      </div>
+
+      <div class="section-content">
+
+        <div class="slider">
+
+          <div class="slide">   
+            <video src="Images/swordfightshenanigansDemoVideo.mp4" autoplay muted loop playsinline></video>
+            <div class="slide-content">
+              <img src="Images\SwordfightShenanigansLogo.jpg">
+              <article>
+                <h3><span style="text-decoration: underline;">Swordfight Shenanigans</span> (May 2023 - May 2024)</h3>
+                <p>This project is a multiplayer online battle arena game where players control customizable characters and engage in fast-paced sword fights.
+                  It is a Roblox game that has around 100 different swords that players can battle with, and 6 different maps to choose from. I created it as my highschool capstone project, to showcase my skills in game development.
+                Due to this, every aspect of the game, including the code, soundtrack, models, and UI, were created by me alone.
+                Since this was my first big personal project, I learned a lot about game development, coding, and how to work with a large codebase.
+                </p>
+                <a href="https://github.com/Dasnapplel/Swordfight-Shenanigans">GitHub Repository</a>
+                <br>
+                <a href="https://www.roblox.com/games/17293476930/Swordfight-Shenanigans">Demo Game Link</a>
+                <br>
+                <a href="https://www.roblox.com/games/12825332826/Swordfight-Shenanigans">Official Game Link</a>
+              </article>
+            </div>
+          </div>
+
+          <div class="slide">
+            <video src="Images/overdriveThumbnailsVideo.mp4" autoplay muted loop playsinline></video>
+            <div class="slide-content">
+              <img src="Images\overdriveLogo.jpg">
+              <article>
+                <h3><span style="text-decoration: underline;">Overdrive</span> (August 2024 - November 2024)</h3>
+                <p>This project is a car crash derby battle royale game where players compete in chaotic vehicular mayhem. 
+                  This Roblox game was made for a game jam, where competitors had to create a game in just 2 weeks. 
+                  My brother and I collaborated on this project, with him handling the art and modeling while I focused on the programming and game mechanics. 
+                  Although we didn't win, and the game is still incomplete, we are both proud of what we accomplished in such a short time frame.</p>
+                <a href="https://www.roblox.com/games/87818223271624/Overdrive">Official Game Link</a>
+              </article>
+            </div>
+          </div>
+          <div class="slide">
+            <video src="Images/Roblox-2026-05-22T15_19_12.111Z.mp4" autoplay muted loop playsinline></video>
+            <div class="slide-content">
+              <img src="Images\GlitchMazeLogo.webp">
+              <article>
+                <h3><span style="text-decoration: underline;">Glitch Maze</span> (Summer 2022 and Fall 2025)</h3>
+                <p>I really like creating games on Roblox Studio. 
+                One of the projects that I made randomly at some point was Glitch Maze. 
+                This game resembles PacMan in a lot of ways, such as the maze, pellets, and enemies that roam around the maze. 
+                However, my game is in first person, features music made by me, and focuses more on the fear of the maze. 
+                Additionally, I revisited the game during my Freshmen year in college, 
+                and polished it using new skills that I learned in my Computer Science classes.</p>
+                <a href="https://github.com/Dasnapplel/Glitch-Maze">GitHub Repository</a>
+                <br>
+                <a href="https://www.roblox.com/games/89815593298915/Glitch-Maze">Official Game Link</a>
+              </article>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bottom-cap" st>
+        <div class="slider-nav">
+        </div>
       </div>
     </section>
-    <section id="Skills">
-      <h1>Skills</h1>
+
+    <section id="Academic">
+      <div class="top-cap">
+        <p>Academic</p>
+        <div class="project-section-btn" role="button">
+          <div class="button-circle"></div>
+        </div>
+      </div>
+
       <div class="section-content">
-        <article>
-          <ul>
-            <li>Python, Lua, HTML, CSS, JavaScript, C, C++, C#, SQL, Bash</li>
-            <li>Spanish (Fluent; MI Seal of Biliteracy)</li>
-            <li>Dutch (Intermediate)</li>
-            <li>Japanese (Basic; JLPT N5)</li>
-            <li>GitHub and Git Version Control</li>
-            <li>Problem Solving and Critical Thinking</li>
-            <li>3D Digital Modeling (Blender, Rhinocerous 3D, OnShape CAD)</li>
-            <li>Trumpet, Piano</li>
-            <li>Music Composition (FL Studio)</li>
-            <li>Google Drive and Microsoft 365 Softwares</li>
-            <li>Youtube & Video Editing</li>
-          </ul>
-        </article>
-      </div> 
-    </section>
-    <section id="Education">
-      <h1>Education</h1>
-      <div class="section-content">
-        <article>
-          <h3 style="text-decoration: underline;">Grand Valley State University (2024-2028)</h3>
-          <p><strong>Bachelor of Science in Computer Science</strong>, Minors in Mathematics and Cybersecurity</p>
-          <p><strong>GPA: 3.67</strong>, Dean's List 4 Semesters</p>
-          <ul>
-            <li>Switzerland Study Abroad (July 2025)</li>
-            <li>Computing Club</li>
-            <li>Pokemon Club</li>
-            <li>Society of Hispanic Professional Engineers</li>
-            <li>Cross Country/Track Club</li>
-            <li><abbr title="Grand Valley State University">GVSU</abbr> Pep Band Programs</li>
-            <li>3C Peer Mentor Program</li>
+        <div class="slider">
+          <div class="slide">
+            <video src="Images/IceLabsHackathonDemo.mp4" autoplay muted loop playsinline></video>
+            <div class="slide-content">
+              <img src="Images\winnerlakericelabs.png">
+              <article>
+                <h3><span style="text-decoration: underline;">MiSpace Hackathon 2025/Laker Ice Labs</span> (October-November, 2025)</h3>
+                <p>I worked with a team of three other people on the GVSU Computing Club's Eboard to create a datamodel that could predictice ice formation on the great lakes.
+                  We spent a month on this project, and ended up winning an honerable mention prize for our efforts. 
+                </p>
+                <a href="https://mispace.devpost.com/project-gallery">Winners Gallery</a>
+                <br>
+                <a href="https://elijahleemorgan.github.io/MiSpaceHackathon/index.html">Laker Ice Labs Website</a>
+                <br>
+                <a href="https://www.youtube.com/watch?v=dxxCCT17vkI">YouTube Video</a>
+                <br>
+                <a href="https://github.com/ElijahLeeMorgan/MISpaceHackathon">Github Repository</a>
+              </article>
+            </div>
             
-          </ul>
-          <br>
-          <h3 style="text-decoration: underline;">Forest Hills Northern Highschool (2020-2024)</h3>
-          <ul>
-            <li>STEM Program</li>
-            <li>Spanish Immersion Program</li>
-            <li><abbr title="Forest Hills Northern">FHN</abbr> Band Programs</li>
-            <li>National Honor Society 2022-2024</li>
-            <li><abbr title="Forest Hills Northern">FHN</abbr> Computing Club</li>
-            <li><abbr title="Forest Hills Northern">FHN</abbr> Cross Country/Track Programs</li>
-          </ul>
-          <br>
-          <h3>Relevent Courses</h3>
-          <p>Computer Science:</p>
-          <ul>     
-            <li><a href="https://www.gvsu.edu/catalog/course/cis-162.htm" target="_blank">Computer Science I (CIS 162)</a></li>
-            <li><a href="https://www.gvsu.edu/catalog/course/cis-163.htm" target="_blank">Computer Science II (CIS 163)</a></li>
-            <li><a href="https://www.gvsu.edu/catalog/course/cis-241.htm" target="_blank">System-Level Programming &amp; Utilities (CIS 241)</a></li>
-            <li><a href="https://www.gvsu.edu/catalog/course/cis-263.htm" target="_blank">Data Structures and Algorithms (CIS 263)</a></li>
-            <li><a href="https://www.gvsu.edu/catalog/course/cis-290.htm" target="_blank">Professional Responsibilities (CIS 290)</a></li>
-            <li><a href="https://www.gvsu.edu/catalog/course/cis-380.htm" target="_blank">Machine Learning and Neural Networks - Switzerland Study Abroad (CIS 380)</a></li>
-            <li><a href="https://www.gvsu.edu/catalog/course/cis-353.htm" target="_blank">Database (CIS 353)</a></li>
-            <li><a href="https://www.gvsu.edu/catalog/course/cis-351.htm" target="_blank">Computer Organization (CIS 351)</a></li>
-            <li><a href="https://www.gvsu.edu/catalog/course/cis-376.htm" target="_blank">Game Programming Techniques and Algorithms (CIS 376)</a></li>
-          </ul>
-          <p>Mathematics:</p>
-          <ul>
-            <li>AP Calculus BC</li>
-            <li><a href="https://www.gvsu.edu/catalog/course/mth-225.htm" target="_blank">Discrete Structures: Computer Science 1 (MTH 225)</a></li>
-            <li><a href="https://www.gvsu.edu/catalog/course/mth-325.htm" target="_blank">Discrete Structures: Computer Science 2 (MTH 325)</a></li>
-            <li><a href="https://www.gvsu.edu/catalog/course/mth-204.htm" target="_blank">Linear Algebra I (MTH 204)</a></li>
-            <li><a href="https://www.gvsu.edu/catalog/course/mth-205.htm" target="_blank">Linear Algebra II (MTH 205)</a></li>
-          </ul>
-          <p>Science & Interdisciplinary:</p>
-          <ul>
-            <li>AP Physics 1 & 2</li>
-            <li><a href="https://www.gvsu.edu/catalog/course/sta-215.htm" target="_blank">Introductory Applied Statistics (STA 215)</a></li>
-            <li><a href="https://www.gvsu.edu/catalog/course/bio-120.htm" target="_blank">General Biology I (BIO 120)</a></li>
-          </ul>
-          
-        </article>
-      </div> 
+          </div>
+          <div class="slide">
+            <img src="Images\pokemonbattleassistantimage.png">
+            <article>
+              <h3><span style="text-decoration: underline;">Pokemon Battle Assistant</span> (July 2025)</h3>
+              <p>Over the duration of my four week study abroad program in Switzerland, we had to create a project that included machine learning models and image recognition. 
+                My group’s project was to create a pokemon GO battle assistant. 
+                The first part of the project was to scrape data from thousands of simulated pokemon battles, 
+                and create a data model to accurately predict who would win a new battle when given two pokemon. 
+                The second part of the project was to create an image recognition model that could identify any pokemon when given an image of it. 
+                Our group was split evenly between American and Swiss students, along with our work. I worked on the pokemon battle predictor and UI of the program. 
+                Together, we won the prize for best presentation in our class!  
+              </p>
+            </article>
+          </div>
+          <div class="slide">
+            <img src="Images\atomicObject.jpg">
+            <article>
+              <h3><span style="text-decoration: underline;">Atomic Games Hackathon 2026</span> (July 2025)</h3>
+              <p>I worked with a partner for a day to create a bot that could best play the game "Sushi Go", and compete against each other in a bracket-style tournament. 
+                With the help of my teammate Caleb Boerma, our bot made it to the semifinals! 
+                It was really fun connecting with all of the other teams and senior developers at the event too! Special thanks to Atomic Object for hosting the event!
+              </p>
+            </article>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="bottom-cap">
+        <div class="slider-nav">
+        </div>
+      </div>
     </section>
-    <section id="Experience">
-      <h1>Experience</h1>
+
+    <section id="Professional">
+      <div class="top-cap">
+        <p>Professional</p>
+        <div class="project-section-btn" role="button">
+          <div class="button-circle"></div>
+        </div>
+      </div>
+
       <div class="section-content">
-        <article>
-          <h3 style="text-decoration: underline;">AI DevOps Intern (April 2025 - Present)</h3>
-          <p>Rep4FinLit | Grand Rapids, MI</p>
-          <ul>
-            <li>Programs in HTML, CSS, and JS to create a financial literacy quiz and website</li>
-            <li>Collaborates with a large team consisting of multiple departments</li>
-            <li>Tested and debugged versions for improved user experience</li>
-          </ul>
-          <br>
-          <h3 style="text-decoration: underline;">Roblox Developer (Summer 2020 - Present)</h3>
-          <p>Saizen Studios | Grand Rapids, MI</p>
-          <ul>
-            <li>Programmed large codebases using LUA and kept track of version control</li>
-            <li>Created detailed and unique 3D models using Blender software</li>
-            <li>Designed and implemented UI tested for great UX</li>
-          </ul>
-          <br>
-          <h3 style="text-decoration: underline;">Deli Associate (March 2024 - Present)</h3>
-          <p>Forest Hills Foods | Grand Rapids, MI</p>
-          <ul>
-            <li>Leads closing shifts and cleans the workspace</li>
-            <li>Slices meats and cheeses and manages buffet</li>
-            <li>Communicates professionally with customers, coworkers, and management</li>
-          </ul>
-          <br>
-          <h3 style="text-decoration: underline;">Junior Sandwich Artist (December 2022 - Febuary 2024)</h3>
-          <p>Subway | Grand Rapids, MI</p>
-          <ul>
-            <li>Led closing shifts with responsibility for the whole store</li>
-            <li>Prepared sandwiches and other menu items for customers</li>
-            <li>Handled monetary transactions for a multi-billion dollar company</li>
-          </ul>
-        </article>
-      </div> 
+        <div class="slider">
+          <div class="slide">
+            <img src="Images\rep4quiz.png">
+            <article>
+              <h3><span style="text-decoration: underline;">Rep4Finlit Quiz, Website, and AI Budgeting Tool</span> (May 2025 - August 2026)</h3>
+              <p>My first internship was at GVSU’s project grand path, for Rep4FinLit. 
+                My job was to work with a team to create a financial literacy quiz and website that will be used by college students all across the US. 
+                Over the course of the summer, I made great friends with my diverse group of coworkers and gained professional experience as a computer scientist. 
+                Additionally, I learned basic usage of Github.</p>
+                <a href="https://www.rep4finlit.org/">Website Link</a>
+                <br>
+                <a href="https://quiz.rep4finlit.org/">Quiz Link</a>
+            </article>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="bottom-cap">
+        <div class="slider-nav">
+        </div>
+      </div>
     </section>
-    <section id="Leadership">
-      <h1>Leadership</h1>
+
+    <section id="Other">
+      <div class="top-cap">
+        <p>Other</p>
+        <div class="project-section-btn" role="button">
+          <div class="button-circle"></div>
+        </div>
+      </div>
+
       <div class="section-content">
-        <article>
-          <ul>
-            <li>Trumpet Section Leader of the <abbr title="Forest Hills Northern">FHN</abbr> Marching Band</li>
-            <li><abbr title="Grand Valley State University">GVSU</abbr> Computing Club Vice President</li>
-            <li><abbr title="Grand Valley State University">GVSU</abbr> Pokemon Club President</li>
-            <li><abbr title="Grand Valley State University">GVSU</abbr> <abbr title="Society of Hispanic Professional Engineers">SHPE</abbr> Financial Officer</li>
-            <li>3C Peer Mentor at <abbr title="Grand Valley State University">GVSU</abbr></li>
-            <li>Closing Shift Leader at Subway</li>
-            <li>Closing Shift Leader at Forest Hills Foods</li>
-            <li>Group Leader for Vacation Bible School Summer Camp</li>
-          </ul>
-        </article>
-      </div> 
+        <div class="slider">
+          <div class="slide">
+            <img src="Images\webpage-photo.png">
+            <article>
+              <h3><span style="text-decoration: underline;">Personal Webpage</span> (Summer 2025 - Present)</h3>
+              <p>This personal webpage was built from scratch by me. 
+                Before my internship at Rep4FinLit, I needed to refresh my HTML and CSS skills, so I decided to practice by creating something useful. 
+                Throughout the summer, I continued trying out new techniques and learning new features. 
+                Here, all of my professional information can be found, alongside a bit more about me.</p>
+                <a href="https://github.com/Dasnapplel/Dasnapplel.github.io">GitHub Repository</a>
+            </article>
+          </div>
+          <div class="slide">
+            <img src="Images\listothing.png">
+            <article>
+              <h3><span style="text-decoration: underline;">UCanDoList</span> (Fall 2023)</h3>
+              <p>During my senior year in highschool, I was losing track of all of the work that I had. 
+                I needed an easy-to-use app that could prioritize my to-do list, so I decided to create one myself.
+                Additionally, I needed to create a project for my senior english class to show what I'm doing to achieve my goals after highschool.
+                This was my first HTML and CSS project, and I was able to create a simple app that allows users to add and remove tasks in a to-do list. 
+                Unfortunately, my experience was limited at the time, so I was unable to implement any further features.
+              This project helped me improve my skills in app development and user interface design.</p>
+            </article>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bottom-cap">
+        <div class="slider-nav">
+        </div>
+      </div>
     </section>
-    <section id="Awards">
-      <h1>Awards</h1>
-      <div class="section-content">
-        <article>
-          <ul>
-            <li>National Hispanic Recognition Award</li>
-            <li>Michigan Seal of Biliteracy in Spanish</li>
-            <li>MiSpace Hackathon 2025 Winner (<a href="https://mispace.devpost.com/project-gallery">Winners Gallery</a>)</li>
-            <li>John Philip Sousa Award (<a href="https://sousawinners.com/2024.html#:~:text=Diego%20De%20Jong">Sousa Winners 2024</a>)</li>
-            <li>Outstanding Undergraduate Peer Mentorship Award (3C Peer Mentorship)</li>
-            <li>"Most Valuable Player" Award from <abbr title="Forest Hills Northern">FHN</abbr> Band</li>
-            <li>GVSU Award for Excellence Scholarship</li>
-          </ul>
-        </article>
-      </div> 
-    </section>
-    <section id="Resume">
-      <h1>Resume</h1>
-      <div class="section-content">
-          <a class="download-resume-btn" download href="Images\Diego_s_Resume_2026_new.pdf">Download Resume as PDF</a>
-          <img src="Images\Diego_resume_img.jpg" class="resume" id="Digital"/>
-      </div> 
-    </section>
-    <br><br>
-    <footer>
-      <p>© 2026 Diego de Jong | <a href="https://github.com/Dasnapplel">GitHub</a></p>
-    </footer>
+
+    
   </main>
 
   <script src="script.js"></script>
+  <script src="ProjectsJS.js"></script>
 </body>
 </html>

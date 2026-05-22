@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <title>Diego de Jong Portfolio</title> 
+  <link rel="icon" href="Images\DiegoLogoFinal.png" type="image/png">
+</head>
+<style>
+  #Resume .section-content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  .resume {
+    all: revert;
+    width: 90%;
+    height: auto;
+    justify-self: center;
+    align-self: center;
+    border-radius: 10px;
+    object-fit: cover;
+    min-width: 200px;
+    min-height: 266px;
+    border: solid 5px black;
+  }
+  .download-resume-btn {
+    color: var(--primary);
+    background-color: #333;
+    border: 4px solid var(--primary);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 15px;
+    height: 100%;
+    margin-bottom: 20px;
+    width: calc(90% - 28px);
+  }
+  .download-resume-btn:hover {
+    background-color: var(--secondary);
+    color: #333;
+    border: 4px solid var(--secondary);
+  }
+  .experience-section {
+    border-radius: 10px;
+    border: black solid 4px;
+    width: calc(100% - 35px);
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+    animation: fade-in linear;
+    animation-timeline: view(85% 0px);
+  }
+  .experience-section img {
+    float: left;
+    margin-right: 15px;
+    border-radius: 10px;
+    width: 20%;
+    height: auto;
+    aspect-ratio: 1/1;
+    min-width: 0px;
+    min-height: 0px;
+    max-height: 50vh;
+    object-fit: contain;
+    border: none;
+  }
+
+  @media screen and (max-width: 1100px){
+    #first-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @media screen and (max-width: 575px){
+    .experience-section {
+      flex-direction: column;
+    }
+    .experience-section img {
+      width: 65%;
+    }
+  }
+
+  @keyframes fade-in {
+    from {scale: .8; opacity: 0;}
+    to {scale: 1; opacity: 1;}
+  }
+</style>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-specials-container">
+      <div class="light-toggle-btn" role="button">☼</div>
+      <div class="highlight-toggle-btn" role="button"><div class="highlight-corner"></div></div>
+      <div class="sidebar-close" role="button">
+      <span></span>
+        <span></span>
+      </div>
+    </div>
+      
+    <p>Diego de Jong</p>
+    <a href="index.html" role="button">Projects</a>
+    <h2><strong>About Me</strong></h2>
+    <a href="Adventures.html" role="button">Adventures</a>
+    <a href="Links-&-Contact-Info.html" role="button">Links & Contact Info</a>
+  </div>
+
+  <main>
+    <div class="sidebar-open" role="button">
+      <div class="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="portrait-navbar">
+      <div class="portrait-navbar-p1">About Me</div>
+      <div class="portrait-navbar-p2" role="button">Biography ▼</div>
+      <div class="portrait-navbar-menu">
+        <a href="#Biography" role="button" class="active">Biography</a>
+        <a href="#LinkedIn" role="button">LinkedIn</a>
+        <a href="#Skills" role="button">Skills</a>
+        <a href="#Education" role="button">Education</a>
+        <a href="#Experience" role="button">Experience</a>
+        <a href="#Leadership" role="button">Leadership</a>
+        <a href="#Awards" role="button">Awards</a>
+        <a href="#Resume" role="button">Resume</a>
+      </div>
+    </div>
+    
+    <div class="landscape-navbar">
+      <div class="inner-landscape-navbar">
+        <a href="#Biography" role="button" class="active">Bio</a>
+        <a href="#LinkedIn" role="button">LinkedIn</a>
+        <a href="#Skills" role="button">Skills</a>
+        <a href="#Education" role="button">Education</a>
+        <a href="#Experience" role="button">Experience</a>
+        <a href="#Leadership" role="button">Leadership</a>
+        <a href="#Awards" role="button">Awards</a>
+        <a href="#Resume" role="button">Resume</a>
+      </div>
+    </div>
+    
+    <section id="Biography">
+      <h1>Biography</h1>
+      <div class="section-content" id="first-section">
+        <img src="Images/diegowebpfp.jpg" alt="Diego de Jong Portrait" style="width: 250px; border-radius: 15px; margin-right: 20px; margin-bottom: 20px;">
+        <article>
+          <p><strong>Hi, I'm Diego de Jong, and I'm a computer scientist!</strong></p>
+          <p>
+            I'm a 3rd-year undergraduate at Grand Valley State University, and am currently interning with 
+            Rep4FinLit, where I help create their website, financial personality quiz, and AI chatbot using 
+            HTML, CSS, and JavaScript. 
+          </p>
+          <p>
+            On campus, I serve as an EBoard leader for the Computing Club, 
+            Pokémon Club, and Society of Hispanic Professional Engineers, 
+            where I manage funding and help organize events. 
+          </p>
+          <p>
+            My long-term goal is to combine my technical skills and creativity to build engaging video games. 
+            In the meantime, I’m focused on growing as a developer through both professional opportunities and community involvement.
+          </p>
+        </article>
+      </div> 
+    </section>
+    <section id="LinkedIn">
+      <h1>LinkedIn</h1>
+      <div class="frame-container">
+        <iframe 
+          src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7459776581297725440?collapsed=1" 
+          allowfullscreen 
+          title="LinkedIn Embedded Post"
+          onerror="this.style.display='none';document.getElementById('linkedin-fallback-link').style.display='block';">
+        </iframe>
+      </div>
+    </section>
+    <section id="Skills">
+      <h1>Skills</h1>
+      <div class="section-content">
+        <article>
+          <ul>
+            <li>Python, Lua, HTML, CSS, JavaScript, C, C++, C#, SQL, Bash</li>
+            <li>GitHub and Git Version Control</li>
+            <li>Spanish (Fluent; MI Seal of Biliteracy)</li>
+            <li>Dutch (Intermediate)</li>
+            <li>Japanese (Basic; JLPT N5)</li>
+            <li>Roblox Studio</li>
+            <li>Unity</li>
+            <li>3D Digital Modeling (Blender, Rhinocerous 3D, OnShape CAD)</li>
+            <li>Trumpet, Piano</li>
+            <li>Music Composition (FL Studio)</li>
+            <li>Google Drive and Microsoft 365 Softwares</li>
+            <li>Youtube & Video Editing</li>
+            <li>Problem Solving and Critical Thinking</li>
+          </ul>
+        </article>
+      </div> 
+    </section>
+    <section id="Education">
+      <h1>Education</h1>
+      <div class="section-content">
+        <article>
+          <h3 style="text-decoration: underline;">Grand Valley State University (2024-2028)</h3>
+          <p><strong>Bachelor of Science in Computer Science</strong>, Minors in Mathematics and Cybersecurity</p>
+          <p><strong>GPA: 3.67</strong>, Dean's List 4 Semesters</p>
+          <ul>
+            <li>Switzerland Study Abroad (July 2025)</li>
+            <li>Computing Club</li>
+            <li>Pokemon Club</li>
+            <li>Society of Hispanic Professional Engineers</li>
+            <li>Cross Country/Track Club</li>
+            <li><abbr title="Grand Valley State University">GVSU</abbr> Pep Band Programs</li>
+            <li>3C Peer Mentor Program</li>
+            
+          </ul>
+          <br>
+          <h3 style="text-decoration: underline;">Forest Hills Northern Highschool (2020-2024)</h3>
+          <ul>
+            <li>STEM Program</li>
+            <li>Spanish Immersion Program</li>
+            <li><abbr title="Forest Hills Northern">FHN</abbr> Band Programs</li>
+            <li>National Honor Society 2022-2024</li>
+            <li><abbr title="Forest Hills Northern">FHN</abbr> Computing Club</li>
+            <li><abbr title="Forest Hills Northern">FHN</abbr> Cross Country/Track Programs</li>
+          </ul>
+          <br>
+          <h3>Relevent Courses</h3>
+          <p>Computer Science:</p>
+          <ul>     
+            <li><a href="https://www.gvsu.edu/catalog/course/cis-162.htm" target="_blank">Computer Science I (CIS 162)</a></li>
+            <li><a href="https://www.gvsu.edu/catalog/course/cis-163.htm" target="_blank">Computer Science II (CIS 163)</a></li>
+            <li><a href="https://www.gvsu.edu/catalog/course/cis-241.htm" target="_blank">System-Level Programming &amp; Utilities (CIS 241)</a></li>
+            <li><a href="https://www.gvsu.edu/catalog/course/cis-263.htm" target="_blank">Data Structures and Algorithms (CIS 263)</a></li>
+            <li><a href="https://www.gvsu.edu/catalog/course/cis-290.htm" target="_blank">Professional Responsibilities (CIS 290)</a></li>
+            <li><a href="https://www.gvsu.edu/catalog/course/cis-380.htm" target="_blank">Machine Learning and Neural Networks - Switzerland Study Abroad (CIS 380)</a></li>
+            <li><a href="https://www.gvsu.edu/catalog/course/cis-353.htm" target="_blank">Database (CIS 353)</a></li>
+            <li><a href="https://www.gvsu.edu/catalog/course/cis-351.htm" target="_blank">Computer Organization (CIS 351)</a></li>
+            <li><a href="https://www.gvsu.edu/catalog/course/cis-376.htm" target="_blank">Game Programming Techniques and Algorithms (CIS 376)</a></li>
+          </ul>
+          <p>Mathematics:</p>
+          <ul>
+            <li>AP Calculus BC</li>
+            <li><a href="https://www.gvsu.edu/catalog/course/mth-225.htm" target="_blank">Discrete Structures: Computer Science 1 (MTH 225)</a></li>
+            <li><a href="https://www.gvsu.edu/catalog/course/mth-325.htm" target="_blank">Discrete Structures: Computer Science 2 (MTH 325)</a></li>
+            <li><a href="https://www.gvsu.edu/catalog/course/mth-204.htm" target="_blank">Linear Algebra I (MTH 204)</a></li>
+            <li><a href="https://www.gvsu.edu/catalog/course/mth-205.htm" target="_blank">Linear Algebra II (MTH 205)</a></li>
+          </ul>
+          <p>Science & Interdisciplinary:</p>
+          <ul>
+            <li>AP Physics 1 & 2</li>
+            <li><a href="https://www.gvsu.edu/catalog/course/sta-215.htm" target="_blank">Introductory Applied Statistics (STA 215)</a></li>
+            <li><a href="https://www.gvsu.edu/catalog/course/bio-120.htm" target="_blank">General Biology I (BIO 120)</a></li>
+          </ul>
+          
+        </article>
+      </div> 
+    </section>
+    <section id="Experience">
+      <h1>Experience</h1>
+      <div class="section-content" style="display: flex; flex-direction: column">
+        <div class="experience-section">
+          <img src="Images/rep4finlitlogo.png">
+          <article>
+            <h3 style="text-decoration: underline;">AI DevOps Intern (April 2025 - Present)</h3>
+          <p>Rep4FinLit | Grand Rapids, MI</p>
+          <ul>
+            <li>Programs in HTML, CSS, and JS to create a financial literacy quiz and website</li>
+            <li>Collaborates with a large team consisting of multiple departments</li>
+            <li>Tested and debugged versions for improved user experience</li>
+          </ul>
+          </article>
+        </div>
+
+        <div class="experience-section">
+          <img src="Images/Roblox_Studio_logo_-_2022.svg.png">
+          <article>
+            <h3 style="text-decoration: underline;">Roblox Developer (Summer 2020 - Present)</h3>
+          <p>Saizen Studios | Grand Rapids, MI</p>
+          <ul>
+            <li>Programmed large codebases using LUA and kept track of version control</li>
+            <li>Created detailed and unique 3D models using Blender software</li>
+            <li>Designed and implemented UI tested for great UX</li>
+          </ul>
+          </article>
+        </div>
+
+        <div class="experience-section">
+          <img src="Images/fhfoodslogo.jpg">
+          <article>
+            <h3 style="text-decoration: underline;">Deli Associate (March 2024 - Present)</h3>
+          <p>Forest Hills Foods | Grand Rapids, MI</p>
+          <ul>
+            <li>Leads closing shifts and cleans the workspace</li>
+            <li>Slices meats and cheeses and manages buffet</li>
+            <li>Communicates professionally with customers, coworkers, and management</li>
+          </ul>
+          </article>
+        </div>
+
+        <div class="experience-section">
+          <img src="Images/Subway Choicemark_thumbnail.png">
+          <article>
+            <h3 style="text-decoration: underline;">Junior Sandwich Artist (December 2022 - Febuary 2024)</h3>
+          <p>Subway | Grand Rapids, MI</p>
+          <ul>
+            <li>Led closing shifts with responsibility for the whole store</li>
+            <li>Prepared sandwiches and other menu items for customers</li>
+            <li>Handled monetary transactions for a multi-billion dollar company</li>
+          </ul>
+          </article>
+        </div>
+      </div> 
+    </section>
+    <section id="Leadership">
+      <h1>Leadership</h1>
+      <div class="section-content">
+        <article>
+          <ul>
+            <li>Trumpet Section Leader of the <abbr title="Forest Hills Northern">FHN</abbr> Marching Band</li>
+            <li><abbr title="Grand Valley State University">GVSU</abbr> Computing Club Vice President</li>
+            <li><abbr title="Grand Valley State University">GVSU</abbr> Pokemon Club President</li>
+            <li><abbr title="Grand Valley State University">GVSU</abbr> <abbr title="Society of Hispanic Professional Engineers">SHPE</abbr> Financial Officer</li>
+            <li>3C Peer Mentor at <abbr title="Grand Valley State University">GVSU</abbr></li>
+            <li>Closing Shift Leader at Subway</li>
+            <li>Closing Shift Leader at Forest Hills Foods</li>
+            <li>Group Leader for Vacation Bible School Summer Camp</li>
+          </ul>
+        </article>
+      </div> 
+    </section>
+    <section id="Awards">
+      <h1>Awards</h1>
+      <div class="section-content">
+        <article>
+          <ul>
+            <li>National Hispanic Recognition Award</li>
+            <li>Michigan Seal of Biliteracy in Spanish</li>
+            <li>MiSpace Hackathon 2025 Winner (<a href="https://mispace.devpost.com/project-gallery">Winners Gallery</a>)</li>
+            <li>John Philip Sousa Award (<a href="https://sousawinners.com/2024.html#:~:text=Diego%20De%20Jong">Sousa Winners 2024</a>)</li>
+            <li>Outstanding Undergraduate Peer Mentorship Award (3C Peer Mentorship)</li>
+            <li>"Most Valuable Player" Award from <abbr title="Forest Hills Northern">FHN</abbr> Band</li>
+            <li>GVSU Award for Excellence Scholarship</li>
+          </ul>
+        </article>
+      </div> 
+    </section>
+    <section id="Resume">
+      <h1>Resume</h1>
+      <div class="section-content">
+          <a class="download-resume-btn" download href="Images\Diego_s_Resume_2026_new.pdf">Download Resume as PDF</a>
+          <img src="Images\Diego_resume_img.jpg" class="resume" id="Digital"/>
+      </div> 
+    </section>
+    <br><br>
+    <footer>
+      <p>© 2026 Diego de Jong | <a href="https://github.com/Dasnapplel">GitHub</a></p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -42,10 +42,16 @@ lightToggleBtn.addEventListener('click', () => {
 
 // Color Theme Toggle
 let colors = [
-    ['rgb(230, 240, 10)','rgb(225, 10, 240)'],
-    ['rgb(40, 200, 10)','rgb(255, 0, 190)'],
-    ['rgb(5, 240, 5)', 'rgb(230, 5, 5)'],
-    ['rgb(0, 210, 210)', 'rgb(255, 165, 0)']
+    ['rgb(0, 106, 255)','rgb(255, 135, 0)','blue'],
+    ['rgb(225, 10, 240)','rgb(230, 240, 10)','purple'],
+    ['rgb(255, 0, 190)','rgb(40, 200, 10)','pink'],
+    ['rgb(255, 50, 50)','rgb(5, 240, 5)','red'],
+    ['rgb(255, 135, 0)','rgb(0, 106, 255)','orange'],
+    ['rgb(255, 165, 0)','rgb(0, 210, 210)','orange'],
+    ['rgb(230, 240, 10)','rgb(225, 10, 240)','yellow'],
+    ['rgb(40, 200, 10)','rgb(255, 0, 190)','green'],
+    ['rgb(5, 240, 5)','rgb(255, 50, 50)','green'],
+    ['rgb(0, 210, 210)','rgb(255, 165, 0)','blue']
 ]
 
 const primaryColor = document.querySelector('.highlight-toggle-btn');
@@ -55,6 +61,7 @@ let count = 0;
 highlightToggleBtn.addEventListener('click', () => {
     document.documentElement.style.setProperty('--primary', colors[count][0]);
     document.documentElement.style.setProperty('--secondary', colors[count][1]);
+    document.documentElement.style.setProperty('--third', colors[count][2]);
     count = (count + 1) % colors.length;
     
     // For completely random colors lmao
@@ -147,48 +154,4 @@ portraitNavmenuOpen.addEventListener('click', () => {
     //     let child = portraitNavMenu.children[i]
     //     child.classList.toggle('active');
     // }
-});
-
-
-// Projects Page Slide Buttons
-sections.forEach(content => {
-    let title = content.querySelector('h1');
-    let leftBtn = content.querySelector('.left-btn');
-    let rightBtn = content.querySelector('.right-btn');
-    let slides = content.querySelector('.slides-container').children;
-    let currentSlide = 0;
-    let debounce = false;
-
-    leftBtn.addEventListener('click', () => {
-        if (debounce) return;
-        debounce = true;
-
-        slides[currentSlide].style.animation = 'fadeout 0.25s forwards';
-        slides[(currentSlide - 1 + slides.length) % slides.length].style.animation = 'fadein 0.125s';
-
-        setTimeout(() => {
-            slides[currentSlide].style.display = 'none';
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            slides[currentSlide].style.display = 'flex';
-            const text = title.textContent.trim().slice(0, -3);
-            title.textContent = text + `${currentSlide + 1}/${slides.length}`;
-            debounce = false;
-        }, 250); // time in ms
-    });
-    rightBtn.addEventListener('click', () => {
-        if (debounce) return;
-        debounce = true;
-
-        slides[currentSlide].style.animation = 'fadeout 0.25s forwards';
-        slides[(currentSlide + 1 + slides.length) % slides.length].style.animation = 'fadein 0.125s';
-
-        setTimeout(() => {
-            slides[currentSlide].style.display = 'none';
-            currentSlide = (currentSlide + 1 + slides.length) % slides.length;
-            slides[currentSlide].style.display = 'flex';
-            const text = title.textContent.trim().slice(0, -3);
-            title.textContent = text + `${currentSlide + 1}/${slides.length}`;
-            debounce = false;
-        }, 250); // time in ms
-    });
 });
