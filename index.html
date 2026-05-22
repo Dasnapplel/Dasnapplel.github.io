@@ -21,9 +21,13 @@
     margin-bottom: 15px;
     background-color: #fff;
   }
-  section.dark-mode .slides-container, section.dark-mode .slide, section.dark-mode .section-content, section.dark-mode article {
+  section.dark-mode .slides-container, section.dark-mode .slide, section.dark-mode .section-content {
     background-color: #333;
     color:#fff;
+  }
+  section.dark-mode .slide-content {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
   }
   section img {
     object-fit: none;
@@ -48,8 +52,6 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
   }
-
-
 </style>
 <body>
 
@@ -124,7 +126,6 @@
       <div class="section-content">
 
         <div class="slider">
-
           <div class="slide">   
             <video src="Images/swordfightshenanigansDemoVideo.mp4" autoplay muted loop playsinline></video>
             <div class="slide-content">
@@ -144,7 +145,6 @@
               </article>
             </div>
           </div>
-
           <div class="slide">
             <video src="Images/overdriveThumbnailsVideo.mp4" autoplay muted loop playsinline></video>
             <div class="slide-content">
@@ -218,28 +218,32 @@
             
           </div>
           <div class="slide">
-            <img src="Images\pokemonbattleassistantimage.png">
-            <article>
-              <h3><span style="text-decoration: underline;">Pokemon Battle Assistant</span> (July 2025)</h3>
-              <p>Over the duration of my four week study abroad program in Switzerland, we had to create a project that included machine learning models and image recognition. 
-                My group’s project was to create a pokemon GO battle assistant. 
-                The first part of the project was to scrape data from thousands of simulated pokemon battles, 
-                and create a data model to accurately predict who would win a new battle when given two pokemon. 
-                The second part of the project was to create an image recognition model that could identify any pokemon when given an image of it. 
-                Our group was split evenly between American and Swiss students, along with our work. I worked on the pokemon battle predictor and UI of the program. 
-                Together, we won the prize for best presentation in our class!  
-              </p>
-            </article>
+            <div class="slide-content">
+               <img src="Images\pokemonbattleassistantimage.png">
+              <article>
+                <h3><span style="text-decoration: underline;">Pokemon Battle Assistant</span> (July 2025)</h3>
+                <p>Over the duration of my four week study abroad program in Switzerland, we had to create a project that included machine learning models and image recognition. 
+                  My group’s project was to create a pokemon GO battle assistant. 
+                  The first part of the project was to scrape data from thousands of simulated pokemon battles, 
+                  and create a data model to accurately predict who would win a new battle when given two pokemon. 
+                  The second part of the project was to create an image recognition model that could identify any pokemon when given an image of it. 
+                  Our group was split evenly between American and Swiss students, along with our work. I worked on the pokemon battle predictor and UI of the program. 
+                  Together, we won the prize for best presentation in our class!  
+                </p>
+              </article>
+            </div>
           </div>
           <div class="slide">
-            <img src="Images\atomicObject.jpg">
-            <article>
-              <h3><span style="text-decoration: underline;">Atomic Games Hackathon 2026</span> (July 2025)</h3>
-              <p>I worked with a partner for a day to create a bot that could best play the game "Sushi Go", and compete against each other in a bracket-style tournament. 
-                With the help of my teammate Caleb Boerma, our bot made it to the semifinals! 
-                It was really fun connecting with all of the other teams and senior developers at the event too! Special thanks to Atomic Object for hosting the event!
-              </p>
-            </article>
+            <div class="slide-content">
+              <img src="Images\atomicObject.jpg">
+              <article>
+                <h3><span style="text-decoration: underline;">Atomic Games Hackathon 2026</span> (July 2025)</h3>
+                <p>I worked with a partner for a day to create a bot that could best play the game "Sushi Go", and compete against each other in a bracket-style tournament. 
+                  With the help of my teammate Caleb Boerma, our bot made it to the semifinals! 
+                  It was really fun connecting with all of the other teams and senior developers at the event too! Special thanks to Atomic Object for hosting the event!
+                </p>
+              </article>
+            </div>
           </div>
         </div>
         
@@ -262,17 +266,20 @@
       <div class="section-content">
         <div class="slider">
           <div class="slide">
-            <img src="Images\rep4quiz.png">
-            <article>
-              <h3><span style="text-decoration: underline;">Rep4Finlit Quiz, Website, and AI Budgeting Tool</span> (May 2025 - August 2026)</h3>
-              <p>My first internship was at GVSU’s project grand path, for Rep4FinLit. 
-                My job was to work with a team to create a financial literacy quiz and website that will be used by college students all across the US. 
-                Over the course of the summer, I made great friends with my diverse group of coworkers and gained professional experience as a computer scientist. 
-                Additionally, I learned basic usage of Github.</p>
-                <a href="https://www.rep4finlit.org/">Website Link</a>
-                <br>
-                <a href="https://quiz.rep4finlit.org/">Quiz Link</a>
-            </article>
+            <video src="Images/FinlitQuizDemo.mp4" autoplay muted loop playsinline></video>
+            <div class="slide-content">
+              <img src="Images\rep4quiz.png">
+              <article>
+                <h3><span style="text-decoration: underline;">Rep4Finlit Quiz, Website, and AI Budgeting Tool</span> (May 2025 - August 2026)</h3>
+                <p>My first internship was at GVSU’s project grand path, for Rep4FinLit. 
+                  My job was to work with a team to create a financial literacy quiz and website that will be used by college students all across the US. 
+                  Over the course of the summer, I made great friends with my diverse group of coworkers and gained professional experience as a computer scientist. 
+                  Additionally, I learned basic usage of Github.</p>
+                  <a href="https://www.rep4finlit.org/">Website Link</a>
+                  <br>
+                  <a href="https://quiz.rep4finlit.org/">Quiz Link</a>
+              </article>
+            </div>
           </div>
         </div>
         
@@ -295,30 +302,34 @@
       <div class="section-content">
         <div class="slider">
           <div class="slide">
-            <img src="Images\webpage-photo.png">
-            <article>
-              <h3><span style="text-decoration: underline;">Personal Webpage</span> (Summer 2025 - Present)</h3>
-              <p>This personal webpage was built from scratch by me. 
-                Before my internship at Rep4FinLit, I needed to refresh my HTML and CSS skills, so I decided to practice by creating something useful. 
-                Throughout the summer, I continued trying out new techniques and learning new features. 
-                Here, all of my professional information can be found, alongside a bit more about me.</p>
-                <a href="https://github.com/Dasnapplel/Dasnapplel.github.io">GitHub Repository</a>
-            </article>
+            <img class="slide-background-image" src="Images/DiegoWebsitePhoto.png">
+            <div class="slide-content">
+              <img src="Images\webpage-photo.png">
+              <article>
+                <h3><span style="text-decoration: underline;">Personal Webpage</span> (Summer 2025 - Present)</h3>
+                <p>This personal webpage was built from scratch by me. 
+                  Before my internship at Rep4FinLit, I needed to refresh my HTML and CSS skills, so I decided to practice by creating something useful. 
+                  Throughout the summer, I continued trying out new techniques and learning new features. 
+                  Here, all of my professional information can be found, alongside a bit more about me.</p>
+                  <a href="https://github.com/Dasnapplel/Dasnapplel.github.io">GitHub Repository</a>
+              </article>
+            </div>
           </div>
           <div class="slide">
-            <img src="Images\listothing.png">
-            <article>
-              <h3><span style="text-decoration: underline;">UCanDoList</span> (Fall 2023)</h3>
-              <p>During my senior year in highschool, I was losing track of all of the work that I had. 
-                I needed an easy-to-use app that could prioritize my to-do list, so I decided to create one myself.
-                Additionally, I needed to create a project for my senior english class to show what I'm doing to achieve my goals after highschool.
-                This was my first HTML and CSS project, and I was able to create a simple app that allows users to add and remove tasks in a to-do list. 
-                Unfortunately, my experience was limited at the time, so I was unable to implement any further features.
-              This project helped me improve my skills in app development and user interface design.</p>
-            </article>
+            <div class="slide-content">
+               <img src="Images\listothing.png">
+              <article>
+                <h3><span style="text-decoration: underline;">UCanDoList</span> (Fall 2023)</h3>
+                <p>During my senior year in highschool, I was losing track of all of the work that I had. 
+                  I needed an easy-to-use app that could prioritize my to-do list, so I decided to create one myself.
+                  Additionally, I needed to create a project for my senior english class to show what I'm doing to achieve my goals after highschool.
+                  This was my first HTML and CSS project, and I was able to create a simple app that allows users to add and remove tasks in a to-do list. 
+                  Unfortunately, my experience was limited at the time, so I was unable to implement any further features.
+                This project helped me improve my skills in app development and user interface design.</p>
+              </article>
+            </div>
           </div>
         </div>
-
       </div>
 
       <div class="bottom-cap">
