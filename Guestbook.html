@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <title>Diego de Jong Portfolio</title> 
+  <link rel="icon" href="Images\DiegoLogoFinal.png" type="image/png">
+</head>
+<style>
+  section.dark-mode input {
+    background-color: #333;
+    color:#fff;
+  }
+  input {
+    width: 50vw;
+  }
+  .comment-page {
+    gap: 15px;
+    grid-template-columns: auto auto;
+    display: none;
+  }
+  .comment-page:nth-child(1) {
+    display: grid;
+  }
+  .comment {
+    height: auto;
+    width: 100%;
+    outline: var(--primary) solid 2px;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  .comment:hover {
+    outline: var(--secondary) solid 4px;
+  }
+
+  .username {
+    font-weight: bolder;
+  }
+  @media screen and (max-width: 700px){
+    .comment-page {
+      grid-template-columns: auto;
+    }
+  }
+
+  .submitBtn {
+    color: black;
+    background-color: var(--primary);
+    padding: 10px;
+    border: 2px black solid;
+    border-radius: 10px;
+  }
+  .submitBtn:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+  }
+
+  .page-btns {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    gap: 10px;
+    justify-self: center;
+  }
+  .page-btns button {
+    color: black;
+    background-color: var(--primary);
+    padding: 10px;
+    border: 2px black solid;
+    border-radius: 10px;
+  }
+  .page-btns button:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+  }
+</style>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-specials-container">
+      <div class="light-toggle-btn" role="button">☼</div>
+      <div class="highlight-toggle-btn" role="button"><div class="highlight-corner"></div></div>
+      <div class="sidebar-close" role="button">
+      <span></span>
+        <span></span>
+      </div>
+    </div>
+      
+    <p>Diego de Jong</p>
+    <a href="index.html" role="button">Projects</a>
+    <a href="AboutMe.html" role="button">About Me</a>
+    <a href="Adventures.html" role="button">Adventures</a>
+    <a href="Links-&-Contact-Info.html" role="button">Links & Contact Info</a>
+    <h2><strong>Guestbook</strong></h2>
+  </div>
+
+  <main>
+    <div class="sidebar-open" role="button">
+      <div class="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="portrait-navbar">
+      <div class="portrait-navbar-p1">Guestbook</div>
+      <div class="portrait-navbar-p2" role="button">Comment ▼</div>
+      <div class="portrait-navbar-menu">
+        <a href="#Comment" role="button" class="active">Comment</a>
+        <a href="#Messages" role="button" class="active">Messages</a>
+      </div>
+    </div>
+    
+    <div class="landscape-navbar">
+      <div class="inner-landscape-navbar">
+        <a href="#Comment" role="button" class="active">Comment</a>
+        <a href="#Messages" role="button" class="active">Messages</a>
+      </div>
+    </div>
+    
+    <section id="Comment">
+      <h1>Leave a message!</h1>
+      <div class="section-content">
+        <p class="nameP">Name*</p>
+        <input placeholder="Your name" class="nameInput">
+        <p class="messageP">Message*</p>
+        <input placeholder="Say something..." class="messageInput">
+        <br><br>
+        <button class="submitBtn">Submit</button>
+      </div> 
+    </section>
+
+    <section id="Messages">
+      <h1>Messages</h1>
+      <div class="comment-section">
+      
+      </div>
+      <div class="page-btns">
+        <button class="prevBtn">prev</button>
+        <p class="message-page-num">1/x</p>
+        <button class="nextBtn">next</button>
+      </div>
+      
+    </section>
+   
+    <br><br>
+    <footer>
+      <p>© 2026 Diego de Jong | <a href="https://github.com/Dasnapplel">GitHub</a> | Guestbook made using <a href="https://turso.tech/">Turso</a></p>
+    </footer>
+  </main>
+
+  <script src="JS/script.js"></script>
+  <script src="JS/GuestbookJS.js" type="module"></script>
+</body>
+</html>

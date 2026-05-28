@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@tursodatabase/database": "^0.6.1",
+    "allprofanity": "^2.2.1"
+  }
+}
