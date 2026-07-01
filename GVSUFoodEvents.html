@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <title>Diego de Jong Portfolio</title> 
+  <link rel="icon" href="Images\DiegoLogoFinal.png" type="image/png">
+  <style>
+    .event {
+        width: 100%;
+        border-radius: 10px;
+        outline: var(--primary) solid 2px;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+    .events-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0px 15px;
+        padding: 10px;
+    }
+    th {
+        border: 2px solid var(--secondary);
+        font-size: 1.5rem;
+    }
+    td {
+        font-size: 1rem;
+    }
+
+    @media screen and (max-width: 750px){
+        
+        tr {
+            display: block;
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+        }
+        td, th {
+            display: block;
+        }
+        th {
+            border: none;
+        }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="sidebar-specials-container">
+      <div class="light-toggle-btn" role="button">☼</div>
+      <div class="highlight-toggle-btn" role="button"><div class="highlight-corner"></div></div>
+      <div class="sidebar-close" role="button">
+      <span></span>
+        <span></span>
+      </div>
+    </div>
+    
+    <p>Diego de Jong</p>
+    <a href="index.html" role="button">Projects</a>
+    <a href="AboutMe.html" role="button">About Me</a>
+    <a href="Adventures.html" role="button">Adventures</a>
+    <a href="Links-&-Contact-Info.html" role="button">Links & Contact Info</a>
+    <a href="Guestbook.html" role="button">Guestbook</a>
+    <h2><strong>GV Food Events</strong></h2>
+  </div>
+
+  <main>
+    <div class="sidebar-open" role="button">
+      <div class="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    
+    <div class="portrait-navbar">
+      <div class="portrait-navbar-p1">Events</div>
+      <div class="portrait-navbar-p2">Free Food</div>
+    </div>
+    
+    <div class="landscape-navbar">
+      <div class="inner-landscape-navbar">
+          
+      </div>
+    </div>
+    
+    <section id="biography">
+      <h1>Find events at GVSU with free food!</h1>
+        <table class="events-table">
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Keywords</th>
+            </tr>
+        </table>
+    </section>
+    <br><br>
+    <footer>
+      <p>© 2026 Diego de Jong | <a href="https://github.com/Dasnapplel">GitHub</a></p>
+    </footer>
+  </main>
+
+  <script src="JS/script.js"></script>
+  <script src="JS/XMLReaderJS.js"></script>
+</body>
+</html>

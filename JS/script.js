@@ -42,17 +42,17 @@ lightToggleBtn.addEventListener('click', () => {
 
 // Color Theme Toggle
 let colors = [
-    ['rgb(0, 106, 255)','rgb(255, 135, 0)','blue'],
-    ['rgb(225, 10, 240)','rgb(230, 240, 10)','purple'],
-    ['rgb(255, 0, 190)','rgb(40, 200, 10)','pink'],
-    ['rgb(255, 50, 50)','rgb(5, 240, 5)','red'],
-    ['rgb(255, 135, 0)','rgb(0, 106, 255)','orange'],
-    ['rgb(255, 165, 0)','rgb(0, 210, 210)','orange'],
-    ['rgb(230, 240, 10)','rgb(225, 10, 240)','yellow'],
-    ['rgb(40, 200, 10)','rgb(255, 0, 190)','green'],
-    ['rgb(5, 240, 5)','rgb(255, 50, 50)','green'],
-    ['rgb(0, 210, 210)','rgb(255, 165, 0)','blue']
-]
+    ['rgb(0, 75, 225)','rgb(225, 105, 0)','blue'],
+    ['rgb(195, 0, 210)','rgb(200, 210, 0)','purple'],
+    ['rgb(225, 0, 160)','rgb(10, 170, 0)','pink'],
+    ['rgb(225, 20, 20)','rgb(0, 210, 0)','red'],
+    ['rgb(225, 105, 0)','rgb(0, 75, 225)','orange'],
+    ['rgb(225, 135, 0)','rgb(0, 180, 180)','orange'],
+    ['rgb(200, 210, 0)','rgb(195, 0, 210)','yellow'],
+    ['rgb(10, 170, 0)','rgb(225, 0, 160)','green'],
+    ['rgb(0, 210, 0)','rgb(225, 20, 20)','green'],
+    ['rgb(0, 180, 180)','rgb(225, 135, 0)','blue']
+];
 
 const primaryColor = document.querySelector('.highlight-toggle-btn');
 const secondaryColor = document.querySelector('.highlight-toggle-btn');
