@@ -88,13 +88,13 @@ const table = document.querySelector('.events-table');
     currEvent.innerHTML += `<td>Try using mobile data</td>`;
     table.appendChild(currEvent);
   }
+  console.log(table.childElementCount);
+  if (table.childElementCount == 1) {
+    const currEvent = document.createElement('tr');
+    currEvent.innerHTML += `<td>No Food Events</td>`;
+    currEvent.innerHTML += `<td>Rip</td>`;
+    currEvent.innerHTML += `<td>Check tomorrow</td>`;
+    table.appendChild(currEvent);
+  }
 })();
 
-console.log(table.childElementCount);
-if (table.childElementCount == 1) {
-  const currEvent = document.createElement('tr');
-  currEvent.innerHTML += `<td>No Food Events</td>`;
-  currEvent.innerHTML += `<td>Rip</td>`;
-  currEvent.innerHTML += `<td>Check tomorrow</td>`;
-  table.appendChild(currEvent);
-}

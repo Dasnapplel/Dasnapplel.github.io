@@ -8,6 +8,7 @@ const sideBarOpen = document.querySelector('.sidebar-open');
 const sideBar = document.querySelector('.sidebar');
 const sideBarClose = document.querySelector('.sidebar-close');
 const pageChangeButtons = document.querySelectorAll('.sidebar a');
+const currPageButton = document.querySelector('h2');
 const main = document.querySelector('main');
 
 const portraitNavmenuOpen = document.querySelector('.portrait-navbar-p2')
@@ -15,6 +16,27 @@ const portraitNavmenuOpen = document.querySelector('.portrait-navbar-p2')
 const lightToggleBtn = document.querySelector('.light-toggle-btn');
 
 const highlightToggleBtn = document.querySelector('.highlight-toggle-btn');
+
+
+// Page enter/change animation
+addEventListener("load", (event) => { 
+    main.style.opacity = 1;
+    currPageButton.classList.toggle('active');
+})
+pageChangeButtons.forEach(button => {
+    button.addEventListener('click', e => {
+        e.preventDefault();
+        const target = button.href;
+        sideBar.classList.remove('active');
+        main.style.opacity = 0;
+        currPageButton.classList.toggle('active');
+
+        setTimeout(() => {
+            window.location.href = target;
+        }, 250); // Must match CSS transition duration
+  
+    });
+});
 
 // Dark Mode Toggle
 const enterState = localStorage.getItem('DarkMode') === 'true';
@@ -42,16 +64,12 @@ lightToggleBtn.addEventListener('click', () => {
 
 // Color Theme Toggle
 let colors = [
-    ['rgb(0, 75, 225)','rgb(225, 105, 0)','blue'],
-    ['rgb(195, 0, 210)','rgb(200, 210, 0)','purple'],
-    ['rgb(225, 0, 160)','rgb(10, 170, 0)','pink'],
-    ['rgb(225, 20, 20)','rgb(0, 210, 0)','red'],
-    ['rgb(225, 105, 0)','rgb(0, 75, 225)','orange'],
-    ['rgb(225, 135, 0)','rgb(0, 180, 180)','orange'],
-    ['rgb(200, 210, 0)','rgb(195, 0, 210)','yellow'],
-    ['rgb(10, 170, 0)','rgb(225, 0, 160)','green'],
-    ['rgb(0, 210, 0)','rgb(225, 20, 20)','green'],
-    ['rgb(0, 180, 180)','rgb(225, 135, 0)','blue']
+    ['rgb(255, 130, 255)','rgb(225, 225, 0)','purple', 'black'],
+    ['rgb(255, 100, 100)','rgb(0, 210, 0)','red', 'black'],
+    ['rgb(255, 180, 0)','rgb(0, 215, 215)','orange', 'black'],
+    ['rgb(225, 225, 0)','rgb(255, 130, 255)','yellow', 'black'],
+    ['rgb(0, 210, 0)','rgb(255, 100, 100)','green', 'black'],
+    ['rgb(0, 215, 215)','rgb(255, 180, 0)','blue', 'black']
 ];
 
 const primaryColor = document.querySelector('.highlight-toggle-btn');
@@ -62,6 +80,7 @@ highlightToggleBtn.addEventListener('click', () => {
     document.documentElement.style.setProperty('--primary', colors[count][0]);
     document.documentElement.style.setProperty('--secondary', colors[count][1]);
     document.documentElement.style.setProperty('--third', colors[count][2]);
+    document.documentElement.style.setProperty('--fourth', colors[count][3]);
     count = (count + 1) % colors.length;
     
     // For completely random colors lmao
@@ -76,21 +95,7 @@ highlightToggleBtn.addEventListener('click', () => {
 });
 
 
-// Side Bar Page Change Animation
-main.style.opacity = 1;
-pageChangeButtons.forEach(button => {
-    button.addEventListener('click', e => {
-        e.preventDefault();
-        const target = button.href;
-        sideBar.classList.remove('active');
-        main.style.opacity = 0;
 
-        setTimeout(() => {
-            window.location.href = target;
-        }, 250); // Must match CSS transition duration
-  
-    });
-});
 
 
 // Sidebar Open and Close

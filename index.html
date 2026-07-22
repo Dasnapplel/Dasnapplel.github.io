@@ -25,6 +25,9 @@
     background-color: #333;
     color:#fff;
   }
+  section.dark-mode a {
+    color: var(--fourth);
+}
   section.dark-mode .slide-content {
     background-color: rgba(0, 0, 0, 0.75);
     color: #fff;
@@ -37,21 +40,171 @@
     object-fit: contain;
   }
   section.active .section-content {
-    max-height: 60dvh;
+    max-height: 67.5dvh;
   }
   section.active .button-circle {
     background-color: #fff;
   }
   section.active .slider {
-    padding-top: 5dvh;
+    padding-top: 0dvh;
   }
   section.active .slider-nav {
     display: flex;
   }
   section ::-webkit-scrollbar-track {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
   }
+
+  h1 {
+    height: 7.5dvh;
+    min-height: 50px;
+    align-content: center;
+    cursor: pointer;
+    color: var(--primary);
+  }
+  h1:hover {
+    color: var(--secondary);
+  }
+  h1.active {
+    color: var(--secondary)
+  }
+
+  .slide video {
+    top: -5dvh;
+    left: 0;
+    width: auto;
+    height: auto;
+    max-height: 55dvh;
+    max-width: 100%;
+    object-fit: cover;  /* fills the slide, crops edges */
+    z-index: 0;
+    border: black 4px solid;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+    background-color: #333;
+    object-fit: fill;
+  }
+  .slide-background-image {
+    position: absolute;
+    top: -5dvh;
+    left: 0;
+    width: 100%;
+    height: 60dvh;
+    object-fit: cover;  /* fills the slide, crops edges */
+    z-index: 0;
+    opacity: 0.5;
+
+    background-color: #333;
+    object-fit: fill;
+    border-radius: 0px;
+  }
+
+  .left, .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+  }
+  .left img, .right img {
+    margin: 15px;
+    width: 50%;
+    height: auto;
+    min-width: 200px;
+    min-height: 200px;
+    max-height: 35dvh;
+    border-radius: 10px;
+    animation: fade-in linear;
+    animation-timeline: view(80% 0px);
+  }
+  .left .top-text, .right .top-text {
+    font-size: calc(1.5vw + 1.5vh);
+    text-align: center;
+  }
+  .left .bottom-text, .right .bottom-text {
+    font-size: calc(1vw + 1vh);
+    text-align: center;
+  }
+
+  .section-description {
+    background-color: #333;
+    color: white;
+    margin-top: -15px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 15px;
+    font-size: larger;
+  }
+
+  .secret-link {
+    border: 4px var(--primary) solid;
+    background-color: #333 !important; 
+    color: var(--primary) !important;
+    justify-self: center !important;
+  }
+  .secret-link:hover {
+    border-color: var(--secondary);
+    color: var(--secondary) !important;
+  }
+
+  .left-navBtn, .right-navBtn {
+    font-size: 1.75rem;
+    color: var(--primary);
+    margin-top: -13px;
+    cursor: pointer;
+  }
+  .left-navBtn:hover, .right-navBtn:hover {
+      opacity: 1;
+      color: var(--secondary);
+  }
+  .left-navBtn.active, .right-navBtn.active {
+    visibility: hidden;
+  }
+
+  article p {
+    font-size: max(calc(0.55vw + 0.55vh), 0.9rem);
+  }
+
+  .assorted-gallery {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    justify-items: center;
+    gap: 15px;
+  }
+  .assorted-gallery img {
+    animation: fade-in linear;
+    animation-timeline: view(90% 0px);
+  }
+
+
+  @media screen and (max-width: 750px){
+    .left {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .right {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+    }
+
+    .left-navBtn, .right-navBtn {
+      display: none;
+    }
+
+    .assorted-gallery {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  @keyframes fade-in {
+    from {scale: .8; opacity: 0;}
+    to {scale: 1; opacity: 1;}
+  }
+
+
 </style>
 <body>
 
@@ -60,17 +213,49 @@
       <div class="light-toggle-btn" role="button">☼</div>
       <div class="highlight-toggle-btn" role="button"><div class="highlight-corner"></div></div>
       <div class="sidebar-close" role="button">
-      <span></span>
+        <span></span>
         <span></span>
       </div>
     </div>
     
     <p>Diego de Jong</p>
-    <h2><strong>Projects</strong></h2>
+    <h2 style="padding-top: 20px;"><strong>Projects</strong></h2>
     <a href="AboutMe.html" role="button">About Me</a>
     <a href="Adventures.html" role="button">Adventures</a>
-    <a href="Links-&-Contact-Info.html" role="button">Links & Contact Info</a>
-    <a href="Guestbook.html" role="button">Guestbook</a>
+    
+    <p class="email-title" style="all:unset; color: rgb(174, 174, 174); position: absolute; bottom: 150px; left: 15px">(Email)</p>
+    <a class="email-link">DiegoDJBV@hotmail.com</a>
+    <p class="Socials-title" style="all:unset; color: rgb(174, 174, 174); position: absolute; bottom: 80px; left: 15px">(Socials)</p>
+    <div class="side-bar-connect">
+      <a href="https://www.youtube.com/@SaizenStudios">
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <path d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 
+          C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 
+          10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 
+          4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 
+          40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 
+          45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"></path>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/dasnapplel">
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z 
+          M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,
+          24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path>
+        </svg>
+      </a>
+      <a href="https://github.com/Dasnapplel">
+        <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 30 30">
+          <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,
+          0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,
+          0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,
+          1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,
+          0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,
+          0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,
+          0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
+        </svg>
+      </a>
+    </div>
   </div>
 
   <main>
@@ -106,35 +291,26 @@
     <div id="Bio" class="special-section">
       <img src="Images/DiegoAura.jpg">
       <div class="bio-text">
-        <p>
-          <span></span>
-          Diego de Jong
-          <span></span>
-        </p>
-        <p><em>Computer Science</em></p>
+        <p>Diego de Jong</p>
+        <p><em>Computer Scientist</em></p>
+        <p><em>Software Engineer</em></p>
         <p><em>Videogame Developer</em></p>
       </div>
     </div>
 
     <section id="Gaming" class="active">
-      <div class="top-cap">
-        <p>Gaming</p>
-        <div class="project-section-btn" role="button">
-          <div class="button-circle"></div>
-        </div>
-      </div>
-
+      <h1 class="active">Gaming ▲</h1>
       <div class="section-content">
-
         <div class="slider">
+
           <div class="slide">   
-            <video src="Images/swordfightshenanigansDemoVideo.mp4" autoplay muted loop playsinline></video>
             <div class="slide-content">
               <img src="Images\SwordfightShenanigansLogo.jpg">
               <article>
                 <h3><span style="text-decoration: underline;">Swordfight Shenanigans</span> (May 2023 - May 2024)</h3>
                 <p>This project is a multiplayer online battle arena game where players control customizable characters and engage in fast-paced sword fights.
-                  It is a Roblox game that has around 100 different swords that players can battle with, and 6 different maps to choose from. I created it as my highschool capstone project, to showcase my skills in game development.
+                  It is a Roblox game that has around 100 different swords that players can battle with, and 6 different maps to choose from. 
+                  I created it as my highschool capstone project, to showcase my skills in game development.
                 Due to this, every aspect of the game, including the code, soundtrack, models, and UI, were created by me alone.
                 Since this was my first big personal project, I learned a lot about game development, coding, and how to work with a large codebase.
                 </p>
@@ -144,10 +320,34 @@
                 <br>
                 <a href="https://www.roblox.com/games/12825332826/Swordfight-Shenanigans">Official Game Link</a>
               </article>
-            </div>
+            </div>  
+            <video src="Images/swordfightshenanigansDemoVideo.mp4" autoplay="" muted="" loop="" playsinline=""></video>
+            <!-- <div class="left">
+              <img src="Images\SwordfightShenanigansLogo.jpg">
+              <p>100+ Swords and Abilities!</p>
+            </div>  
+            <div class="right">
+              <p>50+ Shenanigans!</p>
+              <img src="Images\SwordfightShenanigansLogo.jpg">
+            </div>  
+            <div class="left">
+              <img src="Images\SwordfightShenanigansLogo.jpg">
+              <p>6+ Maps!</p>
+            </div>  
+            <div class="assorted-gallery">
+              <img src="Images\SwordfightShenanigansLogo.jpg">
+              <img src="Images\dego at cabo.jpg">
+              <img src="Images\SwordfightShenanigansLogo.jpg">
+              <img src="Images\tetiohuacan.jpg" style="grid-column: span 2;">
+              <img src="Images\SwordfightShenanigansLogo.jpg">
+              <img src="Images\floridaIndoorSkydiving.jpg" style="grid-row: span 2; grid-column: 2;">
+              <img src="Images\SwordfightShenanigansLogo.jpg">
+              <img src="Images\fhn-drive.jpg" style="grid-column: span 2;">
+              <img src="Images\SwordfightShenanigansLogo.jpg">
+            </div> -->
           </div>
-          <div class="slide">
-            <video src="Images/overdriveThumbnailsVideo.mp4" autoplay muted loop playsinline></video>
+
+          <!-- <div class="slide">
             <div class="slide-content">
               <img src="Images\overdriveLogo.jpg">
               <article>
@@ -155,13 +355,14 @@
                 <p>This project is a car crash derby battle royale game where players compete in chaotic vehicular mayhem. 
                   This Roblox game was made for a game jam, where competitors had to create a game in just 2 weeks. 
                   My brother and I collaborated on this project, with him handling the art and modeling while I focused on the programming and game mechanics. 
-                  Although we didn't win, and the game is still incomplete, we are both proud of what we accomplished in such a short time frame.</p>
+                  Although we didn't win, we are both proud of what we accomplished in such a short time frame.</p>
                 <a href="https://www.roblox.com/games/87818223271624/Overdrive">Official Game Link</a>
               </article>
             </div>
-          </div>
+            <video src="Images/overdriveThumbnailsVideo.mp4" autoplay="" muted="" loop="" playsinline=""></video>
+          </div> -->
+
           <div class="slide">
-            <video src="Images/Roblox-2026-05-22T15_19_12.111Z.mp4" autoplay muted loop playsinline></video>
             <div class="slide-content">
               <img src="Images\GlitchMazeLogo.webp">
               <article>
@@ -177,7 +378,77 @@
                 <a href="https://www.roblox.com/games/89815593298915/Glitch-Maze">Official Game Link</a>
               </article>
             </div>
+            <video src="Images/Roblox-2026-05-22T15_19_12.111Z.mp4" autoplay="" muted="" loop="" playsinline=""></video>
           </div>
+
+          <div class="slide">   
+            <div class="slide-content">
+              <img src="Images\PinballManiaIcon.png">
+              <article>
+                <h3><span style="text-decoration: underline;">Pinball MANIA</span> (Summer 2020 and 2026)</h3>
+                <p>This was the first project I ever made on roblox. 
+                  I noticed the physics system was very fun to play with, so I wanted to create a game that pushed it to its limits.
+                  After creating it during the summer of 2020, I revisited it during the summer of 2026 and remade it. 
+                </p>
+                <a href="https://www.roblox.com/games/12825332826/Swordfight-Shenanigans">Official Game Link</a>
+              </article>
+            </div>  
+            <video src="Images\PinballManiaGameplay.mp4" autoplay="" muted="" loop="" playsinline=""></video>
+
+            <!-- <div class="left">
+              <img src="Images\SwordfightShenanigansLogo.jpg">
+              <p>55+ Balls!</p>
+            </div>  
+            <div class="right">
+              <p>20+ Effects</p>
+              <img src="Images\SwordfightShenanigansLogo.jpg">
+            </div>  
+            <div class="left">
+              <img src="Images\SwordfightShenanigansLogo.jpg">
+              <p>6+ Maps!</p>
+            </div>  
+            <p>Get footage of the store, maps, every lotto outcome, all the balls and effects</p>
+            <p>Create a script that swaps out a ball at a certain position every .75 second, get 15 seconds of footage</p>
+            <p>Get gameplay footage from above and below, with friends and without</p> -->
+          </div>
+
+          <div class="slide">
+            <div class="slide-content">
+              <img src="Images\CERT_BLUEwinter.png">
+              <article>
+                <h3><span style="text-decoration: underline;">Gamejams</span> (2024-2026)</h3>
+                <p>Over the course of my college career, I have participated in a variety of gamejams.
+                  Me and many of my friends wanted to bring that fun to GVSU, so we eventually turned them into a tradition at the Computing Club. 
+                  We had our first in fall 2025, and started doing them once a semester. 
+                  It's really fun!
+                  Here are a few of projects.</p>
+                <a href="https://gvsu-gamejam.github.io/">Computing Club Gamejam Website</a>
+              </article>
+            </div>
+            <div class="left">
+              <div>
+                <p class="top-text">Overdrive</p>
+                <p class="bottom-text">Car Battle Royale</p>
+              </div>
+              <img src="Images\overdriveLogo.jpg">
+            </div>  
+            <video src="Images\overdrive2.mp4" autoplay="" muted="" loop="" playsinline=""></video>
+            <div class="right">
+              <img src="Images\bladeBuilders.jpg">
+              <div>
+                <p class="top-text">Blade Builders</p>
+                <p class="bottom-text">Sword Battle Royale</p>
+              </div>
+            </div>  
+            <div class="left">
+              <div>
+                <p class="top-text">Unlighten</p>
+                <p class="bottom-text">Horror Roguelike Collectathon</p>
+              </div>
+              <img src="Images\unlightenlogo.png">
+            </div>  
+          </div>
+
         </div>
 
       </div>
@@ -189,23 +460,16 @@
     </section>
 
     <section id="Academic">
-      <div class="top-cap">
-        <p>Academic</p>
-        <div class="project-section-btn" role="button">
-          <div class="button-circle"></div>
-        </div>
-      </div>
-
+      <h1>Academic ▼</h1>
       <div class="section-content">
         <div class="slider">
           <div class="slide">
-            <video src="Images/IceLabsHackathonDemo.mp4" autoplay muted loop playsinline></video>
             <div class="slide-content">
               <img src="Images\winnerlakericelabs.png">
               <article>
-                <h3><span style="text-decoration: underline;">MiSpace Hackathon 2025/Laker Ice Labs</span> (October-November, 2025)</h3>
-                <p>I worked with a team of three other people on the GVSU Computing Club's Eboard to create a datamodel that could predictice ice formation on the great lakes.
-                  We spent a month on this project, and ended up winning an honerable mention prize for our efforts. 
+                <h3><span style="text-decoration: underline;">MiSpace Hackathon 2025/Laker Ice Labs</span> (October-November 2025)</h3>
+                <p>I worked with a team of three other people on the GVSU Computing Club's Eboard to create a data model that could predict ice formation on the great lakes.
+                  We spent a month on this project, and ended up winning an honorable mention prize for our efforts. 
                 </p>
                 <a href="https://mispace.devpost.com/project-gallery">Winners Gallery</a>
                 <br>
@@ -216,11 +480,12 @@
                 <a href="https://github.com/ElijahLeeMorgan/MISpaceHackathon">Github Repository</a>
               </article>
             </div>
+            <video src="Images/IceLabsHackathonDemo.mp4" autoplay="" muted="" loop="" playsinline=""></video>
             
           </div>
           <div class="slide">
             <div class="slide-content">
-               <img src="Images\pokemonbattleassistantimage.png">
+              <img src="Images\pokemonbattleassistantimage.png">
               <article>
                 <h3><span style="text-decoration: underline;">Pokemon Battle Assistant</span> (July 2025)</h3>
                 <p>Over the duration of my four week study abroad program in Switzerland, we had to create a project that included machine learning models and image recognition. 
@@ -238,7 +503,7 @@
             <div class="slide-content">
               <img src="Images\atomicObject.jpg">
               <article>
-                <h3><span style="text-decoration: underline;">Atomic Games Hackathon 2026</span> (July 2025)</h3>
+                <h3><span style="text-decoration: underline;">Atomic Games Hackathon 2026</span> (Febuary 28, 2026)</h3>
                 <p>I worked with a partner for a day to create a bot that could best play the game "Sushi Go", and compete against each other in a bracket-style tournament. 
                   With the help of my teammate Caleb Boerma, our bot made it to the semifinals! 
                   It was really fun connecting with all of the other teams and senior developers at the event too! Special thanks to Atomic Object for hosting the event!
@@ -257,21 +522,14 @@
     </section>
 
     <section id="Professional">
-      <div class="top-cap">
-        <p>Professional</p>
-        <div class="project-section-btn" role="button">
-          <div class="button-circle"></div>
-        </div>
-      </div>
-
+      <h1>Professional ▼</h1>
       <div class="section-content">
         <div class="slider">
           <div class="slide">
-            <video src="Images/FinlitQuizDemo.mp4" autoplay muted loop playsinline></video>
             <div class="slide-content">
               <img src="Images\rep4quiz.png">
               <article>
-                <h3><span style="text-decoration: underline;">Rep4Finlit Quiz, Website, and AI Budgeting Tool</span> (May 2025 - August 2026)</h3>
+                <h3><span style="text-decoration: underline;">Rep4®Finlit My Personality Quiz and Website</span> (May 2025 - December 2025)</h3>
                 <p>My first internship was at GVSU’s project grand path, for Rep4FinLit. 
                   My job was to work with a team to create a financial literacy quiz and website that will be used by college students all across the US. 
                   Over the course of the summer, I made great friends with my diverse group of coworkers and gained professional experience as a computer scientist. 
@@ -279,6 +537,20 @@
                   <a href="https://www.rep4finlit.org/">Website Link</a>
                   <br>
                   <a href="https://quiz.rep4finlit.org/">Quiz Link</a>
+              </article>
+            </div>
+            <video src="Images/FinlitQuizDemo.mp4" autoplay="" muted="" loop="" playsinline=""></video>
+          </div>
+          <div class="slide">
+            <div class="slide-content">
+              <img src="Images\chatbotIcon.jpg">
+              <article>
+                <h3><span style="text-decoration: underline;">Rep4®Finlit AI Chatbot</span> (January 2026 - August 2026)</h3>
+                <p>The second half of my time spent at Rep4Finlit was spent working on a chatbot prototype to be integrated into their learning modules.
+                  I learned many UI/UX design skills by working with people from Bizstream throughout the process. 
+                  I also learned more about how AI chat backends work, 
+                </p>
+                  <a href="https://www.rep4finlit.org/">Website Link</a>
               </article>
             </div>
           </div>
@@ -293,17 +565,60 @@
     </section>
 
     <section id="Other">
-      <div class="top-cap">
-        <p>Other</p>
-        <div class="project-section-btn" role="button">
-          <div class="button-circle"></div>
-        </div>
-      </div>
-
+      <h1>Other ▼</h1>
       <div class="section-content">
         <div class="slider">
+
           <div class="slide">
-            <img class="slide-background-image" src="Images/DiegoWebsitePhoto.png">
+            <div class="slide-content">
+              <img src="Images\GuestbookIMG.jpg">
+              <article>
+                <h3><span style="text-decoration: underline;">Guestbook Database</span> (Summer 2026)</h3>
+                <p>I have taken database at GVSU, and wanted to apply my knowledge somehow. 
+                  I saw on a website somewhere that it used to be common to have guestbooks on websites where people could leave comments, so I decided to make one myself.
+                  Mine uses Turso to store its data.
+                  See it for yourself here on my website!</p>
+                  <br>
+                  <a class="secret-link" href="Guestbook.html">Guestbook Page Link</a>
+              </article>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="slide-content">
+              <img src="Images\GVSUFreeFoodIMG.jpg">
+              <article>
+                <h3><span style="text-decoration: underline;">GVSU Food Events XML/RSS Reader</span> (Summer 2026)</h3>
+                <p>I've seen many memes online talking about people who made AI web scrapers to find events around college campuses with free food, and thought it'd be funny to try it myself.
+                  I ended up learning how to create a program that can read XML and RSS files, and find keywords within it. 
+                  It lists the title, date, and link for more information on any events it finds. 
+                  It also uses Cloudflare to be able to read the live XML file from any network.
+                  Feel free to use it!</p>
+                  <a href="https://github.com/Dasnapplel/GVSUEventsXMLReader">Python version on Github</a>
+                  <br><br>
+                  <a class="secret-link" href="GVSUFoodEvents.html">GVSU Food Events Page Link</a>
+              </article>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="slide-content">
+              <img src="Images\GVSUPokemonClub.jpg">
+              <article>
+                <h3><span style="text-decoration: underline;">Pokemon Club Website</span> (Summer 2026)</h3>
+                <p>The Pokemon Club Eboard and I noticed that the advertising for our club was pretty bad, 
+                  so we decided to put a bit of effort into getting more attention.
+                  I made this website using HTML, CSS, and JS to help with that. 
+                  It has a gallery with all of our best events, and all the information needed to join our club.
+                </p>
+                  <a href="https://gvpokemonclub-techies.github.io/">Pokemon Club Website Link</a>
+                  <br><br>
+                  <a href="https://github.com/gvpokemonclub-techies/PokemonClubWebsite">Github Repository</a>
+              </article>
+            </div>
+          </div>
+
+          <!-- <div class="slide">
             <div class="slide-content">
               <img src="Images\webpage-photo.png">
               <article>
@@ -315,10 +630,11 @@
                   <a href="https://github.com/Dasnapplel/Dasnapplel.github.io">GitHub Repository</a>
               </article>
             </div>
-          </div>
-          <div class="slide">
+          </div> -->
+
+          <!-- <div class="slide">
             <div class="slide-content">
-               <img src="Images\listothing.png">
+              <img src="Images\listothing.png">
               <article>
                 <h3><span style="text-decoration: underline;">UCanDoList</span> (Fall 2023)</h3>
                 <p>During my senior year in highschool, I was losing track of all of the work that I had. 
@@ -329,7 +645,8 @@
                 This project helped me improve my skills in app development and user interface design.</p>
               </article>
             </div>
-          </div>
+          </div> -->
+
         </div>
       </div>
 
@@ -345,6 +662,6 @@
   </main>
 
   <script src="JS/script.js"></script>
-  <script src="JS/ProjectsJS.js"></script>
+  <script src="JS/newProjectJS.js"></script>
 </body>
 </html>
