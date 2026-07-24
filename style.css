@@ -71,6 +71,7 @@ body {
     overflow: auto;
     border-right: 0px var(--primary) solid;
     border-left: 0px var(--primary) solid;
+    overflow-x: hidden;
 }
 .sidebar.active {
     left: 0px;
